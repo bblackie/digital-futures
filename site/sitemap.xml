@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+      <url>
+        <loc>http://localhost:8000/</loc>
+      </url>
+      <url>
+        <loc>http://localhost:8000/markdown/</loc>
+      </url>
+      <url>
+        <loc>http://localhost:8000/12DGT/01_programming/1_programming_fundamentals/</loc>
+      </url>
+      <url>
+        <loc>http://localhost:8000/12DGT/02_web-design/1_web_design_and_ux_principles/</loc>
+      </url>
+      <url>
+        <loc>http://localhost:8000/12DGT/03_full-stack/1_full_stack_web_development/</loc>
+      </url>
+      <url>
+        <loc>http://localhost:8000/about/</loc>
+      </url>
+      <url>
+        <loc>http://localhost:8000/about/style-guide/</loc>
+      </url>
+</urlset>
