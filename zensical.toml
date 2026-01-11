@@ -71,6 +71,7 @@ extra_css = ["stylesheets/extra.css"]
 # Section for configuring theme options
 # ----------------------------------------------------------------------------
 [project.theme]
+logo = "assets/images/logo-robotface.png"
 
 # change this to "classic" to use the traditional Material for MkDocs look.
 #variant = "classic"
@@ -93,7 +94,7 @@ extra_css = ["stylesheets/extra.css"]
 # - https://zensical.org/docs/setup/logo-and-icons/#favicon
 # - https://developer.mozilla.org/en-US/docs/Glossary/Favicon
 #
-favicon = "img/logo-df.svg"
+favicon = "assets/images/logo-robotface.png"
 
 # Zensical supports more than 60 different languages. This means that the
 # labels and tooltips that Zensical's templates produce are translated.
@@ -292,8 +293,8 @@ toggle.name = "Switch to light mode"
 # - https://zensical.org/docs/setup/logo-and-icons
 # - https://zensical.org/docs/authoring/icons-emojis/#search
 # ----------------------------------------------------------------------------
-[project.theme.icon]
-logo = "img/logo-df.svg"
+#[project.theme.icon]
+#logo = "assets/images/logo-df.svg"
 #repo = "lucide/smile"
 
 # ----------------------------------------------------------------------------
