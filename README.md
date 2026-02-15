@@ -13,6 +13,11 @@ uv creates the venv and other essential files
 ```
 uv init
 uv add zensical
+```
+
+## Activate virtual env to access libs
+
+```
 .venv\Scripts\Activate.ps1
 ```
 

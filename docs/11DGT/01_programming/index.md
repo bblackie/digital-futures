@@ -21,17 +21,28 @@ It is about **thinking clearly and logically**.
 
 ## What Is a Computer Program?
 
+![What Is a Computer Program](../../../../../assets/images/11dgt_01_what_is_a_computer_program.svg)
+
 A computer program is a **set of instructions** that tells a computer:
 - what to do
 - when to do it
 - how to respond to input
 
-Computers do not “understand intent”.  
+Computers do not "understand intent".  
 They follow instructions **exactly as written**.
+
+### Recommended Video Resource
+
+**Introduction to Programming and Computer Science - Full Course** (freeCodeCamp.org)  
+https://www.youtube.com/watch?v=zOjov-2OZ0E
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zOjov-2OZ0E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ---
 
 ## The Input–Process–Output Model
+
+![Input Process Output Model](../../../../../assets/images/11dgt_01_ipo_model.svg)
 
 Most programs can be described using three stages:
 
@@ -39,7 +50,7 @@ Most programs can be described using three stages:
 - **Process** – logic that works on the data
 - **Output** – the result produced
 
-**Figure 1 — Input–Process–Output model**  
+**Figure 1 – Input–Process–Output model**  
 ```mermaid
 flowchart LR
     A[Programming Foundations] --> B[Game Development]
@@ -58,6 +69,8 @@ This model applies to:
 
 ## Program Structure
 
+![Program Structure](../../../../../assets/images/11dgt_01_program_structure.svg)
+
 Programs are written as a **sequence of instructions**.
 
 Common structural elements include:
@@ -66,7 +79,7 @@ Common structural elements include:
 - decisions (to choose between paths)
 - repetition (to repeat actions)
 
-**Figure 2 — Basic program structure**  
+**Figure 2 – Basic program structure**  
 ```mermaid
 flowchart LR
     Input --> Process --> Output
@@ -77,7 +90,16 @@ Good structure makes programs:
 - easier to test
 - easier to fix
 
+### Recommended Video Resource
+
+**Learn to Program with Python - Problem Solving Approach** (Derek Banas)  
+https://www.youtube.com/watch?v=nwjAoZNE56Q
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nwjAoZNE56Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ---
+
+![Why Structure Matters](../../../../../assets/images/11dgt_01_why_structure_matters.svg)
 
 ## Why Structure Matters
 
@@ -105,6 +127,23 @@ By the end of this unit, you should be able to:
 
 These expectations are **explicitly assessed** in AS92004.
 
+### Recommended Video Resource
+
+**Comprehensive Java Programming Tutorial** (Derek Banas)  
+https://www.youtube.com/watch?v=eIrMbAQSU34
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eIrMbAQSU34" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+---
+
+## Summary
+
+
+![Infographic](../../../../../assets/images/info-programming-foundations.png)
+
+
+
+
 ---
 
 ## Looking Ahead
@@ -115,7 +154,7 @@ The ideas in this unit will be reused when you:
 - handle scoring and conditions
 - debug game behaviour
 
-Programming foundations are not optional — they are reused all year.
+Programming foundations are not optional – they are reused all year.
 
 ---
 
