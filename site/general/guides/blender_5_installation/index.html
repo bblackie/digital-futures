@@ -1,0 +1,4750 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A new project generated from the default template project.">
+      
+      
+        <meta name="author" content="BBlackie">
+      
+      
+        <link rel="canonical" href="https://bblackie.github.io/digital-futures/general/guides/blender_5_installation/">
+      
+      
+        <link rel="prev" href="../../events/science-fairs/">
+      
+      
+        <link rel="next" href="../gdevelop_5_installation/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/logo-robotface.png">
+      <meta name="generator" content="zensical-0.0.15">
+    
+    
+      
+        <title>Installing Blender 5 on Windows 11 - Digital Futures</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.f1b6466b.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/modern/palette.dfe2e883.min.css">
+      
+      
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+  
+  <style>:root{}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,a=__md_scope)=>JSON.parse(t.getItem(a.pathname+"."+e)),__md_set=(e,t,a=localStorage,_=__md_scope)=>{try{a.setItem(_.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#installing-blender-5-on-windows-11" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Digital Futures" class="md-header__button md-logo" aria-label="Digital Futures" data-md-component="logo">
+      
+  <img src="../../../assets/images/logo-robotface.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Digital Futures
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Installing Blender 5 on Windows 11
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Digital Futures" class="md-nav__button md-logo" aria-label="Digital Futures" data-md-component="logo">
+      
+  <img src="../../../assets/images/logo-robotface.png" alt="logo">
+
+    </a>
+    Digital Futures
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Get started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../markdown/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.27 19.385H1.73A1.73 1.73 0 0 1 0 17.655V6.345a1.73 1.73 0 0 1 1.73-1.73h20.54A1.73 1.73 0 0 1 24 6.345v11.308a1.73 1.73 0 0 1-1.73 1.731zM5.769 15.923v-4.5l2.308 2.885 2.307-2.885v4.5h2.308V8.078h-2.308l-2.307 2.885-2.308-2.885H3.46v7.847zM21.232 12h-2.309V8.077h-2.307V12h-2.308l3.461 4.039z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Markdown in 5min
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../11DGT/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11DGT
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Student-facing"></span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    11DGT
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../11DGT/01_programming/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 programming
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Student-facing"></span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    01 programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../11DGT/01_programming/2.%20program-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Program Structure
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Student-facing"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../11DGT/01_programming/3.%20control-structures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control Structures
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Student-facing"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../11DGT/01_programming/4.%20testing-debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing and Debugging
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Student-facing"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../11DGT/01_programming/programming_unit_roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programming Unit Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../11DGT/01_programming/programming_unit_student_checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programming Unit – Student Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../11DGT/02_game-dev/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 game dev
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Student-facing"></span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    02 game dev
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../11DGT/02_game-dev/2.%20what-is-a-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Is a Game?
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Student-facing"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../11DGT/02_game-dev/3.%20godot-basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Godot Basics
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Student-facing"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../11DGT/02_game-dev/4.%20scenes-nodes-scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scenes, Nodes, and Scripts
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Student-facing"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../11DGT/02_game-dev/5.%20game-mechanics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Game Mechanics
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Student-facing"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../11DGT/02_game-dev/game_development_student_checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Game Development Unit – Student Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../11DGT/02_game-dev/game_development_unit_roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Game Development Unit – Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../11DGT/03_development-process/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 development process
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Student-facing"></span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    03 development process
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../11DGT/03_development-process/2.%20iteration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Iteration
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Student-facing"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../11DGT/03_development-process/3.%20playtesting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Playtesting
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Student-facing"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../11DGT/03_development-process/4.%20scope-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Managing Scope
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Student-facing"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../11DGT/04_reflection/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 reflection
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Student-facing"></span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    04 reflection
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../11DGT/04_reflection/1.%20what-is-reflection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Is Reflection?
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Student-facing"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../11DGT/04_reflection/2.%20analysis-vs-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analysis vs Description
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Student-facing"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../11DGT/04_reflection/3.%20linking-decisions-to-outcomes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linking Decisions to Outcomes
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Student-facing"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12DGT
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    12DGT
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    01 programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../12DGT/01_programming/1_programming_fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programming with Python – Unit Course Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 web design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    02 web design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../12DGT/02_web-design/1_web_design_and_ux_principles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Design &amp; UX Principles – Unit Course Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 full stack
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    03 full stack
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../12DGT/03_full-stack/1_full_stack_web_development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full-Stack Website Development – Unit Course Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../13DGT/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13DGT
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Student-facing"></span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    13DGT
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../13DGT/01_web-design/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 web design
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Student-facing"></span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    01 web design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../13DGT/01_web-design/01_user-research-and-personas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Research & Personas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../13DGT/01_web-design/01_user-research-and-personas1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Research & Personas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../13DGT/01_web-design/01_user-research-personas%20copy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Research & Personas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../13DGT/01_web-design/02_information-architecture-wireframing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Information Architecture & Wireframing
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Student-facing"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../13DGT/01_web-design/03_visual-design-principles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visual Design Principles
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Student-facing"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../13DGT/01_web-design/04_accessibility-wcag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accessibility & WCAG Compliance
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Student-facing"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../13DGT/01_web-design/05_prototyping-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prototyping & Tools
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Student-facing"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../13DGT/01_web-design/06_user-testing-usability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Testing & Usability Evaluation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Student-facing"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../13DGT/01_web-design/07_design-iteration-feedback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Iteration & Feedback
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Student-facing"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../13DGT/02_programming/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 programming
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Student-facing"></span>
+  
+
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    02 programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../13DGT/03_full-stack/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 full stack
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Student-facing"></span>
+  
+
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    03 full stack
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../about/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    About
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/style-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markdown Style Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    General
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../style-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markdown Style Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Events
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Events
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../events/science-fairs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New Zealand Students' Pathway to ISEF - Current Status
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installing Blender 5 on Windows 11
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installing Blender 5 on Windows 11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-download-blender-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Download Blender 5
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Download Blender 5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-navigate-to-the-official-download-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Navigate to the Official Download Page
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-choose-your-installation-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Choose Your Installation Method
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-download-blender" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Download Blender
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-install-blender" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Install Blender
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Install Blender">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-using-the-installer-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option A: Using the Installer (Recommended)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Option A: Using the Installer (Recommended)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-run-the-installer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Run the Installer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-follow-the-installation-wizard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Follow the Installation Wizard
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-using-the-portable-zip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option B: Using the Portable ZIP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Option B: Using the Portable ZIP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-extract-blender" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Extract Blender
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-create-a-desktop-shortcut-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Create a Desktop Shortcut (Optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-first-time-launch-and-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: First-Time Launch and Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: First-Time Launch and Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-launch-blender" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Launch Blender
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-first-time-startup-dialog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 First-Time Startup Dialog
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-understand-the-default-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Understand the Default Interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-verify-installation-and-basic-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Verify Installation and Basic Testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4: Verify Installation and Basic Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-test-basic-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Test Basic Navigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-test-basic-object-manipulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Test Basic Object Manipulation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-save-a-test-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Save a Test File
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-recommended-initial-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Recommended Initial Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 5: Recommended Initial Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-enable-auto-save-highly-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Enable Auto-Save (Highly Recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-increase-undo-steps-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Increase Undo Steps (Optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-enable-developer-extras-optional-for-advanced-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Enable Developer Extras (Optional, for Advanced Users)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-install-graphics-drivers-important-for-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Install Graphics Drivers (Important for Performance)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 6: Install Graphics Drivers (Important for Performance)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-identify-your-graphics-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Identify Your Graphics Card
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-update-graphics-drivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Update Graphics Drivers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-verify-gpu-settings-in-blender" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Verify GPU Settings in Blender
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-blender-wont-start-or-crashes-immediately" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem: Blender won't start or crashes immediately
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-cant-see-anything-in-the-3d-viewport-black-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem: Can't see anything in the 3D Viewport (black screen)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-mouse-navigation-doesnt-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem: Mouse navigation doesn't work
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-interface-is-too-small-or-too-large" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem: Interface is too small or too large
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-blender-is-very-slow-or-laggy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem: Blender is very slow or laggy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-cant-find-blender-after-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem: Can't find Blender after installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-blenders-system-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understanding Blender's System Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding Blender&#x27;s System Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimum-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimum Requirements:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Requirements:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keyboard-shortcuts-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keyboard Shortcuts Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional Resources
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-of-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary of Installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gdevelop_5_installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installing GDevelop 5 on Windows 11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../godot_4.6_csharp_installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installing Godot 4.6 with C# Support on Windows 11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../markdown-style-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markdown Style Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../style-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markdown Style Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../year9-survival-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Year 9 Blake House Survival Guide 🎓
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Learning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning/effective-note-taking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Effective Note-Taking Techniques
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning/justin-sung-learning-techniques/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Justin Sung's Learning Techniques — Higher-Order Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning/second-brain-and-para/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building a Second Brain &amp; the PARA Method
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pathways
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Pathways
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pathways/nz_computing_programs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New Zealand University Computing Programs Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pathways/nz_digital_design_schools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New Zealand Digital Design Schools &amp; Private Training Establishments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pathways/nz_itp_computing_programs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New Zealand Institutes of Technology and Polytechnics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-download-blender-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Download Blender 5
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Download Blender 5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-navigate-to-the-official-download-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Navigate to the Official Download Page
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-choose-your-installation-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Choose Your Installation Method
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-download-blender" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Download Blender
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-install-blender" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Install Blender
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Install Blender">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-using-the-installer-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option A: Using the Installer (Recommended)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Option A: Using the Installer (Recommended)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-run-the-installer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Run the Installer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-follow-the-installation-wizard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Follow the Installation Wizard
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-using-the-portable-zip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option B: Using the Portable ZIP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Option B: Using the Portable ZIP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-extract-blender" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Extract Blender
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-create-a-desktop-shortcut-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Create a Desktop Shortcut (Optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-first-time-launch-and-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: First-Time Launch and Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: First-Time Launch and Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-launch-blender" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Launch Blender
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-first-time-startup-dialog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 First-Time Startup Dialog
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-understand-the-default-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Understand the Default Interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-verify-installation-and-basic-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Verify Installation and Basic Testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4: Verify Installation and Basic Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-test-basic-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Test Basic Navigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-test-basic-object-manipulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Test Basic Object Manipulation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-save-a-test-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Save a Test File
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-recommended-initial-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Recommended Initial Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 5: Recommended Initial Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-enable-auto-save-highly-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Enable Auto-Save (Highly Recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-increase-undo-steps-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Increase Undo Steps (Optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-enable-developer-extras-optional-for-advanced-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Enable Developer Extras (Optional, for Advanced Users)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-install-graphics-drivers-important-for-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Install Graphics Drivers (Important for Performance)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 6: Install Graphics Drivers (Important for Performance)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-identify-your-graphics-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Identify Your Graphics Card
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-update-graphics-drivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Update Graphics Drivers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-verify-gpu-settings-in-blender" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Verify GPU Settings in Blender
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-blender-wont-start-or-crashes-immediately" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem: Blender won't start or crashes immediately
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-cant-see-anything-in-the-3d-viewport-black-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem: Can't see anything in the 3D Viewport (black screen)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-mouse-navigation-doesnt-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem: Mouse navigation doesn't work
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-interface-is-too-small-or-too-large" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem: Interface is too small or too large
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-blender-is-very-slow-or-laggy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem: Blender is very slow or laggy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-cant-find-blender-after-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem: Can't find Blender after installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-blenders-system-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understanding Blender's System Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding Blender&#x27;s System Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimum-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimum Requirements:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Requirements:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keyboard-shortcuts-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keyboard Shortcuts Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional Resources
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-of-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary of Installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Get started
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../style-guide/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    General
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Guides
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+<h1 id="installing-blender-5-on-windows-11">Installing Blender 5 on Windows 11<a class="headerlink" href="#installing-blender-5-on-windows-11" title="Permanent link">&para;</a></h1>
+<p>This guide will walk you through installing Blender 5, the open-source 3D creation suite, on Windows 11. Blender is used for 3D modeling, animation, rendering, video editing, and much more.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>Before starting, ensure you have:
+- Windows 11 (64-bit)
+- Administrator access to your computer
+- Stable internet connection
+- Approximately 500MB of free disk space for Blender
+- Recommended: A graphics card that supports OpenGL 4.3 or higher
+- Recommended: At least 8GB RAM (16GB+ for complex projects)</p>
+<h2 id="step-1-download-blender-5">Step 1: Download Blender 5<a class="headerlink" href="#step-1-download-blender-5" title="Permanent link">&para;</a></h2>
+<h3 id="11-navigate-to-the-official-download-page">1.1 Navigate to the Official Download Page<a class="headerlink" href="#11-navigate-to-the-official-download-page" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Open your web browser</li>
+<li>Navigate to: <a href="https://www.blender.org/download/">https://www.blender.org/download/</a></li>
+<li>The website should automatically detect that you're using Windows</li>
+</ol>
+<h3 id="12-choose-your-installation-method">1.2 Choose Your Installation Method<a class="headerlink" href="#12-choose-your-installation-method" title="Permanent link">&para;</a></h3>
+<p>Blender offers two main installation options for Windows:</p>
+<p><strong>Option A: Installer (Recommended for most users)</strong>
+- Easiest to set up
+- Adds Blender to Start Menu
+- Can associate .blend files with Blender
+- Easier to uninstall later</p>
+<p><strong>Option B: Portable ZIP</strong>
+- No installation required
+- Can run from USB drive or any folder
+- Good for testing or running multiple versions
+- No Start Menu integration</p>
+<h3 id="13-download-blender">1.3 Download Blender<a class="headerlink" href="#13-download-blender" title="Permanent link">&para;</a></h3>
+<p><strong>For Installer (Recommended):</strong>
+1. Click the large <strong>Download Blender 5.x</strong> button
+2. The installer file will download (approximately 250-300MB)
+3. File will be named something like <code>blender-5.0.0-windows-x64.msi</code></p>
+<p><strong>For Portable ZIP:</strong>
+1. Look for the link that says <strong>Portable (.zip)</strong>
+2. Click to download
+3. File will be named something like <code>blender-5.0.0-windows-x64.zip</code></p>
+<h2 id="step-2-install-blender">Step 2: Install Blender<a class="headerlink" href="#step-2-install-blender" title="Permanent link">&para;</a></h2>
+<h3 id="option-a-using-the-installer-recommended">Option A: Using the Installer (Recommended)<a class="headerlink" href="#option-a-using-the-installer-recommended" title="Permanent link">&para;</a></h3>
+<h4 id="21-run-the-installer">2.1 Run the Installer<a class="headerlink" href="#21-run-the-installer" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Locate the downloaded <code>.msi</code> file in your Downloads folder</li>
+<li>Double-click the installer file</li>
+<li>If prompted by User Account Control, click <strong>Yes</strong> to allow the installation</li>
+</ol>
+<h4 id="22-follow-the-installation-wizard">2.2 Follow the Installation Wizard<a class="headerlink" href="#22-follow-the-installation-wizard" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Welcome Screen</strong>: Click <strong>Next</strong></li>
+<li><strong>End-User License Agreement</strong>: </li>
+<li>Read the license (Blender is free and open-source under GPL)</li>
+<li>Check the box <strong>I accept the terms in the License Agreement</strong></li>
+<li>Click <strong>Next</strong></li>
+<li><strong>Custom Setup</strong> (usually you can keep defaults):</li>
+<li>Installation location: Default is <code>C:\Program Files\Blender Foundation\Blender 5.x\</code></li>
+<li>You can click <strong>Change</strong> to choose a different location if needed</li>
+<li>Make sure <strong>Add Blender to PATH</strong> is checked (if available)</li>
+<li>Click <strong>Next</strong></li>
+<li><strong>Ready to Install</strong>:</li>
+<li>Review your settings</li>
+<li>Click <strong>Install</strong></li>
+<li><strong>Installation Progress</strong>:</li>
+<li>Wait for the installation to complete (usually 1-2 minutes)</li>
+<li><strong>Completion</strong>:</li>
+<li>Optionally check <strong>Launch Blender</strong> to start it immediately</li>
+<li>Click <strong>Finish</strong></li>
+</ol>
+<h3 id="option-b-using-the-portable-zip">Option B: Using the Portable ZIP<a class="headerlink" href="#option-b-using-the-portable-zip" title="Permanent link">&para;</a></h3>
+<h4 id="21-extract-blender">2.1 Extract Blender<a class="headerlink" href="#21-extract-blender" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Locate the downloaded <code>.zip</code> file in your Downloads folder</li>
+<li>Right-click the ZIP file and select <strong>Extract All...</strong></li>
+<li>Choose a permanent location for Blender. Recommended locations:</li>
+<li><code>C:\Blender\</code> (create this folder if needed)</li>
+<li><code>C:\Program Files\Blender\</code></li>
+<li>A dedicated folder in your Documents</li>
+<li>Click <strong>Extract</strong></li>
+<li>After extraction, navigate into the extracted folder</li>
+<li>You'll find the main <code>blender.exe</code> file</li>
+</ol>
+<h4 id="22-create-a-desktop-shortcut-optional">2.2 Create a Desktop Shortcut (Optional)<a class="headerlink" href="#22-create-a-desktop-shortcut-optional" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Navigate to the extracted Blender folder</li>
+<li>Right-click on <code>blender.exe</code></li>
+<li>Select <strong>Send to</strong> &gt; <strong>Desktop (create shortcut)</strong></li>
+<li>Rename the shortcut to "Blender 5" if desired</li>
+</ol>
+<p><strong>Important</strong>: Do not run the portable version from your Downloads folder. Always extract it to a permanent location first.</p>
+<h2 id="step-3-first-time-launch-and-setup">Step 3: First-Time Launch and Setup<a class="headerlink" href="#step-3-first-time-launch-and-setup" title="Permanent link">&para;</a></h2>
+<h3 id="31-launch-blender">3.1 Launch Blender<a class="headerlink" href="#31-launch-blender" title="Permanent link">&para;</a></h3>
+<p><strong>If you used the installer:</strong>
+1. Click the Windows <strong>Start</strong> button
+2. Type "Blender"
+3. Click on <strong>Blender 5.x</strong> when it appears
+4. Alternatively, find it in <strong>All Apps</strong> under <strong>Blender Foundation</strong></p>
+<p><strong>If you used the portable version:</strong>
+1. Navigate to your Blender folder
+2. Double-click <code>blender.exe</code> (or use your desktop shortcut)</p>
+<h3 id="32-first-time-startup-dialog">3.2 First-Time Startup Dialog<a class="headerlink" href="#32-first-time-startup-dialog" title="Permanent link">&para;</a></h3>
+<p>When you launch Blender for the first time, you'll see a Quick Setup dialog:</p>
+<ol>
+<li><strong>Language</strong>: Select your preferred language (default is English)</li>
+<li><strong>Shortcuts</strong>: Choose your preferred keymap</li>
+<li><strong>Blender</strong>: The default Blender shortcuts (recommended if you're new)</li>
+<li><strong>Industry Compatible</strong>: Similar to Maya, 3ds Max, etc.</li>
+<li>You can change this later in preferences</li>
+<li><strong>Select With</strong>: Choose mouse button for selection</li>
+<li><strong>Left</strong>: Standard for most applications (recommended for beginners)</li>
+<li><strong>Right</strong>: Traditional Blender default</li>
+<li><strong>Spacebar</strong>: Choose what the spacebar does</li>
+<li><strong>Play</strong>: Plays animation</li>
+<li><strong>Tools</strong>: Opens tool menu</li>
+<li><strong>Search</strong>: Opens search menu (recommended for learning)</li>
+<li><strong>Theme</strong>: Choose interface appearance</li>
+<li><strong>Blender Dark</strong>: Default dark theme (easier on eyes)</li>
+<li><strong>Blender Light</strong>: Light theme</li>
+<li><strong>Other themes</strong>: Various options available</li>
+<li>Click <strong>Save Preferences</strong> when done</li>
+</ol>
+<h3 id="33-understand-the-default-interface">3.3 Understand the Default Interface<a class="headerlink" href="#33-understand-the-default-interface" title="Permanent link">&para;</a></h3>
+<p>After setup, you'll see Blender's default startup screen:</p>
+<ul>
+<li><strong>3D Viewport</strong>: Main area showing the default scene (cube, camera, light)</li>
+<li><strong>Outliner</strong>: Top-right panel showing scene objects</li>
+<li><strong>Properties Panel</strong>: Right side with various object and scene settings</li>
+<li><strong>Timeline</strong>: Bottom area for animation</li>
+<li><strong>Splash Screen</strong>: Middle of screen with recent files and templates</li>
+<li>Click outside the splash screen to dismiss it</li>
+<li>Or press <code>Esc</code> key</li>
+</ul>
+<h2 id="step-4-verify-installation-and-basic-testing">Step 4: Verify Installation and Basic Testing<a class="headerlink" href="#step-4-verify-installation-and-basic-testing" title="Permanent link">&para;</a></h2>
+<h3 id="41-test-basic-navigation">4.1 Test Basic Navigation<a class="headerlink" href="#41-test-basic-navigation" title="Permanent link">&para;</a></h3>
+<ol>
+<li>In the 3D Viewport, try these basic controls:</li>
+<li><strong>Middle Mouse Button + Drag</strong>: Rotate the view</li>
+<li><strong>Shift + Middle Mouse Button + Drag</strong>: Pan the view</li>
+<li><strong>Scroll Wheel</strong>: Zoom in and out</li>
+<li><strong>Numpad 0</strong>: Camera view</li>
+<li><strong>Numpad 7</strong>: Top view</li>
+<li><strong>Numpad 1</strong>: Front view</li>
+<li><strong>Numpad 3</strong>: Side view</li>
+</ol>
+<p><strong>Note</strong>: If you don't have a middle mouse button, you can enable <strong>Emulate 3 Button Mouse</strong> in Edit &gt; Preferences &gt; Input.</p>
+<h3 id="42-test-basic-object-manipulation">4.2 Test Basic Object Manipulation<a class="headerlink" href="#42-test-basic-object-manipulation" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Select the default cube</strong>:</li>
+<li>Left-click on the cube (it should get an orange outline)</li>
+<li><strong>Move (Translate)</strong>:</li>
+<li>Press <code>G</code> key (for "Grab")</li>
+<li>Move your mouse to move the cube</li>
+<li>Left-click to confirm, or right-click to cancel</li>
+<li><strong>Rotate</strong>:</li>
+<li>Press <code>R</code> key</li>
+<li>Move mouse to rotate</li>
+<li>Left-click to confirm</li>
+<li><strong>Scale</strong>:</li>
+<li>Press <code>S</code> key</li>
+<li>Move mouse to scale</li>
+<li>Left-click to confirm</li>
+</ol>
+<p>If these work, your Blender installation is functioning correctly!</p>
+<h3 id="43-save-a-test-file">4.3 Save a Test File<a class="headerlink" href="#43-save-a-test-file" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Go to <strong>File</strong> &gt; <strong>Save As</strong></li>
+<li>Choose a location (create a "Blender Projects" folder if needed)</li>
+<li>Name your file (e.g., "test.blend")</li>
+<li>Click <strong>Save As Blender File</strong></li>
+</ol>
+<p>If the file saves successfully, everything is working properly.</p>
+<h2 id="step-5-recommended-initial-configuration">Step 5: Recommended Initial Configuration<a class="headerlink" href="#step-5-recommended-initial-configuration" title="Permanent link">&para;</a></h2>
+<h3 id="51-enable-auto-save-highly-recommended">5.1 Enable Auto-Save (Highly Recommended)<a class="headerlink" href="#51-enable-auto-save-highly-recommended" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Go to <strong>Edit</strong> &gt; <strong>Preferences</strong> (or press <code>F4</code> then <code>P</code>)</li>
+<li>Click on <strong>Save &amp; Load</strong> in the left sidebar</li>
+<li>Under <strong>Auto Save</strong>:</li>
+<li>Check <strong>Auto Save</strong></li>
+<li>Set timer to 2 or 5 minutes (default is often 2)</li>
+<li>The preferences save automatically</li>
+</ol>
+<h3 id="52-increase-undo-steps-optional">5.2 Increase Undo Steps (Optional)<a class="headerlink" href="#52-increase-undo-steps-optional" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Still in <strong>Preferences</strong></li>
+<li>Click <strong>System</strong> in the left sidebar</li>
+<li>Find <strong>Undo Steps</strong></li>
+<li>Increase to 64 or 128 (default is 32)</li>
+<li>This allows you to undo more actions</li>
+</ol>
+<h3 id="53-enable-developer-extras-optional-for-advanced-users">5.3 Enable Developer Extras (Optional, for Advanced Users)<a class="headerlink" href="#53-enable-developer-extras-optional-for-advanced-users" title="Permanent link">&para;</a></h3>
+<ol>
+<li>In <strong>Preferences</strong></li>
+<li>Click <strong>Interface</strong> in the left sidebar</li>
+<li>Under <strong>Display</strong>:</li>
+<li>Check <strong>Developer Extras</strong></li>
+<li>This enables additional options and information</li>
+</ol>
+<h2 id="step-6-install-graphics-drivers-important-for-performance">Step 6: Install Graphics Drivers (Important for Performance)<a class="headerlink" href="#step-6-install-graphics-drivers-important-for-performance" title="Permanent link">&para;</a></h2>
+<p>Blender relies heavily on your graphics card. Having up-to-date drivers is crucial.</p>
+<h3 id="61-identify-your-graphics-card">6.1 Identify Your Graphics Card<a class="headerlink" href="#61-identify-your-graphics-card" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Press <code>Windows + R</code></li>
+<li>Type <code>dxdiag</code> and press Enter</li>
+<li>Click the <strong>Display</strong> tab (or <strong>Display 1</strong> if you have multiple monitors)</li>
+<li>Note your graphics card manufacturer (NVIDIA, AMD, or Intel)</li>
+</ol>
+<h3 id="62-update-graphics-drivers">6.2 Update Graphics Drivers<a class="headerlink" href="#62-update-graphics-drivers" title="Permanent link">&para;</a></h3>
+<p><strong>For NVIDIA:</strong>
+1. Visit: <a href="https://www.nvidia.com/download/index.aspx">https://www.nvidia.com/download/index.aspx</a>
+2. Select your graphics card model
+3. Download and install the latest driver</p>
+<p><strong>For AMD:</strong>
+1. Visit: <a href="https://www.amd.com/en/support">https://www.amd.com/en/support</a>
+2. Select your graphics card model
+3. Download and install the latest driver</p>
+<p><strong>For Intel:</strong>
+1. Visit: <a href="https://www.intel.com/content/www/us/en/download-center/home.html">https://www.intel.com/content/www/us/en/download-center/home.html</a>
+2. Search for your graphics model
+3. Download and install the latest driver</p>
+<p><strong>Restart your computer</strong> after installing new drivers.</p>
+<h3 id="63-verify-gpu-settings-in-blender">6.3 Verify GPU Settings in Blender<a class="headerlink" href="#63-verify-gpu-settings-in-blender" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Open Blender</li>
+<li>Go to <strong>Edit</strong> &gt; <strong>Preferences</strong></li>
+<li>Click <strong>System</strong> in the left sidebar</li>
+<li>Under <strong>Cycles Render Devices</strong>:</li>
+<li>You should see your graphics card listed</li>
+<li>Select <strong>OptiX</strong> (NVIDIA), <strong>HIP</strong> (AMD), or <strong>Metal</strong> (though Metal is for Mac)</li>
+<li>If nothing appears, your drivers may need updating</li>
+</ol>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="problem-blender-wont-start-or-crashes-immediately">Problem: Blender won't start or crashes immediately<a class="headerlink" href="#problem-blender-wont-start-or-crashes-immediately" title="Permanent link">&para;</a></h3>
+<p><strong>Solution</strong>:
+1. Update your graphics drivers (see Step 6)
+2. Right-click on Blender shortcut or executable
+3. Select <strong>Properties</strong>
+4. Go to <strong>Compatibility</strong> tab
+5. Try checking <strong>Run this program as an administrator</strong>
+6. Try checking <strong>Disable fullscreen optimizations</strong>
+7. Click <strong>Apply</strong> and <strong>OK</strong></p>
+<h3 id="problem-cant-see-anything-in-the-3d-viewport-black-screen">Problem: Can't see anything in the 3D Viewport (black screen)<a class="headerlink" href="#problem-cant-see-anything-in-the-3d-viewport-black-screen" title="Permanent link">&para;</a></h3>
+<p><strong>Solution</strong>:
+1. Press <code>Alt + Z</code> to change viewport shading mode
+2. Try pressing <code>Numpad 0</code> to enter camera view, then <code>Numpad 7</code> for top view
+3. Press <code>Home</code> key to frame all objects
+4. If still black, update graphics drivers
+5. Try switching renderer: Top-right dropdown, change to <strong>Workbench</strong> instead of <strong>EEVEE</strong></p>
+<h3 id="problem-mouse-navigation-doesnt-work">Problem: Mouse navigation doesn't work<a class="headerlink" href="#problem-mouse-navigation-doesnt-work" title="Permanent link">&para;</a></h3>
+<p><strong>Solution</strong>:
+1. Go to <strong>Edit</strong> &gt; <strong>Preferences</strong> &gt; <strong>Input</strong>
+2. Check <strong>Emulate 3 Button Mouse</strong> (if you don't have a middle mouse button)
+3. Check <strong>Emulate Numpad</strong> (if you don't have a number pad)
+4. Consider getting a 3-button mouse for better Blender experience</p>
+<h3 id="problem-interface-is-too-small-or-too-large">Problem: Interface is too small or too large<a class="headerlink" href="#problem-interface-is-too-small-or-too-large" title="Permanent link">&para;</a></h3>
+<p><strong>Solution</strong>:
+1. Go to <strong>Edit</strong> &gt; <strong>Preferences</strong> &gt; <strong>Interface</strong>
+2. Under <strong>Display</strong>:
+   - Adjust <strong>Resolution Scale</strong> (default is 1.0)
+   - Try 1.25 or 1.5 for larger interface
+   - Try 0.8 or 0.9 for smaller interface
+3. Restart Blender for changes to fully take effect</p>
+<h3 id="problem-blender-is-very-slow-or-laggy">Problem: Blender is very slow or laggy<a class="headerlink" href="#problem-blender-is-very-slow-or-laggy" title="Permanent link">&para;</a></h3>
+<p><strong>Solution</strong>:
+1. Update graphics drivers
+2. Close other programs to free up RAM
+3. For complex scenes, reduce viewport quality:
+   - In the 3D Viewport, click the <strong>downward arrow</strong> in top-right
+   - Under <strong>Viewport Display</strong>, reduce <strong>Clip Start/End</strong> values
+4. Check that GPU rendering is enabled (see Step 6.3)</p>
+<h3 id="problem-cant-find-blender-after-installation">Problem: Can't find Blender after installation<a class="headerlink" href="#problem-cant-find-blender-after-installation" title="Permanent link">&para;</a></h3>
+<p><strong>Solution</strong>:
+1. Check installation location: <code>C:\Program Files\Blender Foundation\</code>
+2. Search Windows for "Blender"
+3. If using portable version, navigate to where you extracted it
+4. Create a desktop shortcut for easier access</p>
+<h2 id="understanding-blenders-system-requirements">Understanding Blender's System Requirements<a class="headerlink" href="#understanding-blenders-system-requirements" title="Permanent link">&para;</a></h2>
+<h3 id="minimum-requirements">Minimum Requirements:<a class="headerlink" href="#minimum-requirements" title="Permanent link">&para;</a></h3>
+<ul>
+<li>64-bit quad-core CPU</li>
+<li>8GB RAM</li>
+<li>Full HD display (1920×1080)</li>
+<li>Mouse or trackpad</li>
+<li>Graphics card with 2GB VRAM, OpenGL 4.3</li>
+</ul>
+<h3 id="recommended-requirements">Recommended Requirements:<a class="headerlink" href="#recommended-requirements" title="Permanent link">&para;</a></h3>
+<ul>
+<li>64-bit eight-core CPU</li>
+<li>32GB RAM</li>
+<li>WQHD or 4K display</li>
+<li>Three-button mouse</li>
+<li>Graphics card with 8GB+ VRAM, DirectX 12 or OpenGL 4.5</li>
+</ul>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<p>Now that Blender 5 is installed:</p>
+<ol>
+<li><strong>Learn the Interface</strong>: Spend time exploring menus and panels</li>
+<li><strong>Follow the Built-in Tutorials</strong>: Help menu has learning resources</li>
+<li><strong>Official Tutorials</strong>: Visit <a href="https://www.blender.org/support/tutorials/">https://www.blender.org/support/tutorials/</a></li>
+<li><strong>Blender Manual</strong>: Comprehensive documentation at <a href="https://docs.blender.org/">https://docs.blender.org/</a></li>
+<li><strong>Practice Projects</strong>: Start with simple modeling exercises (cup, table, room)</li>
+<li><strong>Community Resources</strong>: </li>
+<li>Blender Artists forum: <a href="https://blenderartists.org/">https://blenderartists.org/</a></li>
+<li>Blender subreddit: <a href="https://www.reddit.com/r/blender/">https://www.reddit.com/r/blender/</a></li>
+<li>YouTube tutorials from channels like Blender Guru, Grant Abbitt, CG Cookie</li>
+</ol>
+<h2 id="keyboard-shortcuts-quick-reference">Keyboard Shortcuts Quick Reference<a class="headerlink" href="#keyboard-shortcuts-quick-reference" title="Permanent link">&para;</a></h2>
+<p>Essential shortcuts to remember:</p>
+<ul>
+<li><code>Tab</code>: Toggle Edit Mode / Object Mode</li>
+<li><code>G</code>: Move (Grab)</li>
+<li><code>R</code>: Rotate</li>
+<li><code>S</code>: Scale</li>
+<li><code>X</code>: Delete</li>
+<li><code>Shift + A</code>: Add object menu</li>
+<li><code>Ctrl + S</code>: Save</li>
+<li><code>Ctrl + Z</code>: Undo</li>
+<li><code>Ctrl + Shift + Z</code>: Redo</li>
+<li><code>F3</code>: Search for commands</li>
+<li><code>N</code>: Toggle properties sidebar</li>
+<li><code>T</code>: Toggle tools sidebar</li>
+<li><code>Z</code>: Shading mode menu</li>
+</ul>
+<h2 id="additional-resources">Additional Resources<a class="headerlink" href="#additional-resources" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Official Blender Website</strong>: <a href="https://www.blender.org/">https://www.blender.org/</a></li>
+<li><strong>Blender Manual</strong>: <a href="https://docs.blender.org/manual/en/latest/">https://docs.blender.org/manual/en/latest/</a></li>
+<li><strong>Blender Cloud</strong>: <a href="https://cloud.blender.org/">https://cloud.blender.org/</a> (tutorials and assets)</li>
+<li><strong>Blender Studio</strong>: <a href="https://studio.blender.org/">https://studio.blender.org/</a> (open movie projects)</li>
+<li><strong>Community Support</strong>: <a href="https://blender.community/">https://blender.community/</a></li>
+</ul>
+<h2 id="summary-of-installation">Summary of Installation<a class="headerlink" href="#summary-of-installation" title="Permanent link">&para;</a></h2>
+<p>✅ Download Blender 5 installer or portable version<br />
+✅ Install or extract Blender to permanent location<br />
+✅ Complete first-time setup (language, shortcuts, theme)<br />
+✅ Test basic navigation and object manipulation<br />
+✅ Enable auto-save and adjust preferences<br />
+✅ Update graphics drivers for optimal performance<br />
+✅ Familiarize yourself with the interface and basic shortcuts  </p>
+<hr />
+<p><em>Last updated: February 2026 for Blender 5.0</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../events/science-fairs/" class="md-footer__link md-footer__link--prev" aria-label="Previous: New Zealand Students&#x27; Pathway to ISEF - Current Status">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                New Zealand Students' Pathway to ISEF - Current Status
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../gdevelop_5_installation/" class="md-footer__link md-footer__link--next" aria-label="Next: Installing GDevelop 5 on Windows 11">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Installing GDevelop 5 on Windows 11
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 BBlackie
+
+    </div>
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tabs.link","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.top","navigation.tracking","search.highlight"],"search":"../../../assets/javascripts/workers/search.e2d2d235.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.00c35305.min.js"></script>
+      
+    
+  </body>
+</html>

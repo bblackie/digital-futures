@@ -1,0 +1,33 @@
+<svg width="800" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4c6ef5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#748ffc;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bg1)" rx="16"/>
+  <!-- Pencil icon -->
+  <g transform="translate(60,80)">
+    <rect x="0" y="0" width="12" height="100" rx="2" fill="#fff" opacity="0.9" transform="rotate(-30 6 50)"/>
+    <polygon points="0,100 6,120 12,100" fill="#ffd43b" transform="rotate(-30 6 50)"/>
+  </g>
+  <!-- Notebook lines -->
+  <g transform="translate(180,60)">
+    <rect width="360" height="180" rx="8" fill="#fff" opacity="0.95"/>
+    <line x1="20" y1="50" x2="340" y2="50" stroke="#dee2e6" stroke-width="1.5"/>
+    <line x1="20" y1="80" x2="340" y2="80" stroke="#dee2e6" stroke-width="1.5"/>
+    <line x1="20" y1="110" x2="340" y2="110" stroke="#dee2e6" stroke-width="1.5"/>
+    <line x1="20" y1="140" x2="340" y2="140" stroke="#dee2e6" stroke-width="1.5"/>
+    <text x="180" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#4c6ef5">WHY NOTE-TAKING MATTERS</text>
+    <text x="30" y="72" font-family="Arial, sans-serif" font-size="14" fill="#495057">✓ Process ideas — don't just copy</text>
+    <text x="30" y="102" font-family="Arial, sans-serif" font-size="14" fill="#495057">✓ Revise faster before assessments</text>
+    <text x="30" y="132" font-family="Arial, sans-serif" font-size="14" fill="#495057">✓ Spot gaps in understanding early</text>
+    <text x="30" y="162" font-family="Arial, sans-serif" font-size="14" fill="#868e96">The goal: capture meaning</text>
+  </g>
+  <!-- Brain icon -->
+  <g transform="translate(620,90)">
+    <circle cx="60" cy="60" r="50" fill="none" stroke="#fff" stroke-width="3" opacity="0.8"/>
+    <path d="M40,60 Q45,30 60,35 Q75,30 80,60 Q85,80 60,90 Q35,80 40,60Z" fill="#fff" opacity="0.3"/>
+    <text x="60" y="65" font-family="Arial, sans-serif" font-size="28" text-anchor="middle" fill="#fff">🧠</text>
+  </g>
+</svg>
