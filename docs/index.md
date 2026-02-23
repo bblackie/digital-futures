@@ -164,3 +164,8 @@ $$
 [Hover me][example]
 
   [example]: https://example.com "I'm a tooltip!"
+
+## Markdown resources
+
+- [Markdown in 5min](./markdown.md)
+- [Benefits of Markdown](./markdown-benefits.md)
