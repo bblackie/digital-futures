@@ -24,6 +24,8 @@ You will learn to:
 
 By the end of this unit, you will have designed a functional, accessible website prototype backed by evidence of user testing and iterative improvement.
 
+![Web Design infographic](../../../../../assets/images/web-design-infographic.jpg)
+
 ---
 
 ## Topics in This Unit
@@ -55,6 +57,67 @@ This unit's topics directly map to these requirements:
 - Topics 3, 5 prepare you for high-fidelity prototypes
 - Topics 4 prepare you for accessibility requirements
 - Topics 6–7 prepare you for user testing and iteration evidence
+
+![Topic-to-assessment requirement mapping](../../../../../assets/images/WD-1.0-03-assessment-topic-map.svg)
+
+---
+
+# Mastering UX Methodologies for Your Full-Stack Project
+
+Welcome to the first stage of your year-long development journey! Before you write a single line of JavaScript for your API or build your database backend, you need to understand **who** you are building for and **how** they will interact with your creation. 
+
+For **Achievement Standard 91901**, you aren't just "making a design"; you are **applying User Experience (UX) methodologies** to ensure your digital outcome is actually fit for purpose [2, 3].
+
+---
+
+## What is UX (User Experience)?
+UX is the "step up" from Level 2. While Level 2 focused on conventions, Level 3 requires you to use specific **methodologies** to generate, model, and test your ideas [2, 4]. It is the difference between a website that just "works" and one that feels intuitive and efficient.
+
+To meet the standard, you must **investigate at least two** of the following methodologies [5, 6]:
+
+![The UX design process cycle](../../../../../assets/images/WD-1.0-01-ux-process-cycle.svg)
+
+### 1. User Research
+Before you design your API endpoints, you need to understand the **purpose** of your outcome and the **requirements of your end users** [6, 7].
+*   **What it involves:** Interviews, surveys, or observing people to see what problems they face.
+*   **Relevance:** If your API tracks fitness data, your research tells you which JSON fields (data points) your users actually care about.
+
+### 2. Information Architecture (IA)
+This is the "skeleton" of your application. It’s about how information is organized and structured [8].
+*   **What it involves:** Creating site maps or data flow diagrams.
+*   **Relevance:** Since you are building an **API and a database**, IA is critical. You need to decide how your data is categorized so your JavaScript frontend can fetch it logically.
+
+### 3. User Interface (UI) Design
+This is the visual part of the experience. The standard suggests using **design guidelines** to inform your work [7, 8].
+*   **What it involves:** Creating interface sketches or high-fidelity mockups.
+*   **Relevance:** Your JS framework frontend needs to be clean. UI design helps you determine where buttons and data displays go before you start coding the CSS.
+
+### 4. Interaction Design
+Focuses on the "behavior" of the app. How does the system respond when a user clicks a button [8]?
+*   **What it involves:** Designing "states" (e.g., What does the "Loading" screen look like while the frontend waits for the API response?).
+*   **Relevance:** In modern JS frameworks, smooth transitions and feedback (like "Success" toasts after a database update) make an app feel professional.
+
+### 5. Usability Evaluation
+Testing your design with **real people** to see if they can actually use it [8, 9].
+*   **What it involves:** "Modelling" your ideas—showing a paper sketch to a classmate and asking, "How would you find the settings page?" [9, 10].
+*   **Relevance:** You must **effectively use data** from this testing to improve your project before you code it [6, 11].
+
+### 6. Accessibility
+Designing for everyone, including people with impairments [8].
+*   **What it involves:** Checking color contrast, font sizes, and keyboard navigation.
+*   **Relevance:** Accessibility is a major **relevant implication** at Level 3. A "refined" design must justify how it addresses the needs of all potential end users [8, 12].
+
+![Overview of the six UX methodologies](../../../../../assets/images/WD-1.0-02-six-ux-methodologies.svg)
+
+---
+
+## Your Objective: The Investigation
+To get started with AS 91901, you need to:
+1.  **Select a Context:** What is your application's purpose [6, 7]?
+2.  **Explain the End Users:** Who are they and what do they need [6]?
+3.  **Investigate:** Research at least two of the UX methodologies above and **summarize your findings** [6, 7]. 
+
+**Pro-Tip for Excellence:** Don't just pick methodologies because they are on the list. Choose the ones that will actually help you build a better API. Later, you will need to **justify** why these methodologies were the right choice for your specific project [12].
 
 ---
 
@@ -116,6 +179,8 @@ If you can't explain your design, it's not valid evidence—no matter how profes
 - **Week 3:** User testing (recruit testers, conduct sessions, summarize feedback)
 - **Week 4:** Design iteration, accessibility verification, final prototype, documentation
 
+![Four-week unit timeline](../../../../../assets/images/WD-1.0-04-four-week-timeline.svg)
+
 ---
 
 ## Tools You'll Use
@@ -139,6 +204,8 @@ Your teacher will demonstrate these tools; choose the one that works best for yo
 4. **Testing only classmates:** Your classmates know the design; they're biased. Test with people unfamiliar with your project.
 5. **One-off iteration:** Feedback is not a checklist; iteration is a cycle. If you change one element, verify it doesn't break something else.
 6. **No documentation:** Your teacher can't give you credit for thinking you didn't document. Keep an iteration journal from day one.
+
+![Six common pitfalls to avoid](../../../../../assets/images/WD-1.0-05-common-pitfalls.svg)
 
 ---
 

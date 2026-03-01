@@ -65,6 +65,12 @@ Small elements are tertiary
 - Center: draws attention
 - Edges: less noticed
 
+#### Learn More: Visual Hierarchy in UX/UI Design
+This video explores core principles like size, color, and typography with real website examples to show how to guide user attention effectively.
+
+[Visual Hierarchy in UX/UI Design | Make Your Designs Instantly Stand Out](https://www.youtube.com/watch?v=5jAZ9EYjOxs)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5jAZ9EYjOxs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 #### Example: E-commerce Product Page
 
 ```
@@ -86,6 +92,8 @@ Every visual choice guides the eye. Notice:
 - Small reviews = contextual
 - Green button = action
 - Grey wishlist = secondary
+
+![Visual hierarchy: four tools — size, colour, contrast, position](../../../../../assets/images/WD-1.3-01-visual-hierarchy.svg)
 
 ### Contrast
 
@@ -109,6 +117,8 @@ Every visual choice guides the eye. Notice:
 - Elements grouped together are related
 - Elements far apart are different
 - Gaps and white space create emphasis
+
+![Three types of contrast — colour, type, and spatial](../../../../../assets/images/WD-1.3-02-contrast-types.svg)
 
 ### White Space
 
@@ -150,6 +160,8 @@ Rules:
 - Padding: Space inside an element
 - Line spacing: Space between lines of text (usually 1.5× text size minimum)
 
+![White space: crowded vs breathable layout](../../../../../assets/images/WD-1.3-03-white-space.svg)
+
 ### Typography
 
 **Typography** is the art of arranging text. It includes:
@@ -176,6 +188,8 @@ Rules:
 
 **Rule:** Don't mix too many fonts. Typically 1–2 font families per site.
 
+![Typography essentials — serif vs sans-serif, scale and spacing](../../../../../assets/images/WD-1.3-04-typography.svg)
+
 ### Colour Psychology
 
 Colour influences emotion and perception:
@@ -198,6 +212,14 @@ Colour influences emotion and perception:
 **Triadic:** Three colours equally spaced on the wheel (balanced, complex)
 
 For most web projects: **Pick a primary colour + 1–2 accent colours + neutrals (greys, blacks).**
+
+#### Learn More: Color Theory & Typography for Beginners
+A comprehensive breakdown of how to select color schemes and typography to create professional designs from scratch.
+
+[Graphic Design for Beginners | Typography, Color Theory, & More](https://www.youtube.com/watch?v=SGT1l9AukLc)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SGT1l9AukLc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+![Colour psychology and palette strategy guide](../../../../../assets/images/WD-1.3-05-colour-psychology.svg)
 
 ### Design Principles: The Gestalt Principles
 
@@ -237,6 +259,14 @@ Our brain completes incomplete shapes.
 🟠🟠🟠             (Brain sees a circle, 
   🟠              even though it's broken)
 ```
+
+#### Learn More: Gestalt Principles Explained
+Explore how our brains naturally group visuals and how these psychological principles are applied to modern web and UI design.
+
+[The Gestalt Principles | Basics for Beginners](https://www.youtube.com/watch?v=FryaH599ec0)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FryaH599ec0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+![Gestalt principles: proximity, similarity, continuance, closure](../../../../../assets/images/WD-1.3-06-gestalt-principles.svg)
 
 ---
 
@@ -299,6 +329,8 @@ Our brain completes incomplete shapes.
 **Why it's wrong:** 8% of men and 0.5% of women are colourblind. More experience low vision or astigmatism.
 
 **Correct thinking:** Don't rely on colour alone. Pair colour with shape, size, or text.
+
+![Four common visual design misconceptions](../../../../../assets/images/WD-1.3-07-misconceptions.svg)
 
 ---
 
@@ -369,3 +401,11 @@ You now understand visual design principles. In the next topic, [Accessibility &
 ---
 
 *End of Topic 3: Visual Design Principles*
+```
+
+I've integrated three highly relevant videos into your notes: one for **Visual Hierarchy**, one for **Typography & Color Theory**, and one for the **Gestalt Principles**. Each includes a brief description and an embedded player for easy access.
+
+Would you like me to find specific WCAG accessibility checklists for your next topic?
+
+
+http://googleusercontent.com/youtube_content/0
