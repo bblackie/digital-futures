@@ -1,0 +1,67 @@
+<svg width="680" height="380" viewBox="0 0 680 380" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <!-- Background -->
+  <rect width="680" height="380" fill="#F7FAFC" rx="14"/>
+  <rect x="1" y="1" width="678" height="378" fill="none" stroke="#E2E8F0" stroke-width="2" rx="14"/>
+
+  <!-- Title -->
+  <text x="340" y="34" text-anchor="middle" font-size="17" font-weight="bold" fill="#1A202C">Information Architecture: Four Components</text>
+  <text x="340" y="52" text-anchor="middle" font-size="11" fill="#718096">IA answers: "How should content be organized so users find what they need?"</text>
+
+  <!-- Central hub -->
+  <circle cx="340" cy="210" r="52" fill="#EBF8FF" stroke="#4299E1" stroke-width="2.5"/>
+  <text x="340" y="205" text-anchor="middle" font-size="13" font-weight="bold" fill="#2B6CB0">Information</text>
+  <text x="340" y="222" text-anchor="middle" font-size="13" font-weight="bold" fill="#2B6CB0">Architecture</text>
+
+  <!-- Spokes -->
+  <line x1="296" y1="175" x2="178" y2="116" stroke="#CBD5E0" stroke-width="2"/>
+  <line x1="384" y1="175" x2="502" y2="116" stroke="#CBD5E0" stroke-width="2"/>
+  <line x1="296" y1="245" x2="178" y2="304" stroke="#CBD5E0" stroke-width="2"/>
+  <line x1="384" y1="245" x2="502" y2="304" stroke="#CBD5E0" stroke-width="2"/>
+
+  <!-- Card: Navigation Structure (top-left) -->
+  <rect x="36" y="68" width="200" height="116" rx="10" fill="#F0FFF4" stroke="#68D391" stroke-width="2"/>
+  <rect x="36" y="68" width="200" height="34" rx="10" fill="#68D391"/>
+  <rect x="36" y="88" width="200" height="14" fill="#68D391"/>
+  <text x="136" y="90" text-anchor="middle" font-size="12" font-weight="bold" fill="#1C4532">Navigation Structure</text>
+  <text x="46" y="116" font-size="10" fill="#276749">How pages are organized and</text>
+  <text x="46" y="131" font-size="10" fill="#276749">connected — what's at the top</text>
+  <text x="46" y="146" font-size="10" fill="#276749">level, what's nested, and how</text>
+  <text x="46" y="161" font-size="10" fill="#276749">deep the hierarchy goes.</text>
+  <text x="46" y="176" font-size="9" fill="#2F855A" font-style="italic">e.g. Main nav → Sub-pages</text>
+
+  <!-- Card: Labeling (top-right) -->
+  <rect x="444" y="68" width="200" height="116" rx="10" fill="#EBF8FF" stroke="#63B3ED" stroke-width="2"/>
+  <rect x="444" y="68" width="200" height="34" rx="10" fill="#63B3ED"/>
+  <rect x="444" y="88" width="200" height="14" fill="#63B3ED"/>
+  <text x="544" y="90" text-anchor="middle" font-size="12" font-weight="bold" fill="#1A365D">Labeling</text>
+  <text x="454" y="116" font-size="10" fill="#2C5282">What you call sections and</text>
+  <text x="454" y="131" font-size="10" fill="#2C5282">links — labels must be instantly</text>
+  <text x="454" y="146" font-size="10" fill="#2C5282">understood by users, not just</text>
+  <text x="454" y="161" font-size="10" fill="#2C5282">by the designer.</text>
+  <text x="454" y="176" font-size="9" fill="#2B6CB0" font-style="italic">e.g. "Help" vs "Support Centre"</text>
+
+  <!-- Card: Content Grouping (bottom-left) -->
+  <rect x="36" y="256" width="200" height="116" rx="10" fill="#FFFBEB" stroke="#F6AD55" stroke-width="2"/>
+  <rect x="36" y="256" width="200" height="34" rx="10" fill="#F6AD55"/>
+  <rect x="36" y="276" width="200" height="14" fill="#F6AD55"/>
+  <text x="136" y="278" text-anchor="middle" font-size="12" font-weight="bold" fill="#744210">Content Grouping</text>
+  <text x="46" y="306" font-size="10" fill="#92400E">What content belongs together —</text>
+  <text x="46" y="321" font-size="10" fill="#92400E">grouping related items reduces</text>
+  <text x="46" y="336" font-size="10" fill="#92400E">cognitive load and helps users</text>
+  <text x="46" y="351" font-size="10" fill="#92400E">build mental models.</text>
+  <text x="46" y="366" font-size="9" fill="#744210" font-style="italic">e.g. FAQ + Help in one section</text>
+
+  <!-- Card: Search & Filtering (bottom-right) -->
+  <rect x="444" y="256" width="200" height="116" rx="10" fill="#FAF5FF" stroke="#B794F4" stroke-width="2"/>
+  <rect x="444" y="256" width="200" height="34" rx="10" fill="#B794F4"/>
+  <rect x="444" y="276" width="200" height="14" fill="#B794F4"/>
+  <text x="544" y="278" text-anchor="middle" font-size="12" font-weight="bold" fill="#44337A">Search &amp; Filtering</text>
+  <text x="454" y="306" font-size="10" fill="#553C9A">How users find things when</text>
+  <text x="454" y="321" font-size="10" fill="#553C9A">browsing doesn't work — filters,</text>
+  <text x="454" y="336" font-size="10" fill="#553C9A">tags, and search all extend</text>
+  <text x="454" y="351" font-size="10" fill="#553C9A">IA beyond navigation menus.</text>
+  <text x="454" y="366" font-size="9" fill="#44337A" font-style="italic">e.g. Tag-based or keyword search</text>
+
+  <!-- Footer -->
+  <text x="340" y="373" text-anchor="middle" font-size="10" fill="#A0AEC0">Good IA makes finding content obvious — poor IA creates frustrated, abandoning users</text>
+</svg>

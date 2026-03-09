@@ -1,0 +1,98 @@
+<svg width="720" height="400" viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <!-- Background -->
+  <rect width="720" height="400" fill="#F7FAFC" rx="14"/>
+  <rect x="1" y="1" width="718" height="398" fill="none" stroke="#E2E8F0" stroke-width="2" rx="14"/>
+
+  <!-- Title -->
+  <text x="360" y="32" text-anchor="middle" font-size="17" font-weight="bold" fill="#1A202C">Worked Example: IA Option Comparison</text>
+  <text x="360" y="50" text-anchor="middle" font-size="11" fill="#718096">University course registration — three structural approaches and why two of them fail</text>
+
+  <!-- Option A -->
+  <rect x="18" y="64" width="214" height="298" rx="10" fill="#FFF5F7" stroke="#FC8181" stroke-width="2"/>
+  <rect x="18" y="64" width="214" height="36" rx="10" fill="#FC8181"/>
+  <rect x="18" y="84" width="214" height="16" fill="#FC8181"/>
+  <text x="125" y="86" text-anchor="middle" font-size="13" font-weight="bold" fill="#63171B">Option A — Deep Hierarchy</text>
+  <text x="125" y="100" text-anchor="middle" font-size="10" fill="#63171B">Nested navigation</text>
+  <!-- Path diagram -->
+  <text x="32" y="126" font-size="10" fill="#C53030" font-weight="bold">User path:</text>
+  <text x="32" y="142" font-size="10" fill="#4A5568">Navigation</text>
+  <text x="90" y="142" font-size="10" fill="#A0AEC0">→</text>
+  <text x="102" y="142" font-size="10" fill="#4A5568">Academics</text>
+  <text x="32" y="157" font-size="10" fill="#A0AEC0">→</text>
+  <text x="44" y="157" font-size="10" fill="#4A5568">Departments</text>
+  <text x="32" y="172" font-size="10" fill="#A0AEC0">→</text>
+  <text x="44" y="172" font-size="10" fill="#4A5568">Courses</text>
+  <text x="32" y="187" font-size="10" fill="#A0AEC0">→</text>
+  <text x="44" y="187" font-size="10" fill="#4A5568">Description</text>
+  <!-- Click count badge -->
+  <rect x="32" y="200" width="100" height="22" rx="5" fill="#FED7D7"/>
+  <text x="82" y="215" text-anchor="middle" font-size="10" font-weight="bold" fill="#9B2335">4 clicks deep</text>
+  <!-- Problem -->
+  <text x="32" y="242" font-size="10" fill="#9B2335" font-weight="bold">✗ Problem:</text>
+  <text x="32" y="258" font-size="10" fill="#C53030">Students give up before</text>
+  <text x="32" y="273" font-size="10" fill="#C53030">reaching the description.</text>
+  <text x="32" y="289" font-size="10" fill="#C53030">Follows the designer's</text>
+  <text x="32" y="304" font-size="10" fill="#C53030">mental model, not the</text>
+  <text x="32" y="319" font-size="10" fill="#C53030">student's mental model.</text>
+  <rect x="18" y="340" width="214" height="22" rx="0" fill="#FED7D7"/>
+  <rect x="18" y="340" width="214" height="22" rx="10" fill="#FED7D7"/>
+  <text x="125" y="355" text-anchor="middle" font-size="10" font-weight="bold" fill="#9B2335">❌  Fails usability test</text>
+
+  <!-- Option B -->
+  <rect x="250" y="64" width="214" height="298" rx="10" fill="#FFFBEB" stroke="#F6AD55" stroke-width="2"/>
+  <rect x="250" y="64" width="214" height="36" rx="10" fill="#F6AD55"/>
+  <rect x="250" y="84" width="214" height="16" fill="#F6AD55"/>
+  <text x="357" y="86" text-anchor="middle" font-size="13" font-weight="bold" fill="#744210">Option B — Top-Level Link</text>
+  <text x="357" y="100" text-anchor="middle" font-size="10" fill="#744210">Cluttered navigation</text>
+  <!-- Path diagram -->
+  <text x="264" y="126" font-size="10" fill="#92400E" font-weight="bold">User path:</text>
+  <text x="264" y="142" font-size="10" fill="#4A5568">Navigation</text>
+  <text x="330" y="142" font-size="10" fill="#A0AEC0">→</text>
+  <text x="342" y="142" font-size="10" fill="#4A5568">Courses</text>
+  <text x="264" y="157" font-size="10" fill="#4A5568">(all courses shown + filter)</text>
+  <!-- Click count badge -->
+  <rect x="264" y="200" width="100" height="22" rx="5" fill="#FEEBC8"/>
+  <text x="314" y="215" text-anchor="middle" font-size="10" font-weight="bold" fill="#744210">1–2 clicks</text>
+  <!-- Problem -->
+  <text x="264" y="242" font-size="10" fill="#92400E" font-weight="bold">✗ Problem:</text>
+  <text x="264" y="258" font-size="10" fill="#B45309">Navigation bar becomes</text>
+  <text x="264" y="273" font-size="10" fill="#B45309">cluttered with many items.</text>
+  <text x="264" y="289" font-size="10" fill="#B45309">Doesn't scale to mobile</text>
+  <text x="264" y="304" font-size="10" fill="#B45309">— too many top-level</text>
+  <text x="264" y="319" font-size="10" fill="#B45309">navigation items fail on</text>
+  <text x="264" y="335" font-size="10" fill="#B45309">small screens.</text>
+  <rect x="250" y="340" width="214" height="22" rx="10" fill="#FEEBC8"/>
+  <text x="357" y="355" text-anchor="middle" font-size="10" font-weight="bold" fill="#744210">⚠  Partially works, fails mobile</text>
+
+  <!-- Option C - winner -->
+  <rect x="484" y="64" width="218" height="298" rx="10" fill="#F0FFF4" stroke="#68D391" stroke-width="2.5"/>
+  <rect x="484" y="64" width="218" height="36" rx="10" fill="#38A169"/>
+  <rect x="484" y="84" width="218" height="16" fill="#38A169"/>
+  <text x="593" y="86" text-anchor="middle" font-size="13" font-weight="bold" fill="white">Option C — Search First</text>
+  <text x="593" y="100" text-anchor="middle" font-size="10" fill="white">Behaviour-driven IA</text>
+  <!-- Path diagram -->
+  <text x="498" y="126" font-size="10" fill="#276749" font-weight="bold">User path:</text>
+  <text x="498" y="142" font-size="10" fill="#4A5568">Navigation</text>
+  <text x="558" y="142" font-size="10" fill="#A0AEC0">→</text>
+  <text x="570" y="142" font-size="10" fill="#4A5568">Search</text>
+  <text x="498" y="157" font-size="10" fill="#4A5568">Results card:</text>
+  <text x="498" y="171" font-size="10" fill="#4A5568">ID · Title · Instructor</text>
+  <text x="498" y="185" font-size="10" fill="#4A5568">Description · Schedule</text>
+  <!-- Click count badge -->
+  <rect x="498" y="200" width="100" height="22" rx="5" fill="#C6F6D5"/>
+  <text x="548" y="215" text-anchor="middle" font-size="10" font-weight="bold" fill="#1C4532">1 search → done</text>
+  <!-- Why it works -->
+  <text x="498" y="242" font-size="10" fill="#276749" font-weight="bold">✓ Why it works:</text>
+  <text x="498" y="258" font-size="10" fill="#2F855A">Matches real student</text>
+  <text x="498" y="273" font-size="10" fill="#2F855A">behaviour — they know</text>
+  <text x="498" y="289" font-size="10" fill="#2F855A">the course ID or name,</text>
+  <text x="498" y="305" font-size="10" fill="#2F855A">not the department. IA</text>
+  <text x="498" y="321" font-size="10" fill="#2F855A">aligns with the user's</text>
+  <text x="498" y="337" font-size="10" fill="#2F855A">mental model.</text>
+  <rect x="484" y="340" width="218" height="22" rx="10" fill="#C6F6D5"/>
+  <text x="593" y="355" text-anchor="middle" font-size="10" font-weight="bold" fill="#1C4532">✅  Confirmed by user research</text>
+
+  <!-- Footer insight bar -->
+  <rect x="18" y="372" width="684" height="22" rx="6" fill="#E6FFFA" stroke="#4FD1C5" stroke-width="1"/>
+  <text x="360" y="387" text-anchor="middle" font-size="10" fill="#285E61">💡  Key lesson: User research (card sorting, observation) reveals Option C — you cannot guess this from behind a desk</text>
+</svg>

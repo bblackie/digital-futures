@@ -1,0 +1,134 @@
+<svg width="760" height="420" viewBox="0 0 760 420" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <rect width="760" height="420" fill="#F7FAFC" rx="14"/>
+  <rect x="1" y="1" width="758" height="418" fill="none" stroke="#E2E8F0" stroke-width="2" rx="14"/>
+
+  <text x="380" y="32" text-anchor="middle" font-size="17" font-weight="bold" fill="#1A202C">Colour Psychology &amp; Palette Strategy</text>
+  <text x="380" y="50" text-anchor="middle" font-size="11" fill="#718096">Colour influences emotion and perception — choose with intent, not preference</text>
+
+  <!-- Colour swatches row -->
+  <!-- Red -->
+  <rect x="18" y="64" width="86" height="90" rx="8" fill="#FED7D7" stroke="#FC8181" stroke-width="1.5"/>
+  <rect x="18" y="64" width="86" height="46" rx="8" fill="#E53E3E"/>
+  <rect x="18" y="96" width="86" height="14" fill="#E53E3E"/>
+  <text x="61" y="92" text-anchor="middle" font-size="18" fill="white">🔴</text>
+  <text x="61" y="125" text-anchor="middle" font-size="10" font-weight="bold" fill="#9B2335">Red</text>
+  <text x="61" y="140" text-anchor="middle" font-size="9" fill="#C53030">Urgency</text>
+  <text x="61" y="153" text-anchor="middle" font-size="9" fill="#C53030">Emotion</text>
+
+  <!-- Blue -->
+  <rect x="112" y="64" width="86" height="90" rx="8" fill="#BEE3F8" stroke="#63B3ED" stroke-width="1.5"/>
+  <rect x="112" y="64" width="86" height="46" rx="8" fill="#3182CE"/>
+  <rect x="112" y="96" width="86" height="14" fill="#3182CE"/>
+  <text x="155" y="92" text-anchor="middle" font-size="18" fill="white">🔵</text>
+  <text x="155" y="125" text-anchor="middle" font-size="10" font-weight="bold" fill="#2C5282">Blue</text>
+  <text x="155" y="140" text-anchor="middle" font-size="9" fill="#2B6CB0">Trust</text>
+  <text x="155" y="153" text-anchor="middle" font-size="9" fill="#2B6CB0">Professionalism</text>
+
+  <!-- Green -->
+  <rect x="206" y="64" width="86" height="90" rx="8" fill="#C6F6D5" stroke="#68D391" stroke-width="1.5"/>
+  <rect x="206" y="64" width="86" height="46" rx="8" fill="#38A169"/>
+  <rect x="206" y="96" width="86" height="14" fill="#38A169"/>
+  <text x="249" y="92" text-anchor="middle" font-size="18" fill="white">🟢</text>
+  <text x="249" y="125" text-anchor="middle" font-size="10" font-weight="bold" fill="#276749">Green</text>
+  <text x="249" y="140" text-anchor="middle" font-size="9" fill="#2F855A">Growth</text>
+  <text x="249" y="153" text-anchor="middle" font-size="9" fill="#2F855A">Go / Action</text>
+
+  <!-- Yellow -->
+  <rect x="300" y="64" width="86" height="90" rx="8" fill="#FEFCBF" stroke="#F6E05E" stroke-width="1.5"/>
+  <rect x="300" y="64" width="86" height="46" rx="8" fill="#D69E2E"/>
+  <rect x="300" y="96" width="86" height="14" fill="#D69E2E"/>
+  <text x="343" y="92" text-anchor="middle" font-size="18" fill="white">🟡</text>
+  <text x="343" y="125" text-anchor="middle" font-size="10" font-weight="bold" fill="#744210">Yellow</text>
+  <text x="343" y="140" text-anchor="middle" font-size="9" fill="#B45309">Optimism</text>
+  <text x="343" y="153" text-anchor="middle" font-size="9" fill="#B45309">Use for highlights</text>
+
+  <!-- Black -->
+  <rect x="394" y="64" width="86" height="90" rx="8" fill="#E2E8F0" stroke="#4A5568" stroke-width="1.5"/>
+  <rect x="394" y="64" width="86" height="46" rx="8" fill="#1A202C"/>
+  <rect x="394" y="96" width="86" height="14" fill="#1A202C"/>
+  <text x="437" y="92" text-anchor="middle" font-size="18" fill="white">⬛</text>
+  <text x="437" y="125" text-anchor="middle" font-size="10" font-weight="bold" fill="#1A202C">Black</text>
+  <text x="437" y="140" text-anchor="middle" font-size="9" fill="#4A5568">Authority</text>
+  <text x="437" y="153" text-anchor="middle" font-size="9" fill="#4A5568">Formality</text>
+
+  <!-- White -->
+  <rect x="488" y="64" width="86" height="90" rx="8" fill="#F7FAFC" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="488" y="64" width="86" height="46" rx="8" fill="#EDF2F7" stroke="#CBD5E0" stroke-width="1"/>
+  <rect x="488" y="96" width="86" height="14" fill="#EDF2F7"/>
+  <text x="531" y="92" text-anchor="middle" font-size="18">⬜</text>
+  <text x="531" y="125" text-anchor="middle" font-size="10" font-weight="bold" fill="#4A5568">White</text>
+  <text x="531" y="140" text-anchor="middle" font-size="9" fill="#718096">Cleanliness</text>
+  <text x="531" y="153" text-anchor="middle" font-size="9" fill="#718096">Simplicity</text>
+
+  <!-- Grey -->
+  <rect x="582" y="64" width="86" height="90" rx="8" fill="#EDF2F7" stroke="#A0AEC0" stroke-width="1.5"/>
+  <rect x="582" y="64" width="86" height="46" rx="8" fill="#718096"/>
+  <rect x="582" y="96" width="86" height="14" fill="#718096"/>
+  <text x="625" y="92" text-anchor="middle" font-size="18" fill="white">🔘</text>
+  <text x="625" y="125" text-anchor="middle" font-size="10" font-weight="bold" fill="#4A5568">Grey</text>
+  <text x="625" y="140" text-anchor="middle" font-size="9" fill="#718096">Neutral</text>
+  <text x="625" y="153" text-anchor="middle" font-size="9" fill="#718096">Secondary info</text>
+
+  <!-- Context note -->
+  <rect x="682" y="64" width="62" height="90" rx="8" fill="#E6FFFA" stroke="#4FD1C5" stroke-width="1.5"/>
+  <text x="713" y="95" text-anchor="middle" font-size="9" fill="#285E61" font-weight="bold">Context</text>
+  <text x="713" y="110" text-anchor="middle" font-size="9" fill="#285E61">matters!</text>
+  <text x="713" y="126" text-anchor="middle" font-size="8" fill="#285E61">Same colour,</text>
+  <text x="713" y="138" text-anchor="middle" font-size="8" fill="#285E61">different</text>
+  <text x="713" y="150" text-anchor="middle" font-size="8" fill="#285E61">meaning</text>
+
+  <!-- Palette strategies (bottom half) -->
+  <text x="380" y="180" text-anchor="middle" font-size="13" font-weight="bold" fill="#2D3748">Colour Palette Strategies</text>
+
+  <!-- Monochromatic -->
+  <rect x="18" y="194" width="164" height="110" rx="10" fill="#EBF8FF" stroke="#63B3ED" stroke-width="2"/>
+  <text x="100" y="214" text-anchor="middle" font-size="11" font-weight="bold" fill="#2C5282">Monochromatic</text>
+  <rect x="34" y="222" width="26" height="22" rx="3" fill="#1A365D"/>
+  <rect x="64" y="222" width="26" height="22" rx="3" fill="#2C5282"/>
+  <rect x="94" y="222" width="26" height="22" rx="3" fill="#4299E1"/>
+  <rect x="124" y="222" width="26" height="22" rx="3" fill="#BEE3F8"/>
+  <text x="100" y="264" text-anchor="middle" font-size="9" fill="#4A5568">One hue, multiple shades</text>
+  <text x="100" y="278" text-anchor="middle" font-size="9" fill="#4A5568">Cohesive, sophisticated</text>
+  <text x="100" y="293" text-anchor="middle" font-size="9" fill="#718096" font-style="italic">Risk: can feel monotonous</text>
+
+  <!-- Analogous -->
+  <rect x="196" y="194" width="164" height="110" rx="10" fill="#F0FFF4" stroke="#68D391" stroke-width="2"/>
+  <text x="278" y="214" text-anchor="middle" font-size="11" font-weight="bold" fill="#276749">Analogous</text>
+  <rect x="212" y="222" width="26" height="22" rx="3" fill="#2C7A7B"/>
+  <rect x="242" y="222" width="26" height="22" rx="3" fill="#38A169"/>
+  <rect x="272" y="222" width="26" height="22" rx="3" fill="#68D391"/>
+  <rect x="302" y="222" width="26" height="22" rx="3" fill="#9AE6B4"/>
+  <text x="278" y="264" text-anchor="middle" font-size="9" fill="#4A5568">Adjacent hues on the wheel</text>
+  <text x="278" y="278" text-anchor="middle" font-size="9" fill="#4A5568">Harmonious, calm</text>
+  <text x="278" y="293" text-anchor="middle" font-size="9" fill="#718096" font-style="italic">Risk: low contrast</text>
+
+  <!-- Complementary -->
+  <rect x="374" y="194" width="164" height="110" rx="10" fill="#FFFBEB" stroke="#F6AD55" stroke-width="2"/>
+  <text x="456" y="214" text-anchor="middle" font-size="11" font-weight="bold" fill="#744210">Complementary</text>
+  <rect x="390" y="222" width="26" height="22" rx="3" fill="#3182CE"/>
+  <rect x="420" y="222" width="26" height="22" rx="3" fill="#63B3ED"/>
+  <rect x="450" y="222" width="26" height="22" rx="3" fill="#E53E3E"/>
+  <rect x="480" y="222" width="26" height="22" rx="3" fill="#FC8181"/>
+  <text x="456" y="264" text-anchor="middle" font-size="9" fill="#4A5568">Opposite colours on wheel</text>
+  <text x="456" y="278" text-anchor="middle" font-size="9" fill="#4A5568">High contrast, vibrant</text>
+  <text x="456" y="293" text-anchor="middle" font-size="9" fill="#718096" font-style="italic">Risk: can clash if overdone</text>
+
+  <!-- Recommended web strategy -->
+  <rect x="552" y="194" width="190" height="110" rx="10" fill="#F0FFF4" stroke="#38A169" stroke-width="2.5"/>
+  <text x="647" y="214" text-anchor="middle" font-size="11" font-weight="bold" fill="#1C4532">Recommended</text>
+  <text x="647" y="230" text-anchor="middle" font-size="10" fill="#276749">for most web projects:</text>
+  <rect x="568" y="238" width="32" height="20" rx="3" fill="#3182CE"/>
+  <text x="618" y="252" font-size="9" fill="#4A5568">Primary colour</text>
+  <rect x="568" y="262" width="32" height="20" rx="3" fill="#38A169"/>
+  <text x="618" y="276" font-size="9" fill="#4A5568">1–2 accent colours</text>
+  <rect x="568" y="286" width="32" height="20" rx="3" fill="#718096"/>
+  <text x="618" y="300" font-size="9" fill="#4A5568">Neutrals (greys)</text>
+
+  <!-- Footer note -->
+  <rect x="18" y="320" width="724" height="52" rx="8" fill="#FFF5F7" stroke="#FC8181" stroke-width="1.5"/>
+  <text x="380" y="340" text-anchor="middle" font-size="10" font-weight="bold" fill="#9B2335">⚠  Accessibility warning:</text>
+  <text x="380" y="356" text-anchor="middle" font-size="10" fill="#C53030">Never communicate meaning through colour alone — 8% of men are colourblind. Always pair colour with shape, text, or icon.</text>
+  <text x="380" y="370" text-anchor="middle" font-size="10" fill="#C53030">Test your palette with a colour-blindness simulator (e.g. Coblis or browser accessibility tools).</text>
+
+  <text x="380" y="412" text-anchor="middle" font-size="10" fill="#A0AEC0">AS91901: Justify every colour choice in your design rationale — "I liked it" is not acceptable reasoning</text>
+</svg>
