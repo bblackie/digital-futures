@@ -14,7 +14,7 @@ uv creates the venv and other essential files
 uv init
 ```
 
-## Add zensical locallt
+## Add zensical locally
 
 ```
 uv add zensical
