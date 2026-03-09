@@ -1,0 +1,71 @@
+<svg width="720" height="360" viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <rect width="720" height="360" fill="#F7FAFC" rx="14"/>
+  <rect x="1" y="1" width="718" height="358" fill="none" stroke="#E2E8F0" stroke-width="2" rx="14"/>
+
+  <text x="360" y="32" text-anchor="middle" font-size="17" font-weight="bold" fill="#1A202C">Typography Essentials</text>
+  <text x="360" y="50" text-anchor="middle" font-size="11" fill="#718096">Typography is the arrangement of text to guide reading — not just picking a font you like</text>
+
+  <!-- Serif vs Sans-serif -->
+  <rect x="18" y="64" width="330" height="190" rx="10" fill="#EBF8FF" stroke="#63B3ED" stroke-width="2"/>
+  <rect x="18" y="64" width="330" height="34" rx="10" fill="#4299E1"/>
+  <rect x="18" y="82" width="330" height="16" fill="#4299E1"/>
+  <text x="183" y="86" text-anchor="middle" font-size="13" font-weight="bold" fill="white">Serif vs. Sans-Serif</text>
+
+  <!-- Serif column -->
+  <text x="100" y="122" text-anchor="middle" font-size="11" fill="#2C5282" font-weight="bold">Serif</text>
+  <text x="100" y="142" text-anchor="middle" font-size="22" fill="#1A202C" font-family="Georgia, serif">Aa Gg</text>
+  <text x="100" y="162" text-anchor="middle" font-size="9" fill="#718096" font-family="Georgia, serif">Georgia · Times New Roman</text>
+  <text x="36" y="184" font-size="10" fill="#4A5568">• Small "feet" on letters</text>
+  <text x="36" y="198" font-size="10" fill="#4A5568">• Traditional, formal tone</text>
+  <text x="36" y="212" font-size="10" fill="#4A5568">• Good for body text in print</text>
+  <text x="36" y="226" font-size="10" fill="#2B6CB0" font-style="italic">e.g. news sites, books, academia</text>
+  <text x="36" y="244" font-size="9" fill="#E53E3E">⚠  Can be harder to read on-screen</text>
+
+  <!-- Divider -->
+  <line x1="183" y1="108" x2="183" y2="254" stroke="#BEE3F8" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+  <!-- Sans-serif column -->
+  <text x="266" y="122" text-anchor="middle" font-size="11" fill="#2C5282" font-weight="bold">Sans-Serif</text>
+  <text x="266" y="142" text-anchor="middle" font-size="22" fill="#1A202C">Aa Gg</text>
+  <text x="266" y="162" text-anchor="middle" font-size="9" fill="#718096">Arial · Helvetica · Inter</text>
+  <text x="198" y="184" font-size="10" fill="#4A5568">• No feet on letters</text>
+  <text x="198" y="198" font-size="10" fill="#4A5568">• Modern, clean, approachable</text>
+  <text x="198" y="212" font-size="10" fill="#4A5568">• Better on screens at small sizes</text>
+  <text x="198" y="226" font-size="10" fill="#2B6CB0" font-style="italic">e.g. apps, websites, dashboards</text>
+  <text x="198" y="244" font-size="9" fill="#38A169">✓ Preferred for web interfaces</text>
+
+  <!-- Rule box -->
+  <rect x="36" y="255" width="294" height="24" rx="6" fill="#BEE3F8"/>
+  <text x="183" y="271" text-anchor="middle" font-size="10" fill="#1A365D" font-weight="bold">Rule: Use max 2 font families per site — mixing more creates chaos</text>
+
+  <!-- Size scale + spacing rules -->
+  <rect x="366" y="64" width="336" height="190" rx="10" fill="#F0FFF4" stroke="#68D391" stroke-width="2"/>
+  <rect x="366" y="64" width="336" height="34" rx="10" fill="#38A169"/>
+  <rect x="366" y="82" width="336" height="16" fill="#38A169"/>
+  <text x="534" y="86" text-anchor="middle" font-size="13" font-weight="bold" fill="white">Scale, Weight &amp; Spacing</text>
+  <!-- Size demo -->
+  <text x="382" y="120" font-size="22" font-weight="bold" fill="#1C4532">H1 — Page title (28–36px)</text>
+  <text x="382" y="143" font-size="16" font-weight="bold" fill="#276749">H2 — Section heading (22–24px)</text>
+  <text x="382" y="163" font-size="13" fill="#2F855A">H3 — Sub-heading (16–18px)</text>
+  <text x="382" y="180" font-size="11" fill="#4A5568">Body text — readable at 14–16px, 1.5× line height</text>
+  <text x="382" y="196" font-size="9" fill="#A0AEC0">Caption / label — supplementary at 10–12px</text>
+  <line x1="382" y1="208" x2="686" y2="208" stroke="#C6F6D5" stroke-width="1"/>
+  <!-- LH + Line length rules -->
+  <text x="382" y="228" font-size="10" fill="#276749" font-weight="bold">Key spacing rules:</text>
+  <text x="382" y="244" font-size="10" fill="#4A5568">• Line height: 1.5× font size minimum (= breathing room)</text>
+  <text x="382" y="260" font-size="10" fill="#4A5568">• Line length: 50–75 characters per line (beyond = harder to read)</text>
+  <!-- Line length indicator -->
+  <text x="382" y="255" font-size="10" fill="#4A5568"/>
+
+  <!-- Bottom rule strip -->
+  <rect x="382" y="266" width="294" height="24" rx="6" fill="#C6F6D5"/>
+  <text x="529" y="282" text-anchor="middle" font-size="10" fill="#1C4532" font-weight="bold">Use weight (bold/regular) to create hierarchy within the same font family</text>
+
+  <!-- Accessible text guidance -->
+  <rect x="18" y="282" width="684" height="58" rx="10" fill="#FFFBEB" stroke="#F6AD55" stroke-width="1.5"/>
+  <text x="36" y="300" font-size="10" fill="#744210" font-weight="bold">Accessible typography:</text>
+  <text x="36" y="316" font-size="10" fill="#B45309">• Minimum 16px body text (smaller is technically readable but fatiguing for many users)</text>
+  <text x="36" y="332" font-size="10" fill="#B45309">• Avoid full-caps body text — it slows reading by 10–25%  •  Avoid justified text on variable-width screens — uneven spacing impairs low-vision readers</text>
+
+  <text x="360" y="353" text-anchor="middle" font-size="10" fill="#A0AEC0">AS91901: Your prototype's typography choices must be justified in your design rationale document</text>
+</svg>

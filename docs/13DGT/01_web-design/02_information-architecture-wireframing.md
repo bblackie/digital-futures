@@ -45,6 +45,11 @@ It includes:
 - **Search and filtering:** If your site is large, how do users search or narrow results?
 - **Content grouping:** What content belongs together? (Grouping related items reduces cognitive load)
 
+### 🎥 Video: What Is Information Architecture?
+This video provides a comprehensive guide to how IA works within the UX design process.
+[http://www.youtube.com/watch?v=OJLfjgVlwDo](http://www.youtube.com/watch?v=OJLfjgVlwDo)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OJLfjgVlwDo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ### Why IA Matters
 
 Poor IA creates frustrated users:
@@ -59,6 +64,8 @@ flowchart TD
 
 Good IA makes it obvious.
 
+
+
 ### Card Sorting: A Research Method for IA
 
 **Card sorting** is a simple research technique to discover how users organize information:
@@ -69,11 +76,12 @@ Good IA makes it obvious.
 4. Notice patterns (do most users group "FAQ" with "Help" or "Product Info"?)
 5. Use patterns to inform your navigation structure
 
-**Example:** A SaaS tool might organize differently based on user mental models:
-- **Developer mental model:** Features → Documentation → Pricing
-- **Manager mental model:** Pricing → Case Studies → Features
+### 🎥 Video: How To Do Card Sorting
+A practical guide on running card sorting sessions to build your site structure.
+[http://www.youtube.com/watch?v=AxgMIEVcIMY](http://www.youtube.com/watch?v=AxgMIEVcIMY)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/AxgMIEVcIMY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-Understanding these patterns prevents misalignment.
+
 
 ### Wireframes: Low-Fidelity Blueprints
 
@@ -82,6 +90,17 @@ A **wireframe** is a sketch of a page showing:
 - **Navigation:** How users move between pages
 - **Hierarchy:** What's prominent vs. secondary
 - **Interaction:** Where buttons/inputs are and what happens when clicked
+
+**Why wireframes are valuable:**
+Wireframes let you:
+- Test structure quickly (1–2 hours, not days)
+- Focus on user flow, not aesthetics
+- Iterate without attachment ("it's just a sketch")
+
+### 🎥 Video: Creating Your First Wireframe
+A tutorial on the wireframing process, from low-fidelity sketches to digital layouts.
+[http://www.youtube.com/watch?v=qpH7-KFWZRI](http://www.youtube.com/watch?v=qpH7-KFWZRI)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qpH7-KFWZRI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 **What wireframes do NOT show:**
 - Colours, fonts, or visual styling
@@ -144,6 +163,8 @@ Include:
 - Cons: Takes time; designers get attached; hard to iterate
 
 **Typical workflow:** Low → Medium → High fidelity as you validate structure.
+
+
 
 ### User Flows
 
@@ -213,6 +234,8 @@ You show it to 3 students. They all:
 
 **Result:** Faster to registration, fewer abandoned sessions.
 
+
+
 ---
 
 ## Common Misconceptions
@@ -249,6 +272,8 @@ Standard pages (About, Contact) can use a template.
 - The conceptual model (is this a store, a library, a community?)
 
 **Correct thinking:** IA is the invisible structure that makes everything else work.
+
+
 
 ---
 
@@ -303,7 +328,7 @@ Wireframes are evidence of structured thinking and iteration.
 
 ## Next Steps
 
-You now understand how to structure content and sketch layouts. In the next topic, [Visual Design Principles](03_visual-design-principles.md), you'll learn how to apply colour, typography, and visual hierarchy to create high-fidelity prototypes.
+You now understand how to structure content and sketch layouts. In the next topic, Visual Design Principles, you'll learn how to apply colour, typography, and visual hierarchy to create high-fidelity prototypes.
 
 ---
 
