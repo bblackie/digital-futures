@@ -3964,7 +3964,7 @@
 <strong>Estimated Time:</strong> 50 minutes  </p>
 <hr />
 <h2 id="1-purpose-of-these-notes">1. Purpose of These Notes<a class="headerlink" href="#1-purpose-of-these-notes" title="Permanent link">&para;</a></h2>
-<p><img alt="Purpose of These Notes — what they do, what they are not, and connection to AS92004" src="..//assets/images/PG-01-purpose.png" /></p>
+<p><img alt="Purpose of These Notes — what they do, what they are not, and connection to AS92004" src="../../../../../../assets/images/PG-01-purpose.png" /></p>
 <p>These notes exist to:
 - explain what Pygame is and how it connects to the Python you already know
 - show how the programming fundamentals (IPO, variables, selection, iteration) appear inside a game
@@ -3973,7 +3973,7 @@
 <p>These notes are <strong>not</strong> a tutorial you copy line by line. They explain the <em>ideas</em> behind Pygame so you can make and justify your own decisions.</p>
 <hr />
 <h2 id="2-key-concepts-overview">2. Key Concepts (Overview)<a class="headerlink" href="#2-key-concepts-overview" title="Permanent link">&para;</a></h2>
-<p><img alt="Key Concepts overview — six core ideas connecting Pygame to Python fundamentals" src="..//assets/images/PG-02-key-concepts.png" /></p>
+<p><img alt="Key Concepts overview — six core ideas connecting Pygame to Python fundamentals" src="../../../../../../assets/images/PG-02-key-concepts.png" /></p>
 <ul>
 <li>A Pygame program is still a Python program — variables, selection, iteration, and functions all apply.</li>
 <li>Every Pygame program follows a <strong>game loop</strong>: handle events → update state → draw the screen.</li>
@@ -3993,7 +3993,7 @@
 <hr />
 <h2 id="3-core-explanation">3. Core Explanation<a class="headerlink" href="#3-core-explanation" title="Permanent link">&para;</a></h2>
 <h3 id="what-is-pygame">What Is Pygame?<a class="headerlink" href="#what-is-pygame" title="Permanent link">&para;</a></h3>
-<p><img alt="What Pygame provides versus what you still write" src="..//assets/images/PG-03a-what-is-pygame.png" /></p>
+<p><img alt="What Pygame provides versus what you still write" src="../../../../../../assets/images/PG-03a-what-is-pygame.png" /></p>
 <p>Pygame is a Python library for making 2D games and interactive programs. It handles drawing to the screen, reading keyboard and mouse input, and keeping time — things that plain Python cannot do by itself.</p>
 <p>Pygame does <strong>not</strong> change how Python works. You still use variables, functions, conditions, and loops. Pygame just gives you new tools to work with.</p>
 <h3 id="why-use-pygame-for-as92004">Why Use Pygame for AS92004?<a class="headerlink" href="#why-use-pygame-for-as92004" title="Permanent link">&para;</a></h3>
@@ -4006,7 +4006,7 @@
 </ul>
 <p>The game is the <em>context</em>. The programming fundamentals are the <em>evidence</em>.</p>
 <h3 id="the-game-loop">The Game Loop<a class="headerlink" href="#the-game-loop" title="Permanent link">&para;</a></h3>
-<p><img alt="The Game Loop — three phases mapped to IPO" src="..//assets/images/PG-03b-game-loop.png" /></p>
+<p><img alt="The Game Loop — three phases mapped to IPO" src="../../../../../../assets/images/PG-03b-game-loop.png" /></p>
 <p>The most important idea in Pygame is the <strong>game loop</strong>. Every game runs a loop that repeats many times per second. Each time through the loop, three things happen:</p>
 <ol>
 <li><strong>Handle events</strong> — check what the player did (pressed a key, clicked, closed the window)</li>
@@ -4047,11 +4047,11 @@
 <iframe width="560" height="315" src="https://www.youtube.com/embed/jO6qQDNa2UY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <h3 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h3>
-<p><img alt="Events — how games receive and handle input using selection" src="..//assets/images/PG-03c-events.png" /></p>
+<p><img alt="Events — how games receive and handle input using selection" src="../../../../../../assets/images/PG-03c-events.png" /></p>
 <p>An event is something that happens — a key press, a mouse click, or the player closing the window. Pygame collects events into a queue. Each time through the loop, you check the queue and decide what to do.</p>
 <p>This is <strong>selection</strong>: <em>if</em> the event is a quit event, stop the loop. <em>If</em> the event is a key press, change a variable.</p>
 <h3 id="surfaces-and-drawing">Surfaces and Drawing<a class="headerlink" href="#surfaces-and-drawing" title="Permanent link">&para;</a></h3>
-<p><img alt="Surfaces and Drawing — Clear, Draw, Flip workflow" src="..//assets/images/PG-03d-surfaces-drawing.png" /></p>
+<p><img alt="Surfaces and Drawing — Clear, Draw, Flip workflow" src="../../../../../../assets/images/PG-03d-surfaces-drawing.png" /></p>
 <p>A <strong>surface</strong> is a rectangular area of pixels. The display surface is the game window. You draw shapes, images, and text onto surfaces.</p>
 <p>Drawing in Pygame works like a flipbook:
 1. Clear the screen (fill it with a background colour)
@@ -4059,14 +4059,14 @@
 3. Flip the display (show the new frame)</p>
 <p>If you skip the clear step, old drawings stay on the screen and the game looks broken. This is a common mistake.</p>
 <h3 id="coordinates-and-positioning">Coordinates and Positioning<a class="headerlink" href="#coordinates-and-positioning" title="Permanent link">&para;</a></h3>
-<p><img alt="Pygame coordinate system — (0,0) at top-left, y increases downward" src="..//assets/images/PG-03e-coordinates.png" /></p>
+<p><img alt="Pygame coordinate system — (0,0) at top-left, y increases downward" src="../../../../../../assets/images/PG-03e-coordinates.png" /></p>
 <p>Pygame uses a coordinate system where:
 - <strong>(0, 0)</strong> is the <strong>top-left</strong> corner of the window
 - <strong>x</strong> increases to the right
 - <strong>y</strong> increases <strong>downward</strong> (not upward like in maths)</p>
 <p>This catches many students. If you increase a y-value, the object moves <em>down</em>.</p>
 <h3 id="controlling-speed">Controlling Speed<a class="headerlink" href="#controlling-speed" title="Permanent link">&para;</a></h3>
-<p><img alt="Controlling Speed — with and without a clock" src="..//assets/images/PG-03f-clock-speed.png" /></p>
+<p><img alt="Controlling Speed — with and without a clock" src="../../../../../../assets/images/PG-03f-clock-speed.png" /></p>
 <p>Pygame uses a <strong>clock</strong> to control how fast the game loop runs. Setting the clock to 60 frames per second means the loop runs 60 times each second. This keeps the game smooth and consistent.</p>
 <p>Without a clock, the loop runs as fast as the computer allows, which makes the game behave differently on different machines.</p>
 <hr />
@@ -4127,7 +4127,7 @@
 <hr />
 <h2 id="5-worked-examples-conceptual-not-procedural">5. Worked Examples (Conceptual, Not Procedural)<a class="headerlink" href="#5-worked-examples-conceptual-not-procedural" title="Permanent link">&para;</a></h2>
 <h3 id="worked-example-1-understanding-the-game-loop">Worked Example 1: Understanding the Game Loop<a class="headerlink" href="#worked-example-1-understanding-the-game-loop" title="Permanent link">&para;</a></h3>
-<p><img alt="Worked Example: Moving Square — variables, each frame, and the clear-step bug" src="..//assets/images/PG-05a-worked-example-movement.png" /></p>
+<p><img alt="Worked Example: Moving Square — variables, each frame, and the clear-step bug" src="../../../../../../assets/images/PG-05a-worked-example-movement.png" /></p>
 <p>Consider a game where a square moves right when the player presses the right arrow key.</p>
 <p><strong>What variables are needed?</strong>
 - <code>player_x</code> — the x-position of the square
