@@ -19,6 +19,20 @@ It is about **thinking clearly and logically**.
 
 ---
 
+## Start Here: Python Setup
+
+Before you begin regular Python programming tasks, set up your editor and project environment.
+
+- [Python Development Setup with pip](1.%20python-development-setup-with-pip.md)
+
+This note explains:
+- how to install Python and VS Code
+- which VS Code extensions are recommended
+- how to create a virtual environment using `python -m venv`
+- how to install packages using `pip`
+
+---
+
 ## What Is a Computer Program?
 
 ![What Is a Computer Program](../../../../../assets/images/11dgt_01_what_is_a_computer_program.svg)
@@ -133,6 +147,20 @@ These expectations are **explicitly assessed** in AS92004.
 https://www.youtube.com/watch?v=eIrMbAQSU34
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/eIrMbAQSU34" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+---
+
+## Introduction to Pygame
+
+Pygame is a Python library for building 2D games. It connects all of the programming fundamentals — IPO, variables, selection, iteration, and testing — into a single, ongoing project.
+
+- [Introduction to Pygame — Course Notes](5.%20introduction-to-pygame.md)
+
+This note explains:
+- the game loop and why it matters
+- how events, state, and drawing relate to IPO
+- how Pygame maps to AS92004 assessment requirements
+- common misconceptions when starting game programming
 
 ---
 

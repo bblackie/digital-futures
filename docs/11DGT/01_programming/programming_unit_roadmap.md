@@ -13,21 +13,28 @@ Programming is assessed on **understanding and explanation**, not just working c
 ## Phase 1: Programming Foundations (Week 1)
 
 ### Focus
+- Installing Python and VS Code correctly
+- Setting up a project environment with `venv` and `pip`
 - What a computer program is
 - Input → Process → Output (IPO)
 - Sequencing and order of instructions
 
 ### Key Ideas
+- A working programming setup is part of working independently
+- Virtual environments keep project packages separate
 - Computers follow instructions exactly
 - Order matters, even if code “runs”
 - IPO helps structure thinking before coding
 
 ### In-Class Evidence
+- Successful setup check in VS Code
+- Activated `.venv` prompt and basic package install
 - IPO diagrams
 - Written step-by-step logic
 - Explanations of program flow
 
 ### Assessment
+- **Setup note:** Python development setup with pip completed and checked
 - **Formative Assessment 1: Program Logic & IPO**
   - Includes MCQs and written reasoning
 
@@ -101,7 +108,32 @@ Programming is assessed on **understanding and explanation**, not just working c
 
 ---
 
-## Phase 5: Summative Theory Verification (Week 5)
+## Phase 5: Introduction to Pygame (Week 5)
+
+### Focus
+- What Pygame is and how it relates to Python
+- The game loop: events → update → draw
+- Connecting IPO, variables, selection, and iteration to game development
+- Installing Pygame in a virtual environment
+
+### Key Ideas
+- A Pygame program is still a Python program
+- The game loop is the IPO model running continuously
+- Events are input; state updates are process; drawing is output
+- Coordinates work differently from maths (y increases downward)
+
+### In-Class Evidence
+- Game loop diagram with IPO mapping
+- Basic Pygame window with player movement
+- Written explanation of how the game loop works
+
+### Assessment
+- Teacher checkpoint: can the student explain the game loop?
+- First Pygame file running with events, update, and draw phases
+
+---
+
+## Phase 6: Summative Theory Verification (Week 6)
 
 ### Focus
 - Holistic understanding of programming
@@ -119,22 +151,23 @@ This assessment **supports and verifies** your AS92004 programming submission.
 
 ---
 
-## Phase 6: AS92004 Programming Assessment (Weeks 5–6)
+## Phase 7: AS92004 Pygame Programming Project (Weeks 7–8)
 
 ### Focus
-- Independently develop a small Python program
-- Demonstrate structure, logic, and testing
+- Independently develop a Pygame project in Python
+- Demonstrate structure, logic, testing, and iteration
 
 ### Evidence Required
-- Planning or pseudocode
-- Intermediate versions
-- Final program
+- Planning or pseudocode (game loop structure, variables, game logic)
+- Intermediate versions showing iterative development
+- Final Pygame program
 - Reflection and explanations
 
 You must be able to:
-- explain your code
-- justify decisions
-- modify it live if asked
+- explain your game loop and how it handles input, state, and drawing
+- justify decisions about variables, selection, and iteration
+- explain how you tested movement, collisions, scoring, and edge cases
+- modify your code live if asked
 
 ---
 
