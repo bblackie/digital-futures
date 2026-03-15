@@ -1,0 +1,68 @@
+<svg width="700" height="430" viewBox="0 0 700 430" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <!-- Background -->
+  <rect width="700" height="430" fill="#F7FAFC" rx="14"/>
+  <rect x="1" y="1" width="698" height="428" fill="none" stroke="#E2E8F0" stroke-width="2" rx="14"/>
+
+  <!-- Title -->
+  <text x="350" y="32" text-anchor="middle" font-size="17" font-weight="bold" fill="#1A202C">Common Misconceptions: IA &amp; Wireframing</text>
+  <text x="350" y="50" text-anchor="middle" font-size="11" fill="#718096">Recognise and correct these before they affect your assessment evidence</text>
+
+  <!-- Misconception 1: Wireframes need to look good -->
+  <rect x="18" y="64" width="322" height="166" rx="10" fill="#FFF5F7" stroke="#FC8181" stroke-width="2"/>
+  <rect x="18" y="64" width="322" height="34" rx="10" fill="#FC8181"/>
+  <rect x="18" y="84" width="322" height="14" fill="#FC8181"/>
+  <text x="30" y="86" font-size="11" font-weight="bold" fill="white">✗ Misconception 1</text>
+  <text x="180" y="99" text-anchor="middle" font-size="11" fill="white" font-style="italic">"My wireframe needs to look good"</text>
+  <text x="28" y="122" font-size="10" fill="#9B2335" font-weight="bold">Why it's wrong:</text>
+  <text x="28" y="138" font-size="10" fill="#C53030">A polished wireframe shifts feedback from structure to aesthetics.</text>
+  <text x="28" y="153" font-size="10" fill="#C53030">People critique colours and fonts — not the navigation.</text>
+  <rect x="28" y="164" width="300" height="52" rx="6" fill="#FFF0F0" stroke="#E53E3E" stroke-width="1"/>
+  <text x="28" y="178" font-size="10" fill="#1A202C" dx="8" font-weight="bold">✓ Correct thinking:</text>
+  <text x="36" y="194" font-size="10" fill="#4A5568">Keep wireframes rough: black boxes, Arial text. This signals</text>
+  <text x="36" y="208" font-size="10" fill="#4A5568">"This is a draft about structure, not a finished design."</text>
+
+  <!-- Misconception 2: Wireframe every page -->
+  <rect x="360" y="64" width="322" height="166" rx="10" fill="#FFFBEB" stroke="#F6AD55" stroke-width="2"/>
+  <rect x="360" y="64" width="322" height="34" rx="10" fill="#F6AD55"/>
+  <rect x="360" y="84" width="322" height="14" fill="#F6AD55"/>
+  <text x="372" y="86" font-size="11" font-weight="bold" fill="#744210">✗ Misconception 2</text>
+  <text x="522" y="99" text-anchor="middle" font-size="11" fill="#744210" font-style="italic">"I should wireframe every page"</text>
+  <text x="370" y="122" font-size="10" fill="#92400E" font-weight="bold">Why it's wrong:</text>
+  <text x="370" y="138" font-size="10" fill="#B45309">Standard pages (About, Contact) follow predictable templates.</text>
+  <text x="370" y="153" font-size="10" fill="#B45309">Wireframing them wastes time without learning anything new.</text>
+  <rect x="370" y="164" width="300" height="52" rx="6" fill="#FFFDE7" stroke="#D69E2E" stroke-width="1"/>
+  <text x="370" y="178" font-size="10" fill="#1A202C" dx="8" font-weight="bold">✓ Correct thinking:</text>
+  <text x="378" y="194" font-size="10" fill="#4A5568">Wireframe: homepage, key task flows, complex layouts.</text>
+  <text x="378" y="208" font-size="10" fill="#4A5568">Use templates for standard pages; save effort for unique ones.</text>
+
+  <!-- Misconception 3: Wireframes are created once -->
+  <rect x="18" y="248" width="322" height="166" rx="10" fill="#FAF5FF" stroke="#B794F4" stroke-width="2"/>
+  <rect x="18" y="248" width="322" height="34" rx="10" fill="#B794F4"/>
+  <rect x="18" y="268" width="322" height="14" fill="#B794F4"/>
+  <text x="30" y="270" font-size="11" font-weight="bold" fill="#44337A">✗ Misconception 3</text>
+  <text x="180" y="283" text-anchor="middle" font-size="11" fill="#44337A" font-style="italic">"Wireframes are created once, then discarded"</text>
+  <text x="28" y="306" font-size="10" fill="#553C9A" font-weight="bold">Why it's wrong:</text>
+  <text x="28" y="322" font-size="10" fill="#6B46C1">Wireframes are your primary artifact before visual design.</text>
+  <text x="28" y="337" font-size="10" fill="#6B46C1">Discarding them means losing your iteration evidence.</text>
+  <rect x="28" y="348" width="300" height="52" rx="6" fill="#F3E8FF" stroke="#805AD5" stroke-width="1"/>
+  <text x="28" y="362" font-size="10" fill="#1A202C" dx="8" font-weight="bold">✓ Correct thinking:</text>
+  <text x="36" y="378" font-size="10" fill="#4A5568">Wireframes are testing and iteration tools. Keep every version</text>
+  <text x="36" y="392" font-size="10" fill="#4A5568">— AS91901 requires ≥2 iterations showing design evolution.</text>
+
+  <!-- Misconception 4: IA is just a menu -->
+  <rect x="360" y="248" width="322" height="166" rx="10" fill="#E6FFFA" stroke="#4FD1C5" stroke-width="2"/>
+  <rect x="360" y="248" width="322" height="34" rx="10" fill="#4FD1C5"/>
+  <rect x="360" y="268" width="322" height="14" fill="#4FD1C5"/>
+  <text x="372" y="270" font-size="11" font-weight="bold" fill="#1D4044">✗ Misconception 4</text>
+  <text x="522" y="283" text-anchor="middle" font-size="11" fill="#1D4044" font-style="italic">"Information architecture is just a menu"</text>
+  <text x="370" y="306" font-size="10" fill="#285E61" font-weight="bold">Why it's wrong:</text>
+  <text x="370" y="322" font-size="10" fill="#2C7A7B">IA is much larger than navigation: it includes grouping,</text>
+  <text x="370" y="337" font-size="10" fill="#2C7A7B">labeling, search, filtering, and the conceptual model.</text>
+  <rect x="370" y="348" width="300" height="52" rx="6" fill="#C6F6D5" stroke="#38A169" stroke-width="1"/>
+  <text x="370" y="362" font-size="10" fill="#1A202C" dx="8" font-weight="bold">✓ Correct thinking:</text>
+  <text x="378" y="378" font-size="10" fill="#4A5568">IA is the invisible structure that makes everything work —</text>
+  <text x="378" y="392" font-size="10" fill="#4A5568">navigation is just one visible expression of it.</text>
+
+  <!-- Footer -->
+  <text x="350" y="422" text-anchor="middle" font-size="10" fill="#A0AEC0">These misconceptions appear frequently in design critique sessions — be ready to explain your choices</text>
+</svg>

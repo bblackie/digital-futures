@@ -12,8 +12,14 @@ uv creates the venv and other essential files
 
 ```
 uv init
+```
+
+## Add zensical locally
+
+```
 uv add zensical
 ```
+
 
 ## Activate virtual env to access libs
 
