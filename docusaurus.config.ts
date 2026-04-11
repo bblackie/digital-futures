@@ -15,15 +15,15 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://bblackie.github.io',
+  url: 'https://docs.digitalfutures.nz',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/my-docs/',
+  baseUrl: '/digital-futures/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'bblackie', // Usually your GitHub org/user name.
-  projectName: 'my-docs', // Usually your repo name.
+  projectName: 'digital-futures', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 
@@ -44,7 +44,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/bblackie/my-docs/tree/main/',
+            'https://github.com/bblackie/digital-futures/tree/main/',
         },
         blog: {
           showReadingTime: true,
@@ -55,7 +55,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/bblackie/my-docs/tree/main/',
+            'https://github.com/bblackie/digital-futures/tree/main/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -89,7 +89,7 @@ const config: Config = {
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/bblackie/my-docs',
+          href: 'https://github.com/bblackie/digital-futures',
           label: 'GitHub',
           position: 'right',
         },
@@ -133,7 +133,7 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/bblackie/my-docs',
+              href: 'https://github.com/bblackie/digital-futures',
             },
           ],
         },
