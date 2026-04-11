@@ -1,44 +1,41 @@
-# Zensical Installation
+# Website
 
-Zensical is a modern static site generator designed to simplify building and maintaining project documentation.
+This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
-https://zensical.org/docs/get-started/
+## Installation
 
-# Setup
-
-## Install with uv
-
-uv creates the venv and other essential files
-
-```
-uv init
+```bash
+yarn
 ```
 
-## Add zensical locally
+## Local Development
 
-```
-uv add zensical
-```
-
-
-## Activate virtual env to access libs
-
-```
-.venv\Scripts\Activate.ps1
+```bash
+yarn start
 ```
 
-## To run
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-Updates should be automatically included
-```
-zensical serve
-```
-Point your browser to localhost:8000 and you should see:
+## Build
 
-
-## To build
-
-To force build the site
+```bash
+yarn build
 ```
-zensical build
+
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+## Deployment
+
+Using SSH:
+
+```bash
+USE_SSH=true yarn deploy
 ```
+
+Not using SSH:
+
+```bash
+GIT_USER=<Your GitHub username> yarn deploy
+```
+
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
