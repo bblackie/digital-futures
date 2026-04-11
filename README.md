@@ -5,7 +5,7 @@ This website is built using [Docusaurus](https://docusaurus.io/), a modern stati
 ## Installation
 
 ```bash
-yarn
+yarn install
 ```
 
 ## Local Development
@@ -27,6 +27,10 @@ This command generates static content into the `build` directory and can be serv
 ## Deployment
 
 Using SSH:
+
+```powershell
+$env:USE_SSH="true"; yarn deploy
+```
 
 ```bash
 USE_SSH=true yarn deploy

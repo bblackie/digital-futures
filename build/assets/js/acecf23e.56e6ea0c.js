@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdigital_futures=self.webpackChunkdigital_futures||[]).push([["3220"],{1912(t){t.exports=JSON.parse('{"blogBasePath":"/digital-futures/blog","blogTitle":"Blog","authorsListPath":"/digital-futures/blog/authors"}')}}]);
