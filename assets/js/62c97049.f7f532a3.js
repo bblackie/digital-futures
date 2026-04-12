@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdigital_futures=self.webpackChunkdigital_futures||[]).push([["504"],{1874(t){t.exports=JSON.parse('{"metadata":{"permalink":"/digital-futures/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdigital_futures=self.webpackChunkdigital_futures||[]).push([["9528"],{9187(s){s.exports=JSON.parse('{"tags":[{"label":"Tag1","permalink":"/docs/tags/tag-1","count":1}]}')}}]);
