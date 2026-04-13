@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" font-family="Arial, sans-serif">
+  <!-- Background -->
+  <rect width="760" height="400" rx="14" fill="#F7FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+
+  <!-- Title -->
+  <text x="380" y="32" text-anchor="middle" font-size="14" font-weight="bold" fill="#1A202C">7 Non-Negotiable Concepts — AS91896</text>
+
+  <!-- Row 1: 4 cards -->
+  <!-- Card 1: Variables -->
+  <rect x="20" y="50" width="165" height="80" rx="10" fill="#EBF8FF" stroke="#90CDF4" stroke-width="1.5"/>
+  <rect x="20" y="50" width="165" height="24" rx="10" fill="#3182CE"/>
+  <rect x="20" y="62" width="165" height="12" fill="#3182CE"/>
+  <text x="103" y="66" text-anchor="middle" font-size="10" font-weight="bold" fill="#FFFFFF">Variables Store Data</text>
+  <text x="103" y="88" text-anchor="middle" font-size="9.5" fill="#2B6CB0">A named container holding a</text>
+  <text x="103" y="101" text-anchor="middle" font-size="9.5" fill="#2B6CB0">value that can change.</text>
+  <text x="103" y="116" text-anchor="middle" font-size="9" fill="#4A90D9">str · int · float · bool</text>
+
+  <!-- Card 2: Control Structures -->
+  <rect x="198" y="50" width="165" height="80" rx="10" fill="#F0FFF4" stroke="#9AE6B4" stroke-width="1.5"/>
+  <rect x="198" y="50" width="165" height="24" rx="10" fill="#38A169"/>
+  <rect x="198" y="62" width="165" height="12" fill="#38A169"/>
+  <text x="281" y="66" text-anchor="middle" font-size="10" font-weight="bold" fill="#FFFFFF">Control Structures</text>
+  <text x="281" y="88" text-anchor="middle" font-size="9.5" fill="#276749">Loops &amp; conditionals direct</text>
+  <text x="281" y="101" text-anchor="middle" font-size="9.5" fill="#276749">program flow — code adapts.</text>
+  <text x="281" y="116" text-anchor="middle" font-size="9" fill="#38A169">if · elif · for · while</text>
+
+  <!-- Card 3: Functions -->
+  <rect x="376" y="50" width="165" height="80" rx="10" fill="#FFFAF0" stroke="#FBD38D" stroke-width="1.5"/>
+  <rect x="376" y="50" width="165" height="24" rx="10" fill="#DD6B20"/>
+  <rect x="376" y="62" width="165" height="12" fill="#DD6B20"/>
+  <text x="459" y="66" text-anchor="middle" font-size="10" font-weight="bold" fill="#FFFFFF">Functions</text>
+  <text x="459" y="88" text-anchor="middle" font-size="9.5" fill="#7B341E">Reusable code packaged</text>
+  <text x="459" y="101" text-anchor="middle" font-size="9.5" fill="#7B341E">under a name — called often.</text>
+  <text x="459" y="116" text-anchor="middle" font-size="9" fill="#DD6B20">def · parameters · return</text>
+
+  <!-- Card 4: Algorithms -->
+  <rect x="554" y="50" width="165" height="80" rx="10" fill="#FAF5FF" stroke="#D6BCFA" stroke-width="1.5"/>
+  <rect x="554" y="50" width="165" height="24" rx="10" fill="#805AD5"/>
+  <rect x="554" y="62" width="165" height="12" fill="#805AD5"/>
+  <text x="637" y="66" text-anchor="middle" font-size="10" font-weight="bold" fill="#FFFFFF">Algorithms</text>
+  <text x="637" y="88" text-anchor="middle" font-size="9.5" fill="#553C9A">Step-by-step plans — written</text>
+  <text x="637" y="101" text-anchor="middle" font-size="9.5" fill="#553C9A">before code, not after.</text>
+  <text x="637" y="116" text-anchor="middle" font-size="9" fill="#805AD5">pseudocode · flowchart</text>
+
+  <!-- Row 2: 3 cards centred -->
+  <!-- Card 5: Testing -->
+  <rect x="110" y="155" width="165" height="80" rx="10" fill="#FFF5F5" stroke="#FEB2B2" stroke-width="1.5"/>
+  <rect x="110" y="155" width="165" height="24" rx="10" fill="#E53E3E"/>
+  <rect x="110" y="167" width="165" height="12" fill="#E53E3E"/>
+  <text x="193" y="171" text-anchor="middle" font-size="10" font-weight="bold" fill="#FFFFFF">Testing &amp; Debugging</text>
+  <text x="193" y="193" text-anchor="middle" font-size="9.5" fill="#822727">Verify correctness —</text>
+  <text x="193" y="206" text-anchor="middle" font-size="9.5" fill="#822727">errors are normal &amp; expected.</text>
+  <text x="193" y="221" text-anchor="middle" font-size="9" fill="#E53E3E">test cases · edge cases · fix</text>
+
+  <!-- Card 6: Data Structures -->
+  <rect x="297" y="155" width="165" height="80" rx="10" fill="#FFFFF0" stroke="#FAF089" stroke-width="1.5"/>
+  <rect x="297" y="155" width="165" height="24" rx="10" fill="#D69E2E"/>
+  <rect x="297" y="167" width="165" height="12" fill="#D69E2E"/>
+  <text x="380" y="171" text-anchor="middle" font-size="10" font-weight="bold" fill="#FFFFFF">Data Structures</text>
+  <text x="380" y="193" text-anchor="middle" font-size="9.5" fill="#744210">Lists and dictionaries</text>
+  <text x="380" y="206" text-anchor="middle" font-size="9.5" fill="#744210">organise related data.</text>
+  <text x="380" y="221" text-anchor="middle" font-size="9" fill="#D69E2E">[ ] list   { } dict</text>
+
+  <!-- Card 7: Iteration -->
+  <rect x="484" y="155" width="165" height="80" rx="10" fill="#E6FFFA" stroke="#81E6D9" stroke-width="1.5"/>
+  <rect x="484" y="155" width="165" height="24" rx="10" fill="#2C7A7B"/>
+  <rect x="484" y="167" width="165" height="12" fill="#2C7A7B"/>
+  <text x="567" y="171" text-anchor="middle" font-size="10" font-weight="bold" fill="#FFFFFF">Iteration &amp; Decision</text>
+  <text x="567" y="193" text-anchor="middle" font-size="9.5" fill="#234E52">Loops + conditionals make</text>
+  <text x="567" y="206" text-anchor="middle" font-size="9.5" fill="#234E52">programs respond to input.</text>
+  <text x="567" y="221" text-anchor="middle" font-size="9" fill="#2C7A7B">input() · range() · break</text>
+
+  <!-- Divider -->
+  <line x1="40" y1="265" x2="720" y2="265" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- Footer note -->
+  <text x="380" y="288" text-anchor="middle" font-size="10" fill="#718096">Master all 7 concepts to be ready for AS91896 assessment.</text>
+  <text x="380" y="305" text-anchor="middle" font-size="10" fill="#718096">You must be able to explain each one AND demonstrate it in working Python code.</text>
+
+  <!-- Three pillars summary -->
+  <rect x="100" y="325" width="170" height="52" rx="8" fill="#EBF4FF" stroke="#BEE3F8" stroke-width="1"/>
+  <text x="185" y="345" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#2B6CB0">PLAN</text>
+  <text x="185" y="360" text-anchor="middle" font-size="9" fill="#2B6CB0">Algorithms · Pseudocode</text>
+  <text x="185" y="373" text-anchor="middle" font-size="9" fill="#2B6CB0">Variables · Data Structures</text>
+
+  <rect x="295" y="325" width="170" height="52" rx="8" fill="#F0FFF4" stroke="#C6F6D5" stroke-width="1"/>
+  <text x="380" y="345" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#276749">BUILD</text>
+  <text x="380" y="360" text-anchor="middle" font-size="9" fill="#276749">Control Flow · Functions</text>
+  <text x="380" y="373" text-anchor="middle" font-size="9" fill="#276749">Iteration · Decision-making</text>
+
+  <rect x="490" y="325" width="170" height="52" rx="8" fill="#FFF5F5" stroke="#FED7D7" stroke-width="1"/>
+  <text x="575" y="345" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#C53030">VERIFY</text>
+  <text x="575" y="360" text-anchor="middle" font-size="9" fill="#C53030">Testing · Debugging</text>
+  <text x="575" y="373" text-anchor="middle" font-size="9" fill="#C53030">Test cases · Edge cases</text>
+</svg>

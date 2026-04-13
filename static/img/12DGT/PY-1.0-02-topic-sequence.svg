@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 220" font-family="Arial, sans-serif">
+  <!-- Background -->
+  <rect width="760" height="220" rx="14" fill="#F7FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+
+  <!-- Title -->
+  <text x="380" y="28" text-anchor="middle" font-size="13" font-weight="bold" fill="#1A202C">Learning Path — Read Topics in Order</text>
+  <text x="380" y="45" text-anchor="middle" font-size="10" fill="#718096">Each topic builds on the previous. Complete the prep phase before the assessment begins.</text>
+
+  <!-- Topic node width = 86, gap with arrows = 22, total per slot = 108, 7 nodes = 756. Start at x=2 -->
+  <!-- Using slightly narrower nodes to fit 7 comfortably -->
+
+  <!-- Topic 1: Variables -->
+  <rect x="16" y="63" width="88" height="100" rx="9" fill="#EBF8FF" stroke="#90CDF4" stroke-width="1.5"/>
+  <rect x="16" y="63" width="88" height="26" rx="9" fill="#3182CE"/>
+  <rect x="16" y="77" width="88" height="12" fill="#3182CE"/>
+  <text x="60" y="81" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">①</text>
+  <text x="60" y="105" text-anchor="middle" font-size="9" font-weight="bold" fill="#2B6CB0">Variables &amp;</text>
+  <text x="60" y="118" text-anchor="middle" font-size="9" font-weight="bold" fill="#2B6CB0">Data Types</text>
+  <text x="60" y="135" text-anchor="middle" font-size="8.5" fill="#4A90D9">str · int</text>
+  <text x="60" y="148" text-anchor="middle" font-size="8.5" fill="#4A90D9">float · bool</text>
+
+  <!-- Arrow 1→2 -->
+  <line x1="104" y1="113" x2="118" y2="113" stroke="#CBD5E0" stroke-width="2"/>
+  <polygon points="118,109 126,113 118,117" fill="#CBD5E0"/>
+
+  <!-- Topic 2: Conditionals -->
+  <rect x="128" y="63" width="88" height="100" rx="9" fill="#F0FFF4" stroke="#9AE6B4" stroke-width="1.5"/>
+  <rect x="128" y="63" width="88" height="26" rx="9" fill="#38A169"/>
+  <rect x="128" y="77" width="88" height="12" fill="#38A169"/>
+  <text x="172" y="81" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">②</text>
+  <text x="172" y="105" text-anchor="middle" font-size="9" font-weight="bold" fill="#276749">Control Flow:</text>
+  <text x="172" y="118" text-anchor="middle" font-size="9" font-weight="bold" fill="#276749">Conditionals</text>
+  <text x="172" y="135" text-anchor="middle" font-size="8.5" fill="#38A169">if · elif</text>
+  <text x="172" y="148" text-anchor="middle" font-size="8.5" fill="#38A169">else · and/or</text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="216" y1="113" x2="230" y2="113" stroke="#CBD5E0" stroke-width="2"/>
+  <polygon points="230,109 238,113 230,117" fill="#CBD5E0"/>
+
+  <!-- Topic 3: Loops -->
+  <rect x="240" y="63" width="88" height="100" rx="9" fill="#F0FFF4" stroke="#9AE6B4" stroke-width="1.5"/>
+  <rect x="240" y="63" width="88" height="26" rx="9" fill="#2F855A"/>
+  <rect x="240" y="77" width="88" height="12" fill="#2F855A"/>
+  <text x="284" y="81" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">③</text>
+  <text x="284" y="105" text-anchor="middle" font-size="9" font-weight="bold" fill="#276749">Control Flow:</text>
+  <text x="284" y="118" text-anchor="middle" font-size="9" font-weight="bold" fill="#276749">Loops</text>
+  <text x="284" y="135" text-anchor="middle" font-size="8.5" fill="#2F855A">for · while</text>
+  <text x="284" y="148" text-anchor="middle" font-size="8.5" fill="#2F855A">accumulator</text>
+
+  <!-- Arrow 3→4 -->
+  <line x1="328" y1="113" x2="342" y2="113" stroke="#CBD5E0" stroke-width="2"/>
+  <polygon points="342,109 350,113 342,117" fill="#CBD5E0"/>
+
+  <!-- Topic 4: Functions -->
+  <rect x="352" y="63" width="88" height="100" rx="9" fill="#FFFAF0" stroke="#FBD38D" stroke-width="1.5"/>
+  <rect x="352" y="63" width="88" height="26" rx="9" fill="#DD6B20"/>
+  <rect x="352" y="77" width="88" height="12" fill="#DD6B20"/>
+  <text x="396" y="81" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">④</text>
+  <text x="396" y="105" text-anchor="middle" font-size="9" font-weight="bold" fill="#7B341E">Functions</text>
+  <text x="396" y="118" text-anchor="middle" font-size="9" font-weight="bold" fill="#7B341E"> </text>
+  <text x="396" y="135" text-anchor="middle" font-size="8.5" fill="#DD6B20">def · params</text>
+  <text x="396" y="148" text-anchor="middle" font-size="8.5" fill="#DD6B20">return · scope</text>
+
+  <!-- Arrow 4→5 -->
+  <line x1="440" y1="113" x2="454" y2="113" stroke="#CBD5E0" stroke-width="2"/>
+  <polygon points="454,109 462,113 454,117" fill="#CBD5E0"/>
+
+  <!-- Topic 5: Algorithms -->
+  <rect x="464" y="63" width="88" height="100" rx="9" fill="#FAF5FF" stroke="#D6BCFA" stroke-width="1.5"/>
+  <rect x="464" y="63" width="88" height="26" rx="9" fill="#805AD5"/>
+  <rect x="464" y="77" width="88" height="12" fill="#805AD5"/>
+  <text x="508" y="81" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">⑤</text>
+  <text x="508" y="105" text-anchor="middle" font-size="9" font-weight="bold" fill="#553C9A">Algorithms &amp;</text>
+  <text x="508" y="118" text-anchor="middle" font-size="9" font-weight="bold" fill="#553C9A">Pseudocode</text>
+  <text x="508" y="135" text-anchor="middle" font-size="8.5" fill="#805AD5">design first</text>
+  <text x="508" y="148" text-anchor="middle" font-size="8.5" fill="#805AD5">trace · verify</text>
+
+  <!-- Arrow 5→6 -->
+  <line x1="552" y1="113" x2="566" y2="113" stroke="#CBD5E0" stroke-width="2"/>
+  <polygon points="566,109 574,113 566,117" fill="#CBD5E0"/>
+
+  <!-- Topic 6: Data Structures -->
+  <rect x="576" y="63" width="88" height="100" rx="9" fill="#FFFFF0" stroke="#FAF089" stroke-width="1.5"/>
+  <rect x="576" y="63" width="88" height="26" rx="9" fill="#D69E2E"/>
+  <rect x="576" y="77" width="88" height="12" fill="#D69E2E"/>
+  <text x="620" y="81" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">⑥</text>
+  <text x="620" y="105" text-anchor="middle" font-size="9" font-weight="bold" fill="#744210">Data Structures</text>
+  <text x="620" y="118" text-anchor="middle" font-size="9" font-weight="bold" fill="#744210"> </text>
+  <text x="620" y="135" text-anchor="middle" font-size="8.5" fill="#D69E2E">lists [ ]</text>
+  <text x="620" y="148" text-anchor="middle" font-size="8.5" fill="#D69E2E">dicts { }</text>
+
+  <!-- Arrow 6→7 -->
+  <line x1="664" y1="113" x2="674" y2="113" stroke="#CBD5E0" stroke-width="2"/>
+  <polygon points="674,109 682,113 674,117" fill="#CBD5E0"/>
+
+  <!-- Topic 7: Testing -->
+  <rect x="684" y="63" width="60" height="100" rx="9" fill="#FFF5F5" stroke="#FEB2B2" stroke-width="1.5"/>
+  <rect x="684" y="63" width="60" height="26" rx="9" fill="#E53E3E"/>
+  <rect x="684" y="77" width="60" height="12" fill="#E53E3E"/>
+  <text x="714" y="81" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">⑦</text>
+  <text x="714" y="107" text-anchor="middle" font-size="9" font-weight="bold" fill="#822727">Testing &amp;</text>
+  <text x="714" y="120" text-anchor="middle" font-size="9" font-weight="bold" fill="#822727">Debugging</text>
+  <text x="714" y="137" text-anchor="middle" font-size="8.5" fill="#E53E3E">test cases</text>
+  <text x="714" y="150" text-anchor="middle" font-size="8.5" fill="#E53E3E">edge cases</text>
+
+  <!-- Footer -->
+  <line x1="40" y1="183" x2="720" y2="183" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="380" y="202" text-anchor="middle" font-size="9.5" fill="#718096">Prep phase: Topics ①–⑦  (Weeks 1–5)      Assessment phase: Apply all topics  (Weeks 6–12)</text>
+</svg>

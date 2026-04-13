@@ -47,6 +47,46 @@
           "title": "sidebar_position",
           "name": "sidebar_position",
           "type": "number"
+        },
+        {
+          "title": "programme",
+          "name": "programme",
+          "type": "string"
+        },
+        {
+          "title": "aligned_standard",
+          "name": "aligned_standard",
+          "type": "string"
+        },
+        {
+          "title": "version",
+          "name": "version",
+          "type": "string"
+        },
+        {
+          "title": "status",
+          "name": "status",
+          "type": "string"
+        },
+        {
+          "title": "jurisdiction",
+          "name": "jurisdiction",
+          "type": "string"
+        },
+        {
+          "title": "aligned_standards",
+          "name": "aligned_standards",
+          "type": "choice",
+          "choices": [
+            "AS91901",
+            "AS91906",
+            "AS91903"
+          ]
+        },
+        {
+          "title": "last_updated",
+          "name": "last_updated",
+          "type": "datetime"
         }
       ]
     }

@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'My Site',
   tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/logo-robotface.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -24,6 +24,11 @@ const config: Config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'bblackie', // Usually your GitHub org/user name.
   projectName: 'digital-futures', // Usually your repo name.
+
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
 
   onBrokenLinks: 'throw',
 
