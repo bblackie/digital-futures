@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#fff5f5"/>
+  <text x="90" y="100" font-family="Segoe UI, Arial, sans-serif" font-size="48" font-weight="700" fill="#8a1c1c">Common SQL Misconceptions</text>
+
+  <rect x="90" y="160" width="350" height="480" rx="16" fill="#ffffff" stroke="#c53030" stroke-width="3"/>
+  <text x="115" y="220" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700" fill="#8a1c1c">Myth 1</text>
+  <text x="115" y="265" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#8a1c1c">SELECT order is fixed</text>
+  <text x="115" y="330" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#444444">Reality: use ORDER BY</text>
+
+  <rect x="465" y="160" width="350" height="480" rx="16" fill="#ffffff" stroke="#c53030" stroke-width="3"/>
+  <text x="490" y="220" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700" fill="#8a1c1c">Myth 2</text>
+  <text x="490" y="265" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#8a1c1c">UPDATE is safe by default</text>
+  <text x="490" y="330" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#444444">Reality: missing WHERE updates all rows</text>
+
+  <rect x="840" y="160" width="350" height="480" rx="16" fill="#ffffff" stroke="#c53030" stroke-width="3"/>
+  <text x="865" y="220" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700" fill="#8a1c1c">Myth 3</text>
+  <text x="865" y="265" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#8a1c1c">DELETE removes one row</text>
+  <text x="865" y="330" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#444444">Reality: missing WHERE deletes all rows</text>
+</svg>

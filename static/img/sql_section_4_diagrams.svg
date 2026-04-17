@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#f9f6ff"/>
+  <text x="90" y="105" font-family="Segoe UI, Arial, sans-serif" font-size="50" font-weight="700" fill="#472183">CRUD Data Flow</text>
+
+  <circle cx="220" cy="360" r="120" fill="#ffffff" stroke="#6c3db8" stroke-width="4"/>
+  <text x="176" y="372" font-family="Segoe UI, Arial, sans-serif" font-size="34" fill="#472183">User</text>
+
+  <rect x="430" y="260" width="280" height="200" rx="16" fill="#ffffff" stroke="#6c3db8" stroke-width="4"/>
+  <text x="505" y="350" font-family="Segoe UI, Arial, sans-serif" font-size="34" fill="#472183">Web App</text>
+  <text x="500" y="395" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#6c3db8">API Layer</text>
+
+  <rect x="870" y="240" width="300" height="240" rx="16" fill="#ffffff" stroke="#6c3db8" stroke-width="4"/>
+  <text x="930" y="305" font-family="Segoe UI, Arial, sans-serif" font-size="34" fill="#472183">SQL DB</text>
+  <text x="912" y="355" font-family="Consolas, monospace" font-size="26" fill="#5d33a2">INSERT</text>
+  <text x="912" y="390" font-family="Consolas, monospace" font-size="26" fill="#5d33a2">SELECT</text>
+  <text x="912" y="425" font-family="Consolas, monospace" font-size="26" fill="#5d33a2">UPDATE / DELETE</text>
+
+  <line x1="340" y1="360" x2="430" y2="360" stroke="#6c3db8" stroke-width="5"/>
+  <polygon points="430,360 412,349 412,371" fill="#6c3db8"/>
+  <line x1="710" y1="360" x2="870" y2="360" stroke="#6c3db8" stroke-width="5"/>
+  <polygon points="870,360 852,349 852,371" fill="#6c3db8"/>
+
+  <line x1="870" y1="420" x2="710" y2="420" stroke="#8c6ac9" stroke-width="4"/>
+  <polygon points="710,420 728,409 728,431" fill="#8c6ac9"/>
+  <line x1="430" y1="420" x2="340" y2="420" stroke="#8c6ac9" stroke-width="4"/>
+  <polygon points="340,420 358,409 358,431" fill="#8c6ac9"/>
+</svg>
