@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdigital_futures=self.webpackChunkdigital_futures||[]).push([["7207"],{31226(e,s,u){u.d(s,{createInfoServices:()=>t.v});var t=u(73954);u(93345)}}]);

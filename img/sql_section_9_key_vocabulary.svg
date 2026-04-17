@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#fffef2"/>
+  <text x="90" y="95" font-family="Segoe UI, Arial, sans-serif" font-size="50" font-weight="700" fill="#5b4a00">SQL Key Vocabulary</text>
+
+  <rect x="80" y="145" width="1120" height="520" rx="20" fill="#ffffff" stroke="#a16207" stroke-width="3"/>
+
+  <text x="120" y="220" font-family="Segoe UI, Arial, sans-serif" font-size="30" fill="#5b4a00">Database: stores data for later use</text>
+  <text x="120" y="275" font-family="Segoe UI, Arial, sans-serif" font-size="30" fill="#5b4a00">Table: rows and columns for one data type</text>
+  <text x="120" y="330" font-family="Segoe UI, Arial, sans-serif" font-size="30" fill="#5b4a00">Primary key: unique id per row</text>
+  <text x="120" y="385" font-family="Segoe UI, Arial, sans-serif" font-size="30" fill="#5b4a00">Query: instruction sent to database</text>
+  <text x="120" y="440" font-family="Segoe UI, Arial, sans-serif" font-size="30" fill="#5b4a00">CRUD: Create, Read, Update, Delete</text>
+  <text x="120" y="495" font-family="Segoe UI, Arial, sans-serif" font-size="30" fill="#5b4a00">WHERE clause: limits rows changed or returned</text>
+  <text x="120" y="550" font-family="Segoe UI, Arial, sans-serif" font-size="30" fill="#5b4a00">Persistent data: survives app restart</text>
+</svg>

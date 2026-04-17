@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#fffdf5"/>
+  <text x="90" y="110" font-family="Segoe UI, Arial, sans-serif" font-size="50" font-weight="700" fill="#4a3a00">SQL Key Concepts Map</text>
+
+  <rect x="90" y="170" width="500" height="220" rx="18" fill="#fff3bf" stroke="#b08700" stroke-width="3"/>
+  <text x="125" y="230" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700" fill="#4a3a00">Database</text>
+  <text x="125" y="275" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#5f4a00">Keeps data between sessions</text>
+  <text x="125" y="318" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#5f4a00">(persistent storage)</text>
+
+  <rect x="690" y="170" width="500" height="220" rx="18" fill="#e8f8ff" stroke="#176b87" stroke-width="3"/>
+  <text x="725" y="230" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700" fill="#0d3f51">SQL</text>
+  <text x="725" y="275" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#155b73">Language to query</text>
+  <text x="725" y="318" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#155b73">and modify database data</text>
+
+  <rect x="90" y="430" width="1100" height="200" rx="18" fill="#f7f7ff" stroke="#3c4ccf" stroke-width="3"/>
+  <text x="125" y="490" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700" fill="#2b3594">CRUD</text>
+  <text x="125" y="538" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#2b3594">Create (INSERT) | Read (SELECT) | Update (UPDATE) | Delete (DELETE)</text>
+  <text x="125" y="585" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#4d52a8">Rule: Always use WHERE for targeted updates and deletes.</text>
+</svg>
