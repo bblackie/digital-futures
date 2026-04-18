@@ -1,0 +1,291 @@
+---
+slide_label: "PR-2.5"
+title: "Development Process"
+course: "13DGT"
+unit: "Unit 2: Programming Project"
+topic: "5. Development Process"
+---
+
+# [PR-2.5] Development Process
+
+## Why This Matters
+
+A 10-week programming project is not something you can wing. Without a process, you'll spend the first 8 weeks stuck and the last 2 in panic mode.
+
+AS91906 requires evidence of **planning, iterative development, and reflection**. Your development journal and commit history are assessed alongside your code.
+
+---
+
+## The Development Lifecycle
+
+For your project, follow this cycle **repeatedly** — not once:
+
+```
+PLAN → IMPLEMENT → TEST → REFLECT → REPEAT
+```
+
+Each week, you should complete at least one full cycle for a feature or component.
+
+---
+
+## Phase 1: Problem Specification (Week 1)
+
+Before writing any code, define **what** you're building.
+
+### What to Document
+
+- **Problem statement:** What problem does your program solve?
+- **Target user:** Who will use it?
+- **Inputs:** What data goes in?
+- **Outputs:** What does the program produce?
+- **Constraints:** Time limits, data size, platform requirements
+- **Success criteria:** How do you know it works?
+
+### Example
+
+```markdown
+## Problem Specification
+
+**Problem:** Students need a tool to track their study hours across
+subjects and see which subjects need more attention.
+
+**Target user:** Year 12–13 students managing multiple subjects
+
+**Inputs:** Subject names, study session times, dates
+
+**Outputs:** Total hours per subject, weekly summaries, alerts for
+subjects with less than 2 hours/week
+
+**Constraints:** Must run on school computers (Python 3.10+),
+data stored locally in JSON files
+
+**Success criteria:**
+- User can add, edit, and delete study sessions
+- Summary view shows hours per subject
+- Alert highlights subjects below threshold
+- Data persists between sessions
+```
+
+---
+
+## Phase 2: Algorithm Design (Weeks 1–2)
+
+Design your algorithms in **pseudocode** before coding.
+
+### What to Produce
+
+- Pseudocode for each major function
+- Data structure choices with justification
+- Flowcharts for complex logic (optional but helpful)
+
+### Example
+
+```
+FUNCTION add_study_session(subject, hours, date)
+    VALIDATE subject is not empty
+    VALIDATE hours > 0 and hours <= 24
+    VALIDATE date is valid format
+
+    LOAD existing data from file
+    APPEND new session to subject's list
+    SAVE data back to file
+
+    DISPLAY confirmation message
+END FUNCTION
+```
+
+---
+
+## Phase 3: Implementation (Weeks 3–8)
+
+Build your project **incrementally**. Don't try to write everything at once.
+
+### Incremental Development
+
+```
+Week 3: Core data model + file I/O
+Week 4: Add session functionality + basic display
+Week 5: Edit/delete sessions + input validation
+Week 6: Summary calculations + weekly view
+Week 7: Alert system + edge case handling
+Week 8: Polish UI + comprehensive testing
+```
+
+### Each Feature Follows This Pattern
+
+1. Write pseudocode for the feature
+2. Implement the function(s)
+3. Write tests for the function(s)
+4. Run tests and fix failures
+5. Commit working code to git
+6. Update your development journal
+
+---
+
+## Phase 4: Testing (Continuous + Weeks 7–8)
+
+Testing happens **throughout**, not just at the end.
+
+- Write tests as you build each feature
+- Run your full test suite after each change
+- Dedicate Weeks 7–8 to comprehensive testing (boundary cases, edge cases, error handling)
+
+See [Topic 3: Testing & Debugging](03_testing-debugging.mdx) for detailed guidance.
+
+---
+
+## Phase 5: Documentation & Reflection (Weeks 9–10)
+
+### Final Documentation
+
+- Clean up code comments and docstrings
+- Write/update README with setup instructions
+- Finalise your test plan with actual results
+- Prepare for code walkthrough
+
+### Reflection
+
+Your reflection should cover:
+- What went well and why
+- What was challenging and how you overcame it
+- What you would do differently next time
+- What you learned about programming and yourself
+- How you used (or didn't use) AI tools
+
+---
+
+## The Development Journal
+
+Your journal is **assessed evidence**. Write in it weekly.
+
+### What to Record
+
+```markdown
+## Week 3 — March 10, 2026
+
+### What I Did
+- Implemented data model for study sessions
+- Created file I/O functions (load_data, save_data)
+- Wrote 4 unit tests for file I/O
+
+### Challenges
+- JSON file was empty on first run, causing JSONDecodeError
+- Fixed by checking if file exists and is non-empty before loading
+
+### Decisions
+- Chose dictionary structure with subject as key and list of
+  sessions as value — enables O(1) lookup by subject
+- Used JSON for storage instead of CSV — nested data is easier
+  to represent
+
+### Next Week
+- Implement add_session and display_sessions functions
+- Write tests for input validation
+
+### AI Use
+- Asked AI to explain JSONDecodeError — it suggested checking
+  for empty files, which I implemented and verified
+```
+
+---
+
+## Weekly Checkpoints
+
+Your teacher collects evidence **every week**:
+
+| Week | Expected Evidence |
+|------|-------------------|
+| 1 | Problem specification, initial pseudocode |
+| 2 | Algorithm designs, data structure choices |
+| 3 | Core implementation started, first tests |
+| 4 | Working feature(s), test results |
+| 5 | Additional features, journal entries |
+| 6 | Most features working, bug fixes documented |
+| 7 | Comprehensive testing, edge cases |
+| 8 | Full test plan, all features working |
+| 9 | Documentation complete, walkthrough prep |
+| 10 | Final submission, reflection |
+
+**Missing checkpoints** are a red flag. If you have no code in Week 4, you're behind.
+
+---
+
+## Project Management Tips
+
+### 1. Start Small, Build Up
+
+Get the **simplest version** working first, then add features. A basic version that works is worth more than an ambitious version that doesn't.
+
+### 2. One Feature at a Time
+
+Don't work on three features simultaneously. Finish one, commit, then start the next.
+
+### 3. Commit After Each Working Feature
+
+Your git history should show **regular, incremental progress**. See [Topic 6: Version Control & Git](06_version-control-git.mdx).
+
+### 4. Test Before Moving On
+
+Don't build Feature B on top of broken Feature A. Test each feature before starting the next.
+
+### 5. Keep a "Parking Lot"
+
+When you think of an idea or issue while working on something else, write it down in a **parking lot list** rather than switching context.
+
+```markdown
+## Parking Lot
+- [ ] Add colour coding to low-hours alert
+- [ ] Support for multiple users
+- [ ] Export data to CSV
+```
+
+---
+
+## What "Evidence of Process" Looks Like
+
+For AS91906, your teacher is looking for:
+
+| Evidence Type | What It Shows |
+|---------------|---------------|
+| **Pseudocode** | You designed before coding |
+| **Git commit history** | You developed incrementally over 10 weeks |
+| **Test plan + results** | You verified correctness systematically |
+| **Development journal** | You reflected on challenges and decisions |
+| **Code walkthrough** | You understand every line of your code |
+| **Reflection** | You can evaluate your own process |
+
+A project with great code but no process evidence is **incomplete**.
+
+---
+
+## Common Mistakes
+
+1. **No planning phase** — jumping straight to code in Week 1
+2. **No journal entries** — writing the journal the night before submission
+3. **Big bang development** — trying to write everything at once rather than incrementally
+4. **No checkpoints** — teacher has no visibility into progress
+5. **Panic in Week 9** — realising half the features don't work with no time to fix them
+6. **Reflection is too vague** — "it was good" doesn't demonstrate learning
+
+---
+
+## Key Vocabulary
+
+- **Development journal:** A log of weekly progress, challenges, decisions, and reflections
+- **Incremental development:** Building a project feature by feature, testing each before moving on
+- **Iteration:** One cycle of plan → implement → test → reflect
+- **MVP (Minimum Viable Product):** The simplest working version of your project
+- **Parking lot:** A list of ideas and issues to address later
+- **Problem specification:** A document defining what the program should do
+- **Pseudocode:** Plain-language algorithm design before implementation
+- **Reflection:** Evaluating your own process, identifying lessons learned
+
+---
+
+## Next Steps
+
+Continue to [6. Version Control & Git](06_version-control-git.mdx) to learn how to track your code changes and demonstrate your development history.
+
+---
+
+*End of Topic 5: Development Process*

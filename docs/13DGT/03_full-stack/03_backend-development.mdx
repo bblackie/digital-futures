@@ -1,0 +1,491 @@
+---
+slide_label: "FS-3.3"
+title: "Backend Development"
+course: "13DGT"
+unit: "Unit 3: Full-Stack Website Development"
+topic: "3. Backend Development"
+---
+
+# [FS-3.3] Backend Development
+
+## Why This Matters
+
+The backend is the engine of your application. It processes requests, enforces rules, talks to the database, and returns responses. Without it, your frontend is just a static page.
+
+For AS91903, you must build a backend with **documented endpoints, clear logic, and proper error handling**.
+
+---
+
+## What Does a Backend Do?
+
+1. **Receives requests** from the frontend (via HTTP)
+2. **Validates input** — is the data correct and safe?
+3. **Executes business logic** — what should happen with this data?
+4. **Queries the database** — read or write persistent data
+5. **Returns a response** — data (JSON) or a rendered page
+
+```mermaid
+flowchart LR
+    A[Request from Frontend] --> B[Validate Input]
+    B --> C[Business Logic]
+    C --> D[Database Query]
+    D --> E[Format Response]
+    E --> F[Send Response]
+```
+
+---
+
+## Setting Up a Backend
+
+### Option 1: Node.js + Express
+
+```bash
+# Create project
+mkdir backend && cd backend
+npm init -y
+npm install express
+```
+
+```javascript
+// server.js
+const express = require('express');
+const app = express();
+const PORT = 3000;
+
+// Parse JSON request bodies
+app.use(express.json());
+
+// Basic route
+app.get('/', (req, res) => {
+    res.json({ message: 'Server is running' });
+});
+
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+});
+```
+
+```bash
+node server.js
+```
+
+### Option 2: Python + Flask
+
+```bash
+# Create project
+mkdir backend && cd backend
+python -m venv venv
+source venv/bin/activate    # macOS/Linux
+venv\Scripts\activate       # Windows
+pip install flask
+```
+
+```python
+# app.py
+from flask import Flask, jsonify, request
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return jsonify({"message": "Server is running"})
+
+if __name__ == '__main__':
+    app.run(debug=True, port=3000)
+```
+
+```bash
+python app.py
+```
+
+---
+
+## Routes and Endpoints
+
+A **route** maps a URL pattern + HTTP method to a handler function. Each route is an **endpoint** in your API.
+
+### Express Routes
+
+```javascript
+// GET all users
+app.get('/api/users', (req, res) => {
+    // ... fetch from database
+    res.json(users);
+});
+
+// GET one user by ID
+app.get('/api/users/:id', (req, res) => {
+    const userId = req.params.id;
+    // ... fetch from database
+    res.json(user);
+});
+
+// POST create a new user
+app.post('/api/users', (req, res) => {
+    const { name, email } = req.body;
+    // ... validate and save to database
+    res.status(201).json(newUser);
+});
+
+// PUT update a user
+app.put('/api/users/:id', (req, res) => {
+    const userId = req.params.id;
+    const { name, email } = req.body;
+    // ... validate and update in database
+    res.json(updatedUser);
+});
+
+// DELETE a user
+app.delete('/api/users/:id', (req, res) => {
+    const userId = req.params.id;
+    // ... delete from database
+    res.status(204).send();
+});
+```
+
+### Flask Routes
+
+```python
+@app.route('/api/users', methods=['GET'])
+def get_users():
+    # ... fetch from database
+    return jsonify(users)
+
+@app.route('/api/users/<int:user_id>', methods=['GET'])
+def get_user(user_id):
+    # ... fetch from database
+    return jsonify(user)
+
+@app.route('/api/users', methods=['POST'])
+def create_user():
+    data = request.get_json()
+    name = data.get('name')
+    email = data.get('email')
+    # ... validate and save to database
+    return jsonify(new_user), 201
+
+@app.route('/api/users/<int:user_id>', methods=['PUT'])
+def update_user(user_id):
+    data = request.get_json()
+    # ... validate and update in database
+    return jsonify(updated_user)
+
+@app.route('/api/users/<int:user_id>', methods=['DELETE'])
+def delete_user(user_id):
+    # ... delete from database
+    return '', 204
+```
+
+---
+
+## Route Parameters and Query Strings
+
+### Route Parameters
+
+Values embedded in the URL path:
+
+```
+GET /api/users/5        →  req.params.id = "5"     (Express)
+GET /api/users/5        →  user_id = 5              (Flask)
+```
+
+Use for identifying **specific resources**.
+
+### Query Strings
+
+Key-value pairs after `?` in the URL:
+
+```
+GET /api/users?role=admin&sort=name
+```
+
+```javascript
+// Express
+const role = req.query.role;   // "admin"
+const sort = req.query.sort;   // "name"
+```
+
+```python
+# Flask
+role = request.args.get('role')   # "admin"
+sort = request.args.get('sort')   # "name"
+```
+
+Use for **filtering, sorting, and pagination**.
+
+---
+
+## Input Validation
+
+**Never trust data from the frontend.** Always validate on the backend.
+
+### What to Validate
+
+- **Required fields** — are all necessary fields present?
+- **Data types** — is the email actually a string? Is the age a number?
+- **Format** — does the email look like an email?
+- **Length** — is the name too long or empty?
+- **Range** — is the age between 0 and 150?
+
+### Express Validation Example
+
+```javascript
+app.post('/api/users', (req, res) => {
+    const { name, email } = req.body;
+
+    // Required fields
+    if (!name || !email) {
+        return res.status(400).json({ error: 'Name and email are required' });
+    }
+
+    // Length check
+    if (name.length > 100) {
+        return res.status(400).json({ error: 'Name must be 100 characters or less' });
+    }
+
+    // Email format (basic check)
+    if (!email.includes('@') || !email.includes('.')) {
+        return res.status(400).json({ error: 'Invalid email format' });
+    }
+
+    // ... proceed with creating user
+});
+```
+
+### Flask Validation Example
+
+```python
+@app.route('/api/users', methods=['POST'])
+def create_user():
+    data = request.get_json()
+
+    if not data:
+        return jsonify({"error": "Request body is required"}), 400
+
+    name = data.get('name', '').strip()
+    email = data.get('email', '').strip()
+
+    if not name or not email:
+        return jsonify({"error": "Name and email are required"}), 400
+
+    if len(name) > 100:
+        return jsonify({"error": "Name must be 100 characters or less"}), 400
+
+    if '@' not in email or '.' not in email:
+        return jsonify({"error": "Invalid email format"}), 400
+
+    # ... proceed with creating user
+```
+
+---
+
+## Error Handling
+
+Return **meaningful error responses** with appropriate status codes.
+
+### Error Response Format
+
+Be consistent. Always return errors in the same shape:
+
+```json
+{
+    "error": "User not found"
+}
+```
+
+### Express Error Handling
+
+```javascript
+app.get('/api/users/:id', async (req, res) => {
+    try {
+        const user = await db.getUserById(req.params.id);
+
+        if (!user) {
+            return res.status(404).json({ error: 'User not found' });
+        }
+
+        res.json(user);
+    } catch (error) {
+        console.error('Database error:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+```
+
+### Flask Error Handling
+
+```python
+@app.route('/api/users/<int:user_id>', methods=['GET'])
+def get_user(user_id):
+    try:
+        user = db.get_user_by_id(user_id)
+
+        if not user:
+            return jsonify({"error": "User not found"}), 404
+
+        return jsonify(user)
+    except Exception as e:
+        print(f"Database error: {e}")
+        return jsonify({"error": "Internal server error"}), 500
+```
+
+> ⚠️ Never expose internal error details (stack traces, SQL queries) to the client. Log them on the server; return a generic message to the frontend.
+
+---
+
+## Middleware
+
+**Middleware** is code that runs **before** your route handler. Use it for cross-cutting concerns.
+
+### Express Middleware
+
+```javascript
+// Log every request
+app.use((req, res, next) => {
+    console.log(`${req.method} ${req.url}`);
+    next();
+});
+
+// Parse JSON bodies
+app.use(express.json());
+
+// Serve static files (frontend)
+app.use(express.static('public'));
+
+// CORS (allow frontend on different port to call API)
+const cors = require('cors');
+app.use(cors());
+```
+
+### Common Middleware Uses
+
+| Purpose | What It Does |
+|---------|-------------|
+| **Body parsing** | Converts request body from raw text to JSON |
+| **CORS** | Allows cross-origin requests (frontend on port 5500 calling API on port 3000) |
+| **Logging** | Records every request for debugging |
+| **Static files** | Serves HTML, CSS, JS files |
+| **Authentication** | Checks if the user is logged in before allowing access |
+
+---
+
+## Organising Backend Code
+
+Don't put everything in one file. Separate routes by resource:
+
+### Express
+
+```
+backend/
+├── server.js              # Entry point, middleware setup
+├── routes/
+│   ├── users.js           # /api/users routes
+│   └── orders.js          # /api/orders routes
+├── models/
+│   └── db.js              # Database connection and queries
+├── middleware/
+│   └── auth.js            # Authentication middleware
+├── package.json
+└── .env                   # Environment variables (not committed)
+```
+
+```javascript
+// routes/users.js
+const express = require('express');
+const router = express.Router();
+
+router.get('/', async (req, res) => { /* ... */ });
+router.get('/:id', async (req, res) => { /* ... */ });
+router.post('/', async (req, res) => { /* ... */ });
+router.put('/:id', async (req, res) => { /* ... */ });
+router.delete('/:id', async (req, res) => { /* ... */ });
+
+module.exports = router;
+
+// server.js
+const userRoutes = require('./routes/users');
+app.use('/api/users', userRoutes);
+```
+
+### Flask
+
+```
+backend/
+├── app.py                 # Entry point
+├── routes/
+│   ├── users.py           # /api/users routes
+│   └── orders.py          # /api/orders routes
+├── models/
+│   └── db.py              # Database connection and queries
+├── requirements.txt
+└── .env                   # Environment variables (not committed)
+```
+
+---
+
+## Environment Variables
+
+Store configuration (database credentials, port numbers, secret keys) in environment variables — **never in source code**.
+
+### .env File
+
+```
+PORT=3000
+DATABASE_URL=postgresql://user:password@localhost:5432/myapp
+SECRET_KEY=your-secret-key-here
+```
+
+### Loading Environment Variables
+
+```javascript
+// Express (install dotenv: npm install dotenv)
+require('dotenv').config();
+const PORT = process.env.PORT || 3000;
+const DB_URL = process.env.DATABASE_URL;
+```
+
+```python
+# Flask (install python-dotenv: pip install python-dotenv)
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+PORT = int(os.environ.get('PORT', 3000))
+DB_URL = os.environ.get('DATABASE_URL')
+```
+
+> ⚠️ Add `.env` to your `.gitignore`. Never commit credentials to git.
+
+---
+
+## Common Mistakes
+
+1. **No input validation** — trusting frontend data leads to bugs and security vulnerabilities
+2. **Exposing error details** — sending stack traces to the client
+3. **Hardcoded credentials** — database passwords in source code
+4. **Everything in one file** — unmanageable as the project grows
+5. **No CORS setup** — frontend can't reach the API during development
+6. **No error handling** — server crashes on unexpected input instead of returning 400/500
+
+---
+
+## Key Vocabulary
+
+- **Endpoint:** A specific URL + HTTP method that the backend handles
+- **Middleware:** Code that runs before route handlers (logging, auth, CORS)
+- **Route:** A mapping from URL pattern to handler function
+- **Route parameter:** A variable in the URL path (e.g., `/users/:id`)
+- **Query string:** Key-value pairs in the URL after `?`
+- **Request body:** Data sent with POST/PUT requests (usually JSON)
+- **Response:** Data the server sends back (status code + body)
+- **Validation:** Checking that input data meets expected format and rules
+
+---
+
+## Next Steps
+
+Continue to [4. RESTful API Design](04_restful-api-design.mdx) to learn how to design clean, predictable APIs.
+
+---
+
+*End of Topic 3: Backend Development*

@@ -1,0 +1,310 @@
+---
+slide_label: "PR-2.3"
+title: "Testing & Debugging"
+course: "13DGT"
+unit: "Unit 2: Programming Project"
+topic: "3. Testing & Debugging"
+---
+
+# [PR-2.3] Testing & Debugging
+
+## Why This Matters
+
+Code that hasn't been tested is code that doesn't work — you just don't know it yet.
+
+For AS91906, you need **at least 10 test cases** covering normal, boundary, and error scenarios. More importantly, you need to demonstrate a **systematic approach** to finding and fixing bugs.
+
+---
+
+## Types of Testing
+
+| Type | What It Tests | When | Example |
+|------|---------------|------|---------|
+| **Unit test** | One function in isolation | During development | Does `calculate_total()` return the right value? |
+| **Integration test** | Multiple components together | After units work | Does the order system save correctly to the database? |
+| **User acceptance test** | Full system from user's perspective | Before submission | Can a user complete the full workflow? |
+
+For AS91906, **unit tests** are your primary evidence. Integration and acceptance tests strengthen your submission.
+
+---
+
+## Test Case Design
+
+Every test case needs:
+1. **Description** — what you're testing
+2. **Input** — what data you provide
+3. **Expected output** — what should happen
+4. **Actual output** — what actually happened
+5. **Pass/Fail** — did it match?
+
+### The Three Categories
+
+### Normal Cases
+Typical, expected inputs.
+
+```
+Test: Calculate total for a standard order
+Input: items = [{"price": 10, "qty": 2}, {"price": 5, "qty": 1}]
+Expected: 25
+```
+
+### Boundary Cases
+Edge values — empty, zero, maximum, minimum, one element.
+
+```
+Test: Calculate total for an empty order
+Input: items = []
+Expected: 0
+
+Test: Calculate total with quantity of zero
+Input: items = [{"price": 10, "qty": 0}]
+Expected: 0
+```
+
+### Error Cases
+Invalid input — wrong types, missing data, unexpected values.
+
+```
+Test: Calculate total with negative price
+Input: items = [{"price": -5, "qty": 1}]
+Expected: Raises ValueError
+
+Test: Calculate total with non-numeric quantity
+Input: items = [{"price": 10, "qty": "abc"}]
+Expected: Raises TypeError
+```
+
+---
+
+## Writing Unit Tests
+
+### Python (pytest)
+
+```python
+# test_calculator.py
+from calculator import calculate_total
+
+def test_standard_order():
+    items = [{"price": 10, "qty": 2}, {"price": 5, "qty": 1}]
+    assert calculate_total(items) == 25
+
+def test_empty_order():
+    assert calculate_total([]) == 0
+
+def test_single_item():
+    items = [{"price": 15, "qty": 1}]
+    assert calculate_total(items) == 15
+
+def test_zero_quantity():
+    items = [{"price": 10, "qty": 0}]
+    assert calculate_total(items) == 0
+
+def test_negative_price_raises_error():
+    items = [{"price": -5, "qty": 1}]
+    with pytest.raises(ValueError):
+        calculate_total(items)
+
+def test_large_order():
+    items = [{"price": 99.99, "qty": 1000}]
+    assert calculate_total(items) == 99990.0
+```
+
+### JavaScript (Jest)
+
+```javascript
+// calculator.test.js
+const { calculateTotal } = require('./calculator');
+
+test('standard order returns correct total', () => {
+    const items = [{ price: 10, qty: 2 }, { price: 5, qty: 1 }];
+    expect(calculateTotal(items)).toBe(25);
+});
+
+test('empty order returns 0', () => {
+    expect(calculateTotal([])).toBe(0);
+});
+
+test('negative price throws error', () => {
+    const items = [{ price: -5, qty: 1 }];
+    expect(() => calculateTotal(items)).toThrow();
+});
+```
+
+### Running Tests
+
+```bash
+# Python
+pytest test_calculator.py -v
+
+# JavaScript
+npx jest calculator.test.js
+```
+
+---
+
+## Test Plan Template
+
+Use this format for your AS91906 test plan:
+
+| # | Description | Category | Input | Expected Output | Actual Output | Pass? |
+|---|-------------|----------|-------|-----------------|---------------|-------|
+| 1 | Standard order total | Normal | `[{price:10, qty:2}]` | `20` | `20` | ✅ |
+| 2 | Empty order | Boundary | `[]` | `0` | `0` | ✅ |
+| 3 | Single item | Normal | `[{price:5, qty:1}]` | `5` | `5` | ✅ |
+| 4 | Zero quantity | Boundary | `[{price:10, qty:0}]` | `0` | `0` | ✅ |
+| 5 | Negative price | Error | `[{price:-5, qty:1}]` | `ValueError` | `ValueError` | ✅ |
+| 6 | Large quantity | Boundary | `[{price:1, qty:100000}]` | `100000` | `100000` | ✅ |
+| 7 | Float prices | Normal | `[{price:9.99, qty:3}]` | `29.97` | `29.97` | ✅ |
+| 8 | Missing price key | Error | `[{qty:2}]` | `KeyError` | `KeyError` | ✅ |
+| 9 | String input | Error | `"not a list"` | `TypeError` | `TypeError` | ✅ |
+| 10 | Mixed valid/invalid | Error | `[{price:10, qty:2}, {price:-1, qty:1}]` | `ValueError` | `ValueError` | ✅ |
+
+You need **at least 10** test cases. Aim for a mix across all three categories.
+
+---
+
+## Debugging: A Systematic Approach
+
+Debugging is **detective work**, not guessing. Follow a process.
+
+### The Debugging Process
+
+```
+1. REPRODUCE — Make the bug happen consistently
+2. ISOLATE — Find the smallest input that triggers it
+3. DIAGNOSE — Identify exactly which line is wrong and why
+4. FIX — Change the minimum amount of code
+5. VERIFY — Run your tests to confirm the fix works
+6. CHECK — Make sure you didn't break anything else
+```
+
+---
+
+## Debugging Techniques
+
+### 1. Print Debugging
+
+Add `print()` statements to trace values through your code.
+
+```python
+def calculate_average(scores):
+    print(f"DEBUG: scores = {scores}")          # what's coming in?
+    total = sum(scores)
+    print(f"DEBUG: total = {total}")             # is the sum right?
+    count = len(scores)
+    print(f"DEBUG: count = {count}")             # how many items?
+    average = total / count
+    print(f"DEBUG: average = {average}")         # final result
+    return average
+```
+
+> Remove or comment out debug prints before submission.
+
+### 2. Rubber Duck Debugging
+
+Explain your code **line by line** to an inanimate object (or a classmate). The act of explaining often reveals the error.
+
+This is essentially what the **code walkthrough** assessment requires — if you can explain every line, you understand it.
+
+### 3. Binary Search Debugging
+
+If you don't know where the bug is:
+1. Add a print halfway through the function
+2. Is the value correct at that point?
+3. If yes, the bug is in the second half
+4. If no, the bug is in the first half
+5. Repeat until you find the exact line
+
+### 4. Using a Debugger
+
+Most IDEs have a built-in debugger. Learn to use it:
+
+- **Breakpoint:** Pause execution at a specific line
+- **Step over:** Execute the current line and move to the next
+- **Step into:** Enter a function call to see what happens inside
+- **Watch:** Monitor a variable's value as code executes
+- **Call stack:** See the chain of function calls that led here
+
+---
+
+## Common Bug Patterns
+
+| Bug | Symptom | Fix |
+|-----|---------|-----|
+| **Off-by-one** | Loop processes one too many or too few items | Check `<` vs `<=`, array indices |
+| **Uninitialised variable** | `NameError` or unexpected `None` | Ensure variable is set before use |
+| **Wrong comparison** | `=` instead of `==` | Assignment vs equality |
+| **Integer division** | `7 / 2` gives `3.5` when you wanted `3` | Use `//` for integer division |
+| **Mutable default** | List argument shared between calls | Use `None` as default, create inside function |
+| **Scope error** | Variable not accessible where expected | Check function vs global scope |
+| **Type mismatch** | `"5" + 3` gives error or wrong result | Convert types explicitly |
+
+---
+
+## Documenting Debugging in Your Journal
+
+For AS91906, your development journal should record debugging episodes:
+
+```markdown
+### Bug: Average function crashes on empty list
+**Date:** 2026-03-15
+**Symptom:** ZeroDivisionError when no scores entered
+**Diagnosis:** `len(scores)` is 0, division by zero
+**Fix:** Added guard clause: `if not scores: return 0`
+**Tests updated:** Added test_empty_scores test case
+**Lesson:** Always consider empty input as a boundary case
+```
+
+This demonstrates **systematic debugging** — exactly what the standard requires.
+
+---
+
+## Test-Driven Development (TDD)
+
+An advanced approach: write tests **before** code.
+
+```
+1. Write a test for the next feature (it will fail — RED)
+2. Write the minimum code to pass the test (GREEN)
+3. Refactor the code while keeping tests passing (REFACTOR)
+4. Repeat
+```
+
+You don't have to use TDD for your project, but understanding the concept shows maturity in your approach.
+
+---
+
+## Common Mistakes
+
+1. **Testing only the happy path** — only normal cases, no boundaries or errors
+2. **No test plan** — random testing without structure
+3. **Debugging by guessing** — changing random things hoping it works
+4. **Not recording debugging** — fixing bugs without documenting the process
+5. **Testing at the end** — finding 20 bugs in Week 9 with no time to fix them
+6. **Not re-running tests after fixes** — the fix might break something else
+
+---
+
+## Key Vocabulary
+
+- **Assertion:** A statement that checks if a condition is true (test passes if true)
+- **Boundary test:** Testing with edge values (empty, zero, maximum)
+- **Breakpoint:** A marker that pauses program execution for debugging
+- **Bug:** An error in code causing incorrect behaviour
+- **Debugging:** The process of finding and fixing bugs
+- **Edge case:** An unusual or extreme input scenario
+- **Regression:** A previously working feature that breaks after a code change
+- **Test case:** A specific input with an expected output
+- **Test plan:** A structured document listing all test cases
+- **TDD:** Test-Driven Development — writing tests before code
+- **Unit test:** A test of a single function or component in isolation
+
+---
+
+## Next Steps
+
+Continue to [4. Data Structures](04_data-structures.mdx) to learn how to choose the right data structure for your problem.
+
+---
+
+*End of Topic 3: Testing & Debugging*

@@ -1,0 +1,341 @@
+---
+slide_label: "PR-2.2"
+title: "Code Quality & Maintainability"
+course: "13DGT"
+unit: "Unit 2: Programming Project"
+topic: "2. Code Quality & Maintainability"
+---
+
+# [PR-2.2] Code Quality & Maintainability
+
+## Why This Matters
+
+Code that works but can't be read is a liability. In professional development — and for AS91906 — your teacher (or a future developer) must be able to **read your code and understand what it does**.
+
+If you can't explain your code during a walkthrough, it doesn't count as evidence. Writing clean code isn't about style — it's about **communication**.
+
+---
+
+## The Readability Test
+
+> *If someone reads your code for the first time, can they understand what each function does within 30 seconds?*
+
+If not, your code needs work.
+
+### ❌ Hard to Read
+
+```python
+def p(d):
+    t = 0
+    for i in d:
+        if i['a'] > 18:
+            t += i['s']
+    return t / len([x for x in d if x['a'] > 18])
+```
+
+### ✅ Easy to Read
+
+```python
+def average_score_for_adults(people):
+    adults = [person for person in people if person['age'] > 18]
+    if not adults:
+        return 0
+    total_score = sum(person['score'] for person in adults)
+    return total_score / len(adults)
+```
+
+Same logic. One is maintainable; the other is a puzzle.
+
+---
+
+## Naming Conventions
+
+Good names eliminate the need for comments.
+
+### Variables
+
+| ❌ Bad | ✅ Good | Why |
+|--------|---------|-----|
+| `d` | `user_data` | Describes what it holds |
+| `temp` | `previous_score` | Explains purpose |
+| `x` | `student` | Names the entity |
+| `flag` | `is_logged_in` | Boolean reads naturally |
+| `lst` | `order_items` | Describes the collection |
+
+### Functions
+
+| ❌ Bad | ✅ Good | Why |
+|--------|---------|-----|
+| `do_stuff()` | `calculate_total()` | Says what it does |
+| `process()` | `validate_user_input()` | Specific action |
+| `handle()` | `save_to_database()` | Clear intent |
+| `check()` | `is_valid_email()` | Returns boolean |
+
+### Rules
+
+- **Variables:** nouns — `student_name`, `total_price`, `error_count`
+- **Functions:** verbs — `calculate_tax()`, `send_email()`, `validate_input()`
+- **Booleans:** questions — `is_active`, `has_permission`, `can_edit`
+- **Constants:** UPPER_SNAKE — `MAX_RETRIES`, `DEFAULT_TIMEOUT`
+
+---
+
+## Functions: Do One Thing
+
+Each function should do **one thing** and do it well. If you need the word "and" to describe what a function does, split it.
+
+### ❌ Too Much
+
+```python
+def process_order(order):
+    # validate
+    if not order['items']:
+        raise ValueError("Empty order")
+    # calculate total
+    total = sum(item['price'] * item['qty'] for item in order['items'])
+    tax = total * 0.15
+    # save to database
+    db.save({'order': order, 'total': total + tax})
+    # send confirmation
+    email.send(order['email'], f"Order confirmed: ${total + tax:.2f}")
+    return total + tax
+```
+
+### ✅ Single Responsibility
+
+```python
+def validate_order(order):
+    if not order['items']:
+        raise ValueError("Empty order")
+
+def calculate_order_total(order):
+    subtotal = sum(item['price'] * item['qty'] for item in order['items'])
+    tax = subtotal * 0.15
+    return subtotal + tax
+
+def save_order(order, total):
+    db.save({'order': order, 'total': total})
+
+def send_order_confirmation(email_address, total):
+    email.send(email_address, f"Order confirmed: ${total:.2f}")
+
+def process_order(order):
+    validate_order(order)
+    total = calculate_order_total(order)
+    save_order(order, total)
+    send_order_confirmation(order['email'], total)
+    return total
+```
+
+Each function is **testable**, **reusable**, and **understandable** on its own.
+
+---
+
+## Comments and Docstrings
+
+### When to Comment
+
+- **Why**, not **what** — the code shows what; comments explain why
+- Complex business logic
+- Non-obvious workarounds
+- TODO items for future work
+
+### When NOT to Comment
+
+```python
+# Bad: restating the code
+i += 1  # increment i by 1
+
+# Bad: obvious from naming
+total = calculate_total(items)  # calculate the total
+```
+
+### Docstrings
+
+Every function should have a brief docstring explaining:
+- What it does
+- What parameters it takes
+- What it returns
+
+```python
+def binary_search(sorted_list, target):
+    """Search for target in a sorted list using binary search.
+
+    Args:
+        sorted_list: A list sorted in ascending order.
+        target: The value to search for.
+
+    Returns:
+        The index of target if found, -1 otherwise.
+    """
+    low, high = 0, len(sorted_list) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if sorted_list[mid] == target:
+            return mid
+        elif sorted_list[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+```
+
+---
+
+## Code Structure
+
+### Indentation and Spacing
+
+- Use **consistent indentation** (4 spaces in Python, 2 in JavaScript)
+- Add **blank lines** between logical sections
+- Keep lines under **80–100 characters**
+
+### File Organisation
+
+```
+project/
+├── main.py              # Entry point
+├── models/
+│   ├── user.py          # User data model
+│   └── order.py         # Order data model
+├── utils/
+│   ├── validation.py    # Input validation functions
+│   └── formatting.py    # Output formatting
+├── tests/
+│   ├── test_user.py     # User model tests
+│   └── test_order.py    # Order model tests
+└── README.md            # Project documentation
+```
+
+Group related code into **modules** (files) and **packages** (folders). Don't put everything in one file.
+
+---
+
+## DRY: Don't Repeat Yourself
+
+If you copy-paste code, you probably need a function.
+
+### ❌ Repeated Logic
+
+```python
+# Calculating discount in three different places
+price1 = item1['price'] * 0.9 if item1['member'] else item1['price']
+price2 = item2['price'] * 0.9 if item2['member'] else item2['price']
+price3 = item3['price'] * 0.9 if item3['member'] else item3['price']
+```
+
+### ✅ Extracted Function
+
+```python
+def apply_member_discount(item):
+    if item['member']:
+        return item['price'] * 0.9
+    return item['price']
+
+price1 = apply_member_discount(item1)
+price2 = apply_member_discount(item2)
+price3 = apply_member_discount(item3)
+```
+
+One place to fix, one place to test, one place to understand.
+
+---
+
+## Magic Numbers and Constants
+
+**Magic numbers** are unexplained numeric values in code.
+
+### ❌ Magic Numbers
+
+```python
+if score > 50:
+    status = 'pass'
+tax = total * 0.15
+if len(password) < 8:
+    raise ValueError("Too short")
+```
+
+### ✅ Named Constants
+
+```python
+PASS_THRESHOLD = 50
+GST_RATE = 0.15
+MIN_PASSWORD_LENGTH = 8
+
+if score > PASS_THRESHOLD:
+    status = 'pass'
+tax = total * GST_RATE
+if len(password) < MIN_PASSWORD_LENGTH:
+    raise ValueError("Too short")
+```
+
+---
+
+## Error Handling
+
+Handle errors **where they make sense** — at the boundary between your code and the outside world (user input, file I/O, network requests).
+
+```python
+def load_config(filepath):
+    """Load configuration from a JSON file."""
+    try:
+        with open(filepath, 'r') as f:
+            return json.load(f)
+    except FileNotFoundError:
+        raise FileNotFoundError(f"Config file not found: {filepath}")
+    except json.JSONDecodeError as e:
+        raise ValueError(f"Invalid JSON in config file: {e}")
+```
+
+**Don't** catch every exception with a bare `except:` — it hides bugs.
+
+---
+
+## Code Quality Checklist for AS91906
+
+Before submitting, check each item:
+
+- [ ] All variables and functions have **descriptive names**
+- [ ] Every function does **one thing**
+- [ ] Functions have **docstrings**
+- [ ] No **magic numbers** — constants are named
+- [ ] No **copy-pasted code** — repeated logic is extracted
+- [ ] **Consistent formatting** throughout
+- [ ] Comments explain **why**, not what
+- [ ] Files are **organised logically** (not everything in one file)
+- [ ] Error handling at **system boundaries** (user input, file I/O)
+- [ ] You can **explain every line** in a walkthrough
+
+---
+
+## Common Mistakes
+
+1. **Cryptic variable names** — `x`, `temp`, `data` tell nothing
+2. **Functions that do everything** — 100+ line functions are unmaintainable
+3. **No docstrings** — your teacher can't verify understanding without them
+4. **Copy-paste code** — if you fix a bug in one copy, the others still have it
+5. **Over-commenting** — restating what code already says
+6. **Inconsistent style** — mixing `camelCase` and `snake_case` in the same file
+
+---
+
+## Key Vocabulary
+
+- **Constant:** A named value that doesn't change (e.g., `MAX_RETRIES`)
+- **Docstring:** Documentation string at the start of a function explaining its purpose
+- **DRY:** Don't Repeat Yourself — extract repeated code into functions
+- **Magic number:** An unexplained numeric literal in code
+- **Module:** A file containing related functions and classes
+- **Refactoring:** Improving code structure without changing behaviour
+- **Single responsibility:** Each function/module does one thing
+- **Snake case:** Naming style using underscores: `user_name`, `total_price`
+
+---
+
+## Next Steps
+
+Continue to [3. Testing & Debugging](03_testing-debugging.mdx) to learn how to verify your code works correctly.
+
+---
+
+*End of Topic 2: Code Quality & Maintainability*

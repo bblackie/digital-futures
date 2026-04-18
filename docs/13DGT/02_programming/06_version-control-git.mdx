@@ -1,0 +1,382 @@
+---
+slide_label: "PR-2.6"
+title: "Version Control & Git"
+course: "13DGT"
+unit: "Unit 2: Programming Project"
+topic: "6. Version Control & Git"
+---
+
+# [PR-2.6] Version Control & Git
+
+## Why This Matters
+
+Your **git commit history** is evidence of your development process for AS91906. It shows:
+- That you wrote the code incrementally over 10 weeks
+- When features were added, bugs were fixed, and tests were written
+- That the work is authentically yours
+
+A project submitted with one commit on the due date raises serious authenticity concerns. Regular commits tell the story of how your project was built.
+
+---
+
+## What Is Version Control?
+
+Version control is a system that **records changes to files over time** so you can:
+- Go back to any previous version
+- See exactly what changed and when
+- Work on features without breaking the main codebase
+- Collaborate with others (not required for AS91906, but a vital professional skill)
+
+**Git** is the most widely used version control system. **GitHub** is a platform for hosting git repositories online.
+
+---
+
+## Core Git Concepts
+
+### Repository (Repo)
+
+A folder tracked by git. Contains your project files and the full history of changes.
+
+### Commit
+
+A **snapshot** of your project at a specific point in time. Each commit has:
+- A unique ID (hash)
+- A message describing the change
+- A timestamp
+- The author
+
+### Staging Area
+
+A holding area where you choose which changes to include in the next commit. This lets you commit related changes together.
+
+```
+Working Directory → Staging Area → Repository
+   (your files)      (git add)     (git commit)
+```
+
+---
+
+## Essential Git Commands
+
+### Setup
+
+```bash
+# Configure your identity (once per machine)
+git config --global user.name "Your Name"
+git config --global user.email "your.email@school.nz"
+
+# Create a new repository
+git init
+
+# Or clone an existing one
+git clone https://github.com/username/project.git
+```
+
+### Daily Workflow
+
+```bash
+# Check what's changed
+git status
+
+# Stage specific files
+git add calculator.py
+git add test_calculator.py
+
+# Stage all changes
+git add .
+
+# Commit with a message
+git commit -m "Add calculate_total function with unit tests"
+
+# View commit history
+git log --oneline
+
+# Push to GitHub
+git push
+```
+
+### Viewing History
+
+```bash
+# Short history
+git log --oneline
+
+# Detailed history
+git log
+
+# See what changed in a specific commit
+git show abc1234
+
+# See differences since last commit
+git diff
+```
+
+---
+
+## Writing Good Commit Messages
+
+Your commit messages are part of your assessment evidence. They should explain **what** and **why**.
+
+### ❌ Bad Messages
+
+```
+git commit -m "update"
+git commit -m "fix"
+git commit -m "stuff"
+git commit -m "asdf"
+git commit -m "final version"
+```
+
+### ✅ Good Messages
+
+```
+git commit -m "Add input validation for study session hours"
+git commit -m "Fix ZeroDivisionError when no sessions recorded"
+git commit -m "Add boundary tests for empty and negative inputs"
+git commit -m "Refactor display_summary to use helper functions"
+git commit -m "Update README with setup instructions"
+```
+
+### Message Format
+
+```
+<type>: <short description>
+
+Types:
+- Add:      New feature or file
+- Fix:      Bug fix
+- Update:   Modification to existing feature
+- Refactor: Code restructure without behaviour change
+- Test:     Adding or updating tests
+- Docs:     Documentation changes
+```
+
+---
+
+## Branching
+
+Branches let you work on features **without affecting the main codebase**.
+
+```bash
+# Create and switch to a new branch
+git checkout -b feature/add-alerts
+
+# Work on the feature, commit as normal
+git add .
+git commit -m "Add low-hours alert system"
+
+# Switch back to main
+git checkout main
+
+# Merge the feature branch into main
+git merge feature/add-alerts
+```
+
+### When to Branch
+
+- Adding a new feature
+- Experimenting with an idea you might discard
+- Fixing a complex bug that requires multiple commits
+
+### Branch Naming
+
+```
+feature/add-alerts
+feature/export-csv
+fix/empty-file-crash
+fix/negative-hours-validation
+```
+
+---
+
+## Using GitHub
+
+### Creating a Repository
+
+1. Go to [github.com](https://github.com) and sign in
+2. Click **New Repository**
+3. Name it (e.g., `study-tracker`)
+4. Choose **Private** (keep your assessment private)
+5. Don't initialise with README if you already have local files
+
+### Connecting Local to GitHub
+
+```bash
+# Add GitHub as a remote
+git remote add origin https://github.com/username/study-tracker.git
+
+# Push your code
+git push -u origin main
+```
+
+### Regular Push Cycle
+
+```bash
+# After each coding session
+git add .
+git commit -m "Add weekly summary calculation"
+git push
+```
+
+---
+
+## The .gitignore File
+
+Tell git which files to **not track**. Create a `.gitignore` file in your project root.
+
+```
+# .gitignore
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# JavaScript
+node_modules/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Sensitive data
+.env
+config/secrets.json
+```
+
+**Never commit passwords, API keys, or personal data** to git.
+
+---
+
+## Git History as Assessment Evidence
+
+Your teacher will review your git log. Here's what good vs bad history looks like:
+
+### ❌ Suspicious History
+
+```
+abc1234 — Submit final project (2 days ago)
+```
+
+One commit, 2,000 lines of code, submitted the night before the deadline.
+
+### ✅ Authentic History
+
+```
+f8a2c31 — Add reflection and final documentation (1 day ago)
+e7b1d20 — Fix edge case in weekly summary for zero hours (3 days ago)
+d6c0e19 — Add boundary tests for empty session list (5 days ago)
+c5b9f08 — Implement alert system for low study hours (1 week ago)
+b4a8e07 — Refactor display functions into separate module (1 week ago)
+a3b7d06 — Add edit and delete session functionality (2 weeks ago)
+9f2a6c5 — Implement add_session with input validation (3 weeks ago)
+8e1b5b4 — Create data model and file I/O functions (4 weeks ago)
+7d0a4a3 — Add initial pseudocode and problem specification (5 weeks ago)
+6c9b3b2 — Initial project setup with README (6 weeks ago)
+```
+
+Regular commits over 6+ weeks, with clear messages showing incremental development.
+
+---
+
+## Common Git Scenarios
+
+### Undoing Changes
+
+```bash
+# Discard changes to a file (before staging)
+git checkout -- filename.py
+
+# Unstage a file (after git add, before commit)
+git reset HEAD filename.py
+
+# Undo the last commit (keep changes)
+git reset --soft HEAD~1
+```
+
+### Viewing What Changed
+
+```bash
+# Changes since last commit
+git diff
+
+# Changes in staging area
+git diff --staged
+
+# Changes between two commits
+git diff abc1234 def5678
+```
+
+### Resolving Merge Conflicts
+
+When two branches change the same line, git marks the conflict:
+
+```
+<<<<<<< HEAD
+total = calculate_with_tax(subtotal)
+=======
+total = calculate_total(subtotal, tax_rate)
+>>>>>>> feature/tax-calculation
+```
+
+To resolve: choose the correct version, remove the markers, commit.
+
+---
+
+## Git Workflow for Your Project
+
+### Daily Routine
+
+1. `git status` — see what's changed
+2. Work on one feature or fix
+3. `git add .` — stage changes
+4. `git commit -m "Clear message"` — commit
+5. `git push` — push to GitHub
+
+### Weekly Routine
+
+1. Review your commit log — is it telling the story of your development?
+2. Update your development journal
+3. Ensure your teacher can see progress
+
+---
+
+## Common Mistakes
+
+1. **One giant commit** — committing everything at the end instead of incrementally
+2. **Meaningless messages** — "update", "fix", "asdf" tell nothing
+3. **Committing sensitive data** — passwords, API keys, personal information
+4. **Not using .gitignore** — committing `node_modules/` or `__pycache__/`
+5. **Never pushing** — local commits without pushing to GitHub means no backup
+6. **Not committing working code** — commit after each feature works, not mid-bug
+
+---
+
+## Key Vocabulary
+
+- **Branch:** A parallel version of your code for working on features independently
+- **Clone:** Copying a remote repository to your local machine
+- **Commit:** A snapshot of your project at a point in time
+- **Merge:** Combining changes from one branch into another
+- **Pull:** Downloading changes from a remote repository
+- **Push:** Uploading local commits to a remote repository
+- **Remote:** A version of your repository hosted elsewhere (e.g., GitHub)
+- **Repository:** A project folder tracked by git
+- **Staging area:** Where you select which changes to include in the next commit
+- **Version control:** A system that records changes to files over time
+
+---
+
+## External Resources
+
+- **[Git Tutorial (Atlassian)](https://www.atlassian.com/git/tutorials)** — Clear, beginner-friendly guides
+- **[GitHub Learning Lab](https://lab.github.com/)** — Interactive git training
+- **[Git Cheat Sheet (GitHub)](https://education.github.com/git-cheat-sheet-education.pdf)** — Quick reference
+
+---
+
+*End of Topic 6: Version Control & Git*

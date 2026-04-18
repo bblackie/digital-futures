@@ -1,0 +1,328 @@
+---
+slide_label: "PR-2.4"
+title: "Data Structures"
+course: "13DGT"
+unit: "Unit 2: Programming Project"
+topic: "4. Data Structures"
+---
+
+# [PR-2.4] Data Structures
+
+## Why This Matters
+
+The data structure you choose determines how fast your program runs. A poor choice can make a simple operation painfully slow. A good choice makes complex problems simple.
+
+For AS91906, you must be able to **explain why you chose** the data structures in your project and how they affect performance.
+
+---
+
+## Core Data Structures
+
+### 1. Arrays / Lists
+
+An **ordered collection** of elements, accessed by index.
+
+```python
+# Python list
+students = ["Alice", "Bob", "Charlie"]
+print(students[0])   # "Alice"
+students.append("Diana")
+```
+
+| Operation | Time |
+|-----------|------|
+| Access by index | O(1) |
+| Search | O(n) |
+| Append | O(1) |
+| Insert at position | O(n) |
+| Delete by position | O(n) |
+
+**Use when:** You need ordered data with fast index access and mostly append to the end.
+
+---
+
+### 2. Dictionaries / Hash Tables
+
+A collection of **key-value pairs** with fast lookups.
+
+```python
+# Python dictionary
+student_grades = {
+    "Alice": 85,
+    "Bob": 92,
+    "Charlie": 78
+}
+print(student_grades["Bob"])  # 92
+student_grades["Diana"] = 91
+```
+
+| Operation | Average Time |
+|-----------|-------------|
+| Lookup by key | O(1) |
+| Insert | O(1) |
+| Delete | O(1) |
+| Search by value | O(n) |
+
+**Use when:** You need fast lookups by a unique key (usernames, IDs, word counts).
+
+### How Hash Tables Work
+
+1. A **hash function** converts the key into an array index
+2. The value is stored at that index
+3. Lookup: hash the key → go directly to the index → return the value
+
+```
+Key: "Alice" → hash("Alice") → index 3 → grades[3] = 85
+Key: "Bob"   → hash("Bob")   → index 7 → grades[7] = 92
+```
+
+**Collision:** When two keys hash to the same index. Handled by chaining (linked list at each index) or probing (finding the next empty slot).
+
+---
+
+### 3. Sets
+
+An **unordered collection of unique elements**.
+
+```python
+# Python set
+enrolled = {"Alice", "Bob", "Charlie"}
+enrolled.add("Diana")
+enrolled.add("Alice")  # no duplicate — ignored
+print("Bob" in enrolled)  # True — O(1) lookup
+```
+
+| Operation | Average Time |
+|-----------|-------------|
+| Membership check | O(1) |
+| Add | O(1) |
+| Remove | O(1) |
+| Union / Intersection | O(n) |
+
+**Use when:** You need to check membership frequently or eliminate duplicates.
+
+---
+
+### 4. Stacks
+
+**Last In, First Out (LIFO)** — like a stack of plates.
+
+```python
+# Python list as a stack
+stack = []
+stack.append("page1")   # push
+stack.append("page2")   # push
+stack.append("page3")   # push
+current = stack.pop()    # pop → "page3"
+```
+
+| Operation | Time |
+|-----------|------|
+| Push (add to top) | O(1) |
+| Pop (remove from top) | O(1) |
+| Peek (view top) | O(1) |
+
+**Use when:** Undo systems, browser back button, expression parsing, depth-first search.
+
+---
+
+### 5. Queues
+
+**First In, First Out (FIFO)** — like a queue at a shop.
+
+```python
+from collections import deque
+
+queue = deque()
+queue.append("task1")     # enqueue
+queue.append("task2")     # enqueue
+next_task = queue.popleft()  # dequeue → "task1"
+```
+
+| Operation | Time |
+|-----------|------|
+| Enqueue (add to back) | O(1) |
+| Dequeue (remove from front) | O(1) |
+| Peek (view front) | O(1) |
+
+**Use when:** Task scheduling, print queues, breadth-first search, message processing.
+
+> ⚠️ Don't use `list.pop(0)` for queues in Python — it's O(n). Use `collections.deque` instead.
+
+---
+
+### 6. Linked Lists
+
+A sequence of **nodes**, each pointing to the next.
+
+```
+[Alice | →] → [Bob | →] → [Charlie | null]
+```
+
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def prepend(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
+```
+
+| Operation | Time |
+|-----------|------|
+| Access by index | O(n) |
+| Insert at head | O(1) |
+| Insert at position (with reference) | O(1) |
+| Search | O(n) |
+| Delete (with reference) | O(1) |
+
+**Use when:** Frequent insertions/deletions at the beginning, or when you need a simple queue implementation.
+
+---
+
+### 7. Trees
+
+A **hierarchical structure** with a root node and children.
+
+```
+        CEO
+       /    \
+     CTO    CFO
+    /   \
+  Dev1  Dev2
+```
+
+**Binary Search Tree (BST):** Each node has at most two children. Left child < parent < right child.
+
+```python
+class TreeNode:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+def insert(root, value):
+    if root is None:
+        return TreeNode(value)
+    if value < root.value:
+        root.left = insert(root.left, value)
+    else:
+        root.right = insert(root.right, value)
+    return root
+```
+
+| Operation (balanced BST) | Time |
+|--------------------------|------|
+| Search | O(log n) |
+| Insert | O(log n) |
+| Delete | O(log n) |
+
+**Use when:** Hierarchical data (file systems, menus), sorted data with fast search/insert.
+
+---
+
+### 8. Graphs
+
+A collection of **nodes (vertices)** connected by **edges**.
+
+```python
+# Adjacency list representation
+graph = {
+    "Auckland": ["Hamilton", "Tauranga"],
+    "Hamilton": ["Auckland", "Rotorua", "Tauranga"],
+    "Tauranga": ["Auckland", "Hamilton"],
+    "Rotorua": ["Hamilton"]
+}
+```
+
+**Use when:** Networks (social media friends), maps/routes, dependencies (task scheduling).
+
+---
+
+## Choosing the Right Structure
+
+| Need | Best Choice | Why |
+|------|-------------|-----|
+| Ordered list with index access | **Array/List** | O(1) access by index |
+| Fast lookup by key | **Dictionary** | O(1) average lookup |
+| Check if item exists | **Set** | O(1) membership test |
+| Undo/redo functionality | **Stack** | LIFO matches undo behaviour |
+| Process items in order | **Queue** | FIFO ensures fairness |
+| Sorted data with fast insert | **BST/Tree** | O(log n) operations |
+| Frequent insert/delete at start | **Linked List** | O(1) head operations |
+| Relationships between entities | **Graph** | Models connections naturally |
+
+---
+
+## Data Structures in Python vs JavaScript
+
+| Structure | Python | JavaScript |
+|-----------|--------|------------|
+| Array/List | `list` → `[1, 2, 3]` | `Array` → `[1, 2, 3]` |
+| Dictionary | `dict` → `{"key": "val"}` | `Object` or `Map` → `{key: "val"}` |
+| Set | `set` → `{1, 2, 3}` | `Set` → `new Set([1, 2, 3])` |
+| Stack | `list` (use `append`/`pop`) | `Array` (use `push`/`pop`) |
+| Queue | `collections.deque` | `Array` (use `push`/`shift`) or custom |
+| Linked List | Custom class | Custom class |
+| Tree | Custom class | Custom class |
+
+---
+
+## Applying This to Your Project
+
+For your AS91906 project, you should:
+
+1. **Identify the main data** your program works with
+2. **List the operations** you perform most frequently (search, insert, delete, iterate)
+3. **Choose the structure** that makes those operations efficient
+4. **Justify your choice** in your design document
+
+### Example Justification
+
+> *"I used a dictionary to store user accounts with the username as the key. The most frequent operation is looking up a user by username, which is O(1) with a dictionary versus O(n) with a list. Since the application may have hundreds of users, this significantly improves login performance."*
+
+---
+
+## Common Mistakes
+
+1. **Using a list when a dictionary is better** — searching a list for a specific item is O(n); use a dictionary for O(1)
+2. **Not considering the operations you need** — choosing a structure without thinking about what you'll do with it
+3. **Using `list.pop(0)` as a queue** — this is O(n) in Python; use `deque`
+4. **Over-engineering** — using a tree when a simple list with 20 items works fine
+5. **Not explaining your choice** — the standard requires you to justify data structure decisions
+
+---
+
+## Key Vocabulary
+
+- **Array/List:** Ordered collection accessed by numeric index
+- **Binary Search Tree:** Tree where left < parent < right, enabling fast search
+- **Collision:** When two hash table keys map to the same index
+- **Deque:** Double-ended queue supporting fast operations at both ends
+- **Dictionary/Hash table:** Key-value store with O(1) average lookups
+- **FIFO:** First In, First Out (queue behaviour)
+- **Graph:** Nodes connected by edges; models relationships
+- **LIFO:** Last In, First Out (stack behaviour)
+- **Linked list:** Sequence of nodes, each pointing to the next
+- **Node:** An element in a linked list, tree, or graph
+- **Queue:** FIFO data structure
+- **Set:** Unordered collection of unique elements
+- **Stack:** LIFO data structure
+- **Tree:** Hierarchical structure with root and children
+
+---
+
+## Next Steps
+
+Continue to [5. Development Process](05_development-process.mdx) to learn how to manage a multi-week programming project.
+
+---
+
+*End of Topic 4: Data Structures*

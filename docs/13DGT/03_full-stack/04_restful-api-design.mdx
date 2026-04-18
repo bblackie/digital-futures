@@ -1,0 +1,369 @@
+---
+slide_label: "FS-3.4"
+title: "RESTful API Design"
+course: "13DGT"
+unit: "Unit 3: Full-Stack Website Development"
+topic: "4. RESTful API Design"
+---
+
+# [FS-3.4] RESTful API Design
+
+## Why This Matters
+
+An API is the **contract** between your frontend and backend. If the contract is messy, both sides suffer. A well-designed API is predictable, consistent, and easy to use.
+
+For AS91903, your API endpoints must be **documented** and follow a logical pattern. Your teacher will ask you to explain why your endpoints are structured the way they are.
+
+---
+
+## What Is REST?
+
+**REST (Representational State Transfer)** is a set of principles for designing web APIs. A RESTful API:
+
+- Is organised around **resources** (things: users, orders, products)
+- Uses **HTTP methods** to express actions (GET, POST, PUT, DELETE)
+- Is **stateless** — each request contains everything the server needs
+- Returns **consistent response formats** (JSON)
+
+REST is not a strict standard — it's a design philosophy. Follow the conventions and your API will be intuitive.
+
+---
+
+## Resources and URLs
+
+A **resource** is a thing your API manages. Each resource gets a URL.
+
+### URL Design Rules
+
+| Rule | ❌ Bad | ✅ Good |
+|------|--------|---------|
+| Use nouns, not verbs | `/getUsers` | `/users` |
+| Use plural nouns | `/user` | `/users` |
+| Use lowercase | `/Users` | `/users` |
+| Use hyphens for multi-word | `/userOrders` | `/user-orders` |
+| Nest for relationships | `/getUserOrders?userId=5` | `/users/5/orders` |
+
+### Examples
+
+| Resource | URL |
+|----------|-----|
+| All users | `GET /api/users` |
+| One user | `GET /api/users/5` |
+| All orders for user 5 | `GET /api/users/5/orders` |
+| One specific order | `GET /api/orders/42` |
+| All products | `GET /api/products` |
+
+---
+
+## CRUD Operations
+
+Every resource typically supports **Create, Read, Update, Delete** — mapped to HTTP methods:
+
+| Operation | HTTP Method | URL | Request Body | Response |
+|-----------|------------|-----|-------------|----------|
+| **List all** | GET | `/api/users` | — | `200` + array of users |
+| **Get one** | GET | `/api/users/5` | — | `200` + user object |
+| **Create** | POST | `/api/users` | `{ name, email }` | `201` + created user |
+| **Update** | PUT | `/api/users/5` | `{ name, email }` | `200` + updated user |
+| **Delete** | DELETE | `/api/users/5` | — | `204` (no content) |
+
+### Full Example: Users Resource
+
+```javascript
+// Express
+const router = express.Router();
+
+// List all users
+router.get('/', async (req, res) => {
+    const users = await db.query('SELECT id, name, email FROM users');
+    res.json(users.rows);
+});
+
+// Get one user
+router.get('/:id', async (req, res) => {
+    const { rows } = await db.query('SELECT * FROM users WHERE id = $1', [req.params.id]);
+    if (rows.length === 0) {
+        return res.status(404).json({ error: 'User not found' });
+    }
+    res.json(rows[0]);
+});
+
+// Create user
+router.post('/', async (req, res) => {
+    const { name, email } = req.body;
+    if (!name || !email) {
+        return res.status(400).json({ error: 'Name and email are required' });
+    }
+    const { rows } = await db.query(
+        'INSERT INTO users (name, email) VALUES ($1, $2) RETURNING *',
+        [name, email]
+    );
+    res.status(201).json(rows[0]);
+});
+
+// Update user
+router.put('/:id', async (req, res) => {
+    const { name, email } = req.body;
+    const { rows } = await db.query(
+        'UPDATE users SET name = $1, email = $2 WHERE id = $3 RETURNING *',
+        [name, email, req.params.id]
+    );
+    if (rows.length === 0) {
+        return res.status(404).json({ error: 'User not found' });
+    }
+    res.json(rows[0]);
+});
+
+// Delete user
+router.delete('/:id', async (req, res) => {
+    const { rowCount } = await db.query('DELETE FROM users WHERE id = $1', [req.params.id]);
+    if (rowCount === 0) {
+        return res.status(404).json({ error: 'User not found' });
+    }
+    res.status(204).send();
+});
+```
+
+---
+
+## Request and Response Formats
+
+### Consistent JSON Responses
+
+**Success — single resource:**
+```json
+{
+    "id": 5,
+    "name": "Alice",
+    "email": "alice@school.nz"
+}
+```
+
+**Success — collection:**
+```json
+[
+    { "id": 1, "name": "Alice", "email": "alice@school.nz" },
+    { "id": 2, "name": "Bob", "email": "bob@school.nz" }
+]
+```
+
+**Error:**
+```json
+{
+    "error": "Name and email are required"
+}
+```
+
+### Rules
+
+- Always return JSON (set `Content-Type: application/json`)
+- Use consistent field names (pick `snake_case` or `camelCase` and stick with it)
+- Return the created/updated resource on POST and PUT
+- Return `204` with no body on DELETE
+- Return meaningful error messages with appropriate status codes
+
+---
+
+## Filtering, Sorting, and Pagination
+
+For endpoints that return collections, use **query strings**:
+
+### Filtering
+
+```
+GET /api/users?role=admin
+GET /api/products?category=electronics&in_stock=true
+```
+
+```javascript
+router.get('/', async (req, res) => {
+    let query = 'SELECT * FROM users';
+    const params = [];
+
+    if (req.query.role) {
+        params.push(req.query.role);
+        query += ` WHERE role = $${params.length}`;
+    }
+
+    const { rows } = await db.query(query, params);
+    res.json(rows);
+});
+```
+
+### Sorting
+
+```
+GET /api/users?sort=name
+GET /api/users?sort=-created_at    (descending)
+```
+
+### Pagination
+
+```
+GET /api/users?page=2&limit=20
+```
+
+```javascript
+router.get('/', async (req, res) => {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 20;
+    const offset = (page - 1) * limit;
+
+    const { rows } = await db.query(
+        'SELECT * FROM users ORDER BY id LIMIT $1 OFFSET $2',
+        [limit, offset]
+    );
+    res.json(rows);
+});
+```
+
+---
+
+## Nested Resources
+
+When one resource belongs to another, nest the URLs:
+
+```
+GET    /api/users/5/orders          — all orders for user 5
+POST   /api/users/5/orders          — create order for user 5
+GET    /api/users/5/orders/42       — get order 42 for user 5
+```
+
+Only nest one level deep. For deeper relationships, flatten:
+
+```
+❌  /api/users/5/orders/42/items/3
+✅  /api/order-items/3
+```
+
+---
+
+## API Documentation
+
+Document every endpoint. This is assessed evidence for AS91903.
+
+### Template
+
+| Endpoint | Method | Description | Request Body | Response | Status Codes |
+|----------|--------|-------------|-------------|----------|-------------|
+| `/api/users` | GET | List all users | — | Array of users | 200 |
+| `/api/users/:id` | GET | Get one user | — | User object | 200, 404 |
+| `/api/users` | POST | Create user | `{ name, email }` | Created user | 201, 400 |
+| `/api/users/:id` | PUT | Update user | `{ name, email }` | Updated user | 200, 400, 404 |
+| `/api/users/:id` | DELETE | Delete user | — | — | 204, 404 |
+
+### Example Documentation Entry
+
+```markdown
+### POST /api/users
+
+Create a new user.
+
+**Request Body:**
+| Field | Type | Required | Validation |
+|-------|------|----------|-----------|
+| name | string | Yes | 1–100 characters |
+| email | string | Yes | Valid email format |
+
+**Success Response:** `201 Created`
+​```json
+{ "id": 6, "name": "Charlie", "email": "charlie@school.nz" }
+​```
+
+**Error Response:** `400 Bad Request`
+​```json
+{ "error": "Name and email are required" }
+​```
+```
+
+---
+
+## Testing Your API
+
+Use tools to test endpoints **before** connecting the frontend:
+
+### curl (Command Line)
+
+```bash
+# GET all users
+curl http://localhost:3000/api/users
+
+# POST create user
+curl -X POST http://localhost:3000/api/users \
+  -H "Content-Type: application/json" \
+  -d '{"name": "Alice", "email": "alice@school.nz"}'
+
+# DELETE user
+curl -X DELETE http://localhost:3000/api/users/5
+```
+
+### Postman or Thunder Client (VS Code)
+
+GUI tools that let you build and save API requests. Useful for testing during development.
+
+### Automated API Tests
+
+```javascript
+// Using supertest (npm install --save-dev supertest)
+const request = require('supertest');
+const app = require('../server');
+
+describe('GET /api/users', () => {
+    test('returns a list of users', async () => {
+        const response = await request(app).get('/api/users');
+        expect(response.status).toBe(200);
+        expect(Array.isArray(response.body)).toBe(true);
+    });
+});
+
+describe('POST /api/users', () => {
+    test('creates a user with valid data', async () => {
+        const response = await request(app)
+            .post('/api/users')
+            .send({ name: 'Test', email: 'test@example.com' });
+        expect(response.status).toBe(201);
+        expect(response.body.name).toBe('Test');
+    });
+
+    test('returns 400 with missing fields', async () => {
+        const response = await request(app)
+            .post('/api/users')
+            .send({ name: '' });
+        expect(response.status).toBe(400);
+    });
+});
+```
+
+---
+
+## Common Mistakes
+
+1. **Verbs in URLs** — `/getUsers`, `/deleteUser/5` instead of REST conventions
+2. **Inconsistent responses** — different error formats for different endpoints
+3. **Wrong status codes** — returning `200` for everything, even errors
+4. **No validation** — accepting any data the frontend sends
+5. **No API documentation** — teammates and your teacher can't understand the contract
+6. **Not testing endpoints independently** — debugging API bugs through the frontend is slow
+
+---
+
+## Key Vocabulary
+
+- **CRUD:** Create, Read, Update, Delete — the four basic data operations
+- **Endpoint:** A specific URL + HTTP method that handles a request
+- **Pagination:** Returning data in pages (e.g., 20 items at a time)
+- **Query string:** Parameters in the URL after `?` for filtering and sorting
+- **Resource:** A thing managed by the API (user, order, product)
+- **REST:** Representational State Transfer — API design principles
+- **Route parameter:** A variable in the URL path (e.g., `:id`)
+- **Stateless:** Each request is independent; the server doesn't remember previous requests
+
+---
+
+## Next Steps
+
+Continue to [5. Database Design](05_database-design.mdx) to learn how to design the data layer that powers your API.
+
+---
+
+*End of Topic 4: RESTful API Design*

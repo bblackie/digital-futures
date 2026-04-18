@@ -1,0 +1,304 @@
+---
+slide_label: "PR-2.1"
+title: "Algorithm Design & Complexity"
+course: "13DGT"
+unit: "Unit 2: Programming Project"
+topic: "1. Algorithm Design & Complexity"
+---
+
+# [PR-2.1] Algorithm Design & Complexity
+
+## Why This Matters
+
+Every program is built on algorithms — step-by-step instructions that solve a problem. The difference between a good programmer and a great one is choosing the **right algorithm** for the job.
+
+A slow algorithm can take minutes where a fast one takes milliseconds. At Year 13 level, you need to **design** algorithms deliberately, not just stumble into solutions.
+
+---
+
+## What Is an Algorithm?
+
+An algorithm is a **finite sequence of well-defined steps** that solves a specific problem.
+
+- It has a **clear input** and **clear output**
+- Every step is **unambiguous**
+- It **terminates** — it doesn't run forever
+
+### Example: Finding the Largest Number in a List
+
+```
+Input: A list of numbers
+Output: The largest number
+
+1. Set max = first element
+2. For each remaining element:
+   a. If element > max, set max = element
+3. Return max
+```
+
+This is an algorithm. It works for any list of numbers, always terminates, and always gives the correct answer.
+
+---
+
+## Pseudocode: Design Before You Code
+
+**Pseudocode** is structured English that describes your algorithm without worrying about syntax. Write pseudocode **before** you write real code.
+
+### Why?
+
+- Forces you to **think through logic** before implementation
+- Easier to spot **logical errors** in English than in code
+- Language-independent — you can implement in Python, JavaScript, or anything else
+- Required evidence for **AS91906**
+
+### Example: Binary Search
+
+```
+FUNCTION binarySearch(list, target)
+    SET low = 0
+    SET high = length(list) - 1
+
+    WHILE low <= high
+        SET mid = (low + high) / 2 (integer division)
+
+        IF list[mid] == target
+            RETURN mid
+        ELSE IF list[mid] < target
+            SET low = mid + 1
+        ELSE
+            SET high = mid - 1
+
+    RETURN -1  // target not found
+END FUNCTION
+```
+
+---
+
+## Big O Notation: Measuring Efficiency
+
+**Big O notation** describes how an algorithm's performance scales as input size grows. It measures the **worst-case** number of operations.
+
+| Notation | Name | Example | 1,000 items |
+|----------|------|---------|-------------|
+| O(1) | Constant | Array index lookup | 1 operation |
+| O(log n) | Logarithmic | Binary search | ~10 operations |
+| O(n) | Linear | Linear search | 1,000 operations |
+| O(n log n) | Linearithmic | Merge sort | ~10,000 operations |
+| O(n²) | Quadratic | Bubble sort | 1,000,000 operations |
+| O(2ⁿ) | Exponential | Brute-force subsets | Practically infinite |
+
+### The Key Insight
+
+It's not about how fast your computer is. An O(n²) algorithm on a supercomputer will lose to an O(n log n) algorithm on a laptop — given enough data.
+
+---
+
+## Common Algorithm Patterns
+
+### 1. Brute Force
+
+Try every possibility. Simple but slow.
+
+```python
+# Find two numbers that sum to target — O(n²)
+def two_sum_brute(numbers, target):
+    for i in range(len(numbers)):
+        for j in range(i + 1, len(numbers)):
+            if numbers[i] + numbers[j] == target:
+                return (i, j)
+    return None
+```
+
+### 2. Divide and Conquer
+
+Split the problem in half, solve each half, combine results.
+
+```python
+# Merge sort — O(n log n)
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+    return merge(left, right)
+
+def merge(left, right):
+    result = []
+    i = j = 0
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
+```
+
+### 3. Hash-Based Lookup
+
+Use a dictionary/hash table to turn O(n) searches into O(1) lookups.
+
+```python
+# Find two numbers that sum to target — O(n)
+def two_sum_hash(numbers, target):
+    seen = {}
+    for i, num in enumerate(numbers):
+        complement = target - num
+        if complement in seen:
+            return (seen[complement], i)
+        seen[num] = i
+    return None
+```
+
+### 4. Greedy
+
+Make the locally optimal choice at each step.
+
+```python
+# Coin change — greedy approach
+def min_coins_greedy(coins, amount):
+    coins.sort(reverse=True)
+    count = 0
+    for coin in coins:
+        while amount >= coin:
+            amount -= coin
+            count += 1
+    return count if amount == 0 else -1
+```
+
+> ⚠️ Greedy doesn't always give the optimal answer. It works for NZ coins but fails for some coin sets.
+
+---
+
+## Recursion
+
+A function that **calls itself** to solve smaller versions of the same problem.
+
+### Three Requirements
+
+1. **Base case** — when to stop
+2. **Recursive case** — break the problem into a smaller version
+3. **Progress toward base case** — each call must get closer to stopping
+
+```python
+# Factorial: n! = n × (n-1) × ... × 1
+def factorial(n):
+    if n <= 1:         # base case
+        return 1
+    return n * factorial(n - 1)  # recursive case
+```
+
+### When to Use Recursion
+
+- Tree traversal (file systems, HTML DOM)
+- Divide and conquer algorithms (merge sort, quicksort)
+- Problems with **self-similar subproblems**
+
+### When NOT to Use Recursion
+
+- Simple loops do the job
+- Very deep recursion (Python has a default limit of ~1000 calls)
+- Performance matters and an iterative version is simpler
+
+---
+
+## Comparing Sorting Algorithms
+
+| Algorithm | Best Case | Average | Worst Case | Stable? | Notes |
+|-----------|-----------|---------|------------|---------|-------|
+| Bubble Sort | O(n) | O(n²) | O(n²) | Yes | Simple but slow |
+| Selection Sort | O(n²) | O(n²) | O(n²) | No | Always slow |
+| Insertion Sort | O(n) | O(n²) | O(n²) | Yes | Good for nearly-sorted data |
+| Merge Sort | O(n log n) | O(n log n) | O(n log n) | Yes | Consistent, uses extra memory |
+| Quick Sort | O(n log n) | O(n log n) | O(n²) | No | Fast in practice |
+| Python's Timsort | O(n) | O(n log n) | O(n log n) | Yes | Built-in `sort()` |
+
+> For AS91906, you should be able to **explain** why you chose a particular sorting approach and what its Big O is.
+
+---
+
+## Searching Algorithms
+
+### Linear Search — O(n)
+
+Check every element one by one. Works on **unsorted** data.
+
+```python
+def linear_search(arr, target):
+    for i, item in enumerate(arr):
+        if item == target:
+            return i
+    return -1
+```
+
+### Binary Search — O(log n)
+
+Requires **sorted** data. Halves the search space each step.
+
+```python
+def binary_search(arr, target):
+    low, high = 0, len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+```
+
+---
+
+## Applying This to Your Project
+
+For AS91906, you need to:
+
+1. **Describe your algorithm** in pseudocode before implementing it
+2. **Justify your choice** — why this algorithm over alternatives?
+3. **State the Big O** of your key operations
+4. **Explain trade-offs** — what did you sacrifice (memory, simplicity) for speed?
+
+### Example Justification
+
+> *"I used a hash table for user lookups because the application needs to search by username frequently. Linear search would be O(n) per lookup, but with a hash table, lookups are O(1) on average. The trade-off is extra memory usage, which is acceptable for the expected dataset size of ~500 users."*
+
+---
+
+## Common Mistakes
+
+1. **No pseudocode** — jumping straight to code without planning
+2. **Ignoring Big O** — not considering how your solution scales
+3. **Using brute force when better options exist** — nested loops where a hash table works
+4. **Confusing best case with typical case** — bubble sort is O(n) best case, but O(n²) on average
+5. **Recursion without a base case** — infinite loop that crashes your program
+
+---
+
+## Key Vocabulary
+
+- **Algorithm:** Finite sequence of steps to solve a problem
+- **Big O notation:** Describes worst-case growth rate of an algorithm
+- **Binary search:** Searching a sorted collection by repeatedly halving the search space
+- **Brute force:** Trying all possibilities; simple but usually slow
+- **Divide and conquer:** Breaking a problem into smaller subproblems, solving each, combining results
+- **Greedy algorithm:** Making the locally best choice at each step
+- **Linear search:** Checking every element sequentially
+- **Pseudocode:** Plain-language description of algorithm logic
+- **Recursion:** A function calling itself to solve smaller versions of the same problem
+- **Time complexity:** How the number of operations grows relative to input size
+
+---
+
+## Next Steps
+
+Continue to [2. Code Quality & Maintainability](02_code-quality-maintainability.mdx) to learn how to write clear, well-documented code.
+
+---
+
+*End of Topic 1: Algorithm Design & Complexity*
