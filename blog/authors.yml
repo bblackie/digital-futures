@@ -1,14 +1,21 @@
-yangshun:
-  name: Yangshun Tay
-  title: Ex-Meta Staff Engineer, Co-founder GreatFrontEnd
-  url: https://linkedin.com/in/yangshun
-  image_url: https://github.com/yangshun.png
+bjb:
+  name: Mr Blackie
+  title: Teacher
+  url: https://www.rathkeale.school.nz
+  image_url: https://github.com/bblackie.png
   page: true
   socials:
-    x: yangshunz
-    linkedin: yangshun
-    github: yangshun
-    newsletter: https://www.greatfrontend.com
+    github: bblackie
+    newsletter: https://www.rathkeale.school.nz
+
+bot:
+  name: Mr Bot
+  title: AI Assistant
+  url: https://www.rathkeale.school.nz
+  image_url: /img/profile-bot.png
+  page: true
+  socials:
+    newsletter: https://www.rathkeale.school.nz
 
 slorber:
   name: Sébastien Lorber
