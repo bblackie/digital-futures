@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Why This Structure Matters</title>
+  <desc id="desc">A checklist board showing complexity reduction, reuse, testing, and readability.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2b1d10"/>
+      <stop offset="100%" stop-color="#6a4726"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <text x="640" y="96" fill="#fff7ef" font-family="Verdana, sans-serif" font-size="44" text-anchor="middle">Why This Structure Matters</text>
+  <rect x="235" y="160" width="810" height="440" rx="26" fill="#fff7ef"/>
+  <rect x="305" y="225" width="670" height="70" rx="14" fill="#f4d9bd"/>
+  <rect x="305" y="320" width="670" height="70" rx="14" fill="#efc79e"/>
+  <rect x="305" y="415" width="670" height="70" rx="14" fill="#e7b27d"/>
+  <rect x="305" y="510" width="670" height="70" rx="14" fill="#dca065"/>
+  <path d="M338 258 l18 18 l34 -34" fill="none" stroke="#4f321d" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M338 353 l18 18 l34 -34" fill="none" stroke="#4f321d" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M338 448 l18 18 l34 -34" fill="none" stroke="#4f321d" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M338 543 l18 18 l34 -34" fill="none" stroke="#4f321d" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="655" y="270" fill="#3f2817" font-family="Verdana, sans-serif" font-size="28" text-anchor="middle">Reduces complexity</text>
+  <text x="655" y="365" fill="#3f2817" font-family="Verdana, sans-serif" font-size="28" text-anchor="middle">Avoids duplicated code</text>
+  <text x="655" y="460" fill="#3f2817" font-family="Verdana, sans-serif" font-size="28" text-anchor="middle">Makes testing easier</text>
+  <text x="655" y="555" fill="#3f2817" font-family="Verdana, sans-serif" font-size="28" text-anchor="middle">Improves readability</text>
+  <text x="640" y="640" fill="#fff7ef" font-family="Verdana, sans-serif" font-size="24" text-anchor="middle">Good structure keeps projects understandable as they become larger and more complex.</text>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">GDScript</title>
+  <desc id="desc">A code panel highlighting readable scripting for movement, input, states, and collisions.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#09131e"/>
+      <stop offset="100%" stop-color="#17406a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <text x="640" y="92" fill="#eff7ff" font-family="Verdana, sans-serif" font-size="46" text-anchor="middle">GDScript</text>
+  <rect x="190" y="150" width="900" height="420" rx="28" fill="#101b29" stroke="#5fa8ff" stroke-width="4"/>
+  <text x="260" y="235" fill="#7ad7ff" font-family="Courier New, monospace" font-size="28">extends CharacterBody2D</text>
+  <text x="260" y="295" fill="#ffd166" font-family="Courier New, monospace" font-size="28">func _physics_process(delta):</text>
+  <text x="320" y="355" fill="#f4f7fb" font-family="Courier New, monospace" font-size="28">handle_input()</text>
+  <text x="320" y="415" fill="#f4f7fb" font-family="Courier New, monospace" font-size="28">update_state()</text>
+  <text x="320" y="475" fill="#f4f7fb" font-family="Courier New, monospace" font-size="28">move_and_slide()</text>
+  <rect x="830" y="215" width="190" height="60" rx="14" fill="#72efdd"/>
+  <rect x="830" y="315" width="190" height="60" rx="14" fill="#9ccc65"/>
+  <rect x="830" y="415" width="190" height="60" rx="14" fill="#ff8fab"/>
+  <text x="925" y="252" fill="#123733" font-family="Verdana, sans-serif" font-size="20" text-anchor="middle">Readable</text>
+  <text x="925" y="352" fill="#2d401d" font-family="Verdana, sans-serif" font-size="20" text-anchor="middle">Simple</text>
+  <text x="925" y="452" fill="#57192c" font-family="Verdana, sans-serif" font-size="20" text-anchor="middle">Structured</text>
+  <text x="640" y="635" fill="#eff7ff" font-family="Verdana, sans-serif" font-size="24" text-anchor="middle">You use GDScript to control behaviour, respond to input, and manage game state.</text>
+</svg>

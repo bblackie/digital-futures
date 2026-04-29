@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Games Are Interactive Systems</title>
+  <desc id="desc">A circular loop showing action, response, and reaction.</desc>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="70%">
+      <stop offset="0%" stop-color="#2f153b"/>
+      <stop offset="100%" stop-color="#13091a"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <text x="640" y="102" fill="#f6eef9" font-family="Verdana, sans-serif" font-size="44" text-anchor="middle">Games Are Interactive Systems</text>
+  <circle cx="640" cy="380" r="210" fill="none" stroke="#f6eef9" stroke-width="10" stroke-dasharray="14 16"/>
+  <polygon points="845,330 910,380 835,395" fill="#f6eef9"/>
+  <polygon points="565,575 620,630 540,642" fill="#f6eef9"/>
+  <polygon points="365,315 320,390 295,320" fill="#f6eef9"/>
+  <circle cx="640" cy="170" r="72" fill="#f9844a"/>
+  <circle cx="840" cy="500" r="72" fill="#43bccd"/>
+  <circle cx="440" cy="500" r="72" fill="#90be6d"/>
+  <text x="640" y="178" fill="#23112d" font-family="Verdana, sans-serif" font-size="22" text-anchor="middle">Action</text>
+  <text x="840" y="508" fill="#10242a" font-family="Verdana, sans-serif" font-size="22" text-anchor="middle">Response</text>
+  <text x="440" y="508" fill="#1a2715" font-family="Verdana, sans-serif" font-size="22" text-anchor="middle">Reaction</text>
+</svg>
