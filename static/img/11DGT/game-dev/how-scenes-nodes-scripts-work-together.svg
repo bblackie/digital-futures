@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">How They Work Together</title>
+  <desc id="desc">A relationship diagram linking a scene to nodes and each node to its script.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#241226"/>
+      <stop offset="100%" stop-color="#5c2d63"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <text x="640" y="96" fill="#f9f0fb" font-family="Verdana, sans-serif" font-size="44" text-anchor="middle">How They Work Together</text>
+  <rect x="520" y="150" width="240" height="100" rx="22" fill="#ffd166"/>
+  <text x="640" y="210" fill="#3a2a00" font-family="Verdana, sans-serif" font-size="30" text-anchor="middle">Scene</text>
+  <line x1="640" y1="250" x2="430" y2="340" stroke="#f9f0fb" stroke-width="8" stroke-linecap="round"/>
+  <line x1="640" y1="250" x2="850" y2="340" stroke="#f9f0fb" stroke-width="8" stroke-linecap="round"/>
+  <rect x="300" y="340" width="260" height="100" rx="22" fill="#72efdd"/>
+  <rect x="720" y="340" width="260" height="100" rx="22" fill="#72efdd"/>
+  <text x="430" y="400" fill="#123733" font-family="Verdana, sans-serif" font-size="28" text-anchor="middle">Node</text>
+  <text x="850" y="400" fill="#123733" font-family="Verdana, sans-serif" font-size="28" text-anchor="middle">Node</text>
+  <line x1="430" y1="440" x2="430" y2="540" stroke="#f9f0fb" stroke-width="8" stroke-linecap="round"/>
+  <line x1="850" y1="440" x2="850" y2="540" stroke="#f9f0fb" stroke-width="8" stroke-linecap="round"/>
+  <rect x="300" y="540" width="260" height="100" rx="22" fill="#ff8fab"/>
+  <rect x="720" y="540" width="260" height="100" rx="22" fill="#ff8fab"/>
+  <text x="430" y="600" fill="#57192c" font-family="Verdana, sans-serif" font-size="28" text-anchor="middle">Script</text>
+  <text x="850" y="600" fill="#57192c" font-family="Verdana, sans-serif" font-size="28" text-anchor="middle">Script</text>
+</svg>

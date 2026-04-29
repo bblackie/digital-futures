@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Games and Assessment</title>
+  <desc id="desc">An assessment board highlighting function, mechanics, and player experience.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2e1d12"/>
+      <stop offset="100%" stop-color="#6d4727"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <text x="640" y="96" fill="#fff7ef" font-family="Verdana, sans-serif" font-size="44" text-anchor="middle">Games and Assessment</text>
+  <rect x="210" y="160" width="860" height="440" rx="28" fill="#fff7ef"/>
+  <rect x="280" y="230" width="720" height="82" rx="16" fill="#f4d9bd"/>
+  <rect x="280" y="340" width="720" height="82" rx="16" fill="#efc79e"/>
+  <rect x="280" y="450" width="720" height="82" rx="16" fill="#e7b27d"/>
+  <circle cx="332" cy="271" r="18" fill="#50331d"/>
+  <circle cx="332" cy="381" r="18" fill="#50331d"/>
+  <circle cx="332" cy="491" r="18" fill="#50331d"/>
+  <text x="650" y="280" fill="#3f2817" font-family="Verdana, sans-serif" font-size="28" text-anchor="middle">How well the game functions</text>
+  <text x="650" y="390" fill="#3f2817" font-family="Verdana, sans-serif" font-size="28" text-anchor="middle">How the mechanics support the purpose</text>
+  <text x="650" y="500" fill="#3f2817" font-family="Verdana, sans-serif" font-size="28" text-anchor="middle">How design decisions affect player experience</text>
+  <text x="640" y="645" fill="#fff7ef" font-family="Verdana, sans-serif" font-size="24" text-anchor="middle">Assessment values meaningful interaction, not just surface-level polish.</text>
+</svg>

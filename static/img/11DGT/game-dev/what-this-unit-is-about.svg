@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">What This Unit Is About</title>
+  <desc id="desc">A stylized game controller above a progress roadmap.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0e1a2b"/>
+      <stop offset="100%" stop-color="#173a5d"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2f6fa6"/>
+      <stop offset="100%" stop-color="#204e77"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect x="80" y="80" width="1120" height="560" rx="28" fill="url(#panel)" opacity="0.92"/>
+  <rect x="440" y="210" width="400" height="180" rx="90" fill="#f5f7fb"/>
+  <circle cx="530" cy="300" r="22" fill="#173a5d"/>
+  <rect x="620" y="278" width="96" height="20" rx="10" fill="#173a5d"/>
+  <rect x="658" y="240" width="20" height="96" rx="10" fill="#173a5d"/>
+  <circle cx="776" cy="280" r="15" fill="#ffb347"/>
+  <circle cx="812" cy="320" r="15" fill="#ff6961"/>
+  <path d="M240 500 L400 430 L560 500 L720 430 L880 500 L1040 430" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="240" cy="500" r="10" fill="#ffffff"/>
+  <circle cx="400" cy="430" r="10" fill="#ffffff"/>
+  <circle cx="560" cy="500" r="10" fill="#ffffff"/>
+  <circle cx="720" cy="430" r="10" fill="#ffffff"/>
+  <circle cx="880" cy="500" r="10" fill="#ffffff"/>
+  <circle cx="1040" cy="430" r="10" fill="#ffffff"/>
+  <text x="640" y="145" fill="#ffffff" font-family="Verdana, sans-serif" font-size="46" text-anchor="middle">What This Unit Is About</text>
+</svg>

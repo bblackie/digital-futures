@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Nodes</title>
+  <desc id="desc">A set of example game objects shown as individual nodes with distinct roles.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0e1e2d"/>
+      <stop offset="100%" stop-color="#28506d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <text x="640" y="96" fill="#eef7fb" font-family="Verdana, sans-serif" font-size="46" text-anchor="middle">Nodes</text>
+  <text x="640" y="142" fill="#cde2ea" font-family="Verdana, sans-serif" font-size="24" text-anchor="middle">A node is one object with one job inside the game.</text>
+  <rect x="130" y="250" width="180" height="180" rx="28" fill="#ffd166"/>
+  <rect x="350" y="250" width="180" height="180" rx="28" fill="#72efdd"/>
+  <rect x="570" y="250" width="180" height="180" rx="28" fill="#ff8fab"/>
+  <rect x="790" y="250" width="180" height="180" rx="28" fill="#9ccc65"/>
+  <rect x="1010" y="250" width="180" height="180" rx="28" fill="#55c1ff"/>
+  <text x="220" y="350" fill="#3a2a00" font-family="Verdana, sans-serif" font-size="28" text-anchor="middle">Player</text>
+  <text x="440" y="350" fill="#123733" font-family="Verdana, sans-serif" font-size="28" text-anchor="middle">Enemy</text>
+  <text x="660" y="350" fill="#57192c" font-family="Verdana, sans-serif" font-size="28" text-anchor="middle">Platform</text>
+  <text x="880" y="350" fill="#2d401d" font-family="Verdana, sans-serif" font-size="28" text-anchor="middle">Button</text>
+  <text x="1100" y="350" fill="#103246" font-family="Verdana, sans-serif" font-size="26" text-anchor="middle">Sound FX</text>
+  <text x="640" y="610" fill="#eef7fb" font-family="Verdana, sans-serif" font-size="24" text-anchor="middle">Different nodes do different jobs, but each one stays focused on a specific role.</text>
+</svg>

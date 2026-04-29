@@ -11,7 +11,7 @@ yarn install
 ## Local Development
 
 ```bash
-yarn start
+corepack yarn start
 ```
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
@@ -26,20 +26,14 @@ This command generates static content into the `build` directory and can be serv
 
 ## Deployment
 
-Using SSH:
+Using HTTPS (PAT):
 
 ```powershell
-$env:USE_SSH="true"; yarn deploy
+$env:USE_SSH="false"; $env:GIT_USER="<Your GitHub username>"; corepack yarn deploy
 ```
 
 ```bash
-USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
+USE_SSH=false GIT_USER=<Your GitHub username> corepack yarn deploy
 ```
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.

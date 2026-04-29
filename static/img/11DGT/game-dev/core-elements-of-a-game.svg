@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Core Elements of a Game</title>
+  <desc id="desc">Four linked cards showing input, rules, feedback, and outcomes as the foundation of a game.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1f2a"/>
+      <stop offset="100%" stop-color="#17445c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <text x="120" y="110" fill="#eef8fb" font-family="Verdana, sans-serif" font-size="46">Core Elements of a Game</text>
+  <text x="120" y="158" fill="#c9e4eb" font-family="Verdana, sans-serif" font-size="24">A game needs player action, system rules, meaningful feedback, and a clear outcome.</text>
+  <line x1="240" y1="415" x2="1040" y2="415" stroke="#d9eef5" stroke-width="10" stroke-linecap="round"/>
+  <rect x="135" y="250" width="220" height="235" rx="26" fill="#ffd166"/>
+  <rect x="375" y="250" width="220" height="235" rx="26" fill="#7bd389"/>
+  <rect x="615" y="250" width="220" height="235" rx="26" fill="#55c1ff"/>
+  <rect x="855" y="250" width="220" height="235" rx="26" fill="#ef476f"/>
+  <circle cx="245" cy="415" r="18" fill="#eef8fb"/>
+  <circle cx="485" cy="415" r="18" fill="#eef8fb"/>
+  <circle cx="725" cy="415" r="18" fill="#eef8fb"/>
+  <circle cx="965" cy="415" r="18" fill="#eef8fb"/>
+  <text x="245" y="325" fill="#24313a" font-family="Verdana, sans-serif" font-size="30" text-anchor="middle">Input</text>
+  <text x="245" y="370" fill="#24313a" font-family="Verdana, sans-serif" font-size="20" text-anchor="middle">The player</text>
+  <text x="245" y="398" fill="#24313a" font-family="Verdana, sans-serif" font-size="20" text-anchor="middle">can act</text>
+  <text x="485" y="325" fill="#143126" font-family="Verdana, sans-serif" font-size="30" text-anchor="middle">Rules</text>
+  <text x="485" y="370" fill="#143126" font-family="Verdana, sans-serif" font-size="20" text-anchor="middle">Limits and</text>
+  <text x="485" y="398" fill="#143126" font-family="Verdana, sans-serif" font-size="20" text-anchor="middle">conditions</text>
+  <text x="725" y="325" fill="#0c2a3b" font-family="Verdana, sans-serif" font-size="30" text-anchor="middle">Feedback</text>
+  <text x="725" y="370" fill="#0c2a3b" font-family="Verdana, sans-serif" font-size="20" text-anchor="middle">The game</text>
+  <text x="725" y="398" fill="#0c2a3b" font-family="Verdana, sans-serif" font-size="20" text-anchor="middle">responds</text>
+  <text x="965" y="325" fill="#3d1020" font-family="Verdana, sans-serif" font-size="30" text-anchor="middle">Outcomes</text>
+  <text x="965" y="370" fill="#3d1020" font-family="Verdana, sans-serif" font-size="20" text-anchor="middle">Win, lose,</text>
+  <text x="965" y="398" fill="#3d1020" font-family="Verdana, sans-serif" font-size="20" text-anchor="middle">restart</text>
+  <text x="640" y="610" fill="#eef8fb" font-family="Verdana, sans-serif" font-size="24" text-anchor="middle">If one piece is missing, the experience usually feels incomplete.</text>
+</svg>
