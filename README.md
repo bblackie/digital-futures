@@ -19,17 +19,22 @@ This command starts a local development server and opens up a browser window. Mo
 ## Build
 
 ```bash
-yarn build
+corepack yarn build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+command to test your build locally.
+```
+npm run serve
+```
 
 ## Deployment
 
 Using HTTPS (PAT):
 
 ```powershell
-$env:USE_SSH="false"; $env:GIT_USER="<Your GitHub username>"; corepack yarn deploy
+$env:USE_SSH="false"; $env:GIT_USER="bblackie"; corepack yarn deploy
 ```
 
 ```bash

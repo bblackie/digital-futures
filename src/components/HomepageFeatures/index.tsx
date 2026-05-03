@@ -13,6 +13,28 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
+    title: '9DGT',
+    image: '/img/undraw_robot_drone-removebg-preview.png',
+    description: (
+      <>
+        Year 9 Digital Technologies — introduction to programming, basic game development,
+        and the development process.
+      </>
+    ),
+    link: '/docs/9DGT/',
+  },
+  {
+    title: '10DGT',
+    image: '/img/undraw_robot_classroom-removebg-preview.png',
+    description: (
+      <>
+        Year 10 Digital Technologies — introduction to programming, basic game development,
+        and the development process.
+      </>
+    ),
+    link: '/docs/10DGT/',
+  },
+  {
     title: '11DGT',
     image: '/img/undraw_robot_taxi-removebg-preview.png',
     description: (
@@ -36,7 +58,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: '13DGT',
-    image: '/img/undraw_robot_drone-removebg-preview.png',
+    image: '/img/undraw_robot_workshop-removebg-preview.png',
     description: (
       <>
         Year 13 Digital Technologies — UX design, user research,
@@ -44,7 +66,7 @@ const FeatureList: FeatureItem[] = [
       </>
     ),
     link: '/docs/13DGT/',
-  },
+  }
 ];
 
 function Feature({title, image, description, link}: FeatureItem) {
@@ -52,7 +74,7 @@ function Feature({title, image, description, link}: FeatureItem) {
     <img src={image} alt={title} className={styles.featureSvg} />
   );
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col col--3')}>
       <div className={clsx('text--center', styles.featureImageWrapper)}>
         {link ? <Link to={link}>{img}</Link> : img}
       </div>
