@@ -1,0 +1,134 @@
+---
+slide_label: "SE-4.1"
+title: "Populating Your Planning Board"
+course: "13DGT"
+unit: "Unit 4: Software Engineering Practice"
+topic: "1. Populating Your Planning Board"
+---
+
+# [SE-4.1] Populating Your Planning Board
+
+## Why This Matters
+
+Knowing your architecture and folder structure is not enough — you also need a plan for **how you will actually build the project**, one piece at a time. This is where a **planning board** comes in.
+
+A planning board is a visual tool that breaks your project into small, manageable tasks and tracks their progress from idea to completion. Without one, it is easy to spend two hours on a detail that doesn't matter yet, while critical setup tasks never get done.
+
+---
+
+## What Is a Planning Board?
+
+A planning board (also called a **Kanban board**) organises work into columns that represent the current state of each task. Common tools include:
+
+- **GitHub Projects** — integrated with your code repository (recommended)
+- **Trello** — simple drag-and-drop boards
+- **Jira** — used in industry, more complex
+
+Recommended video: [Kanban – simpleshow explains agile methods](https://www.youtube.com/watch?v=KeukwUyLZdg)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KeukwUyLZdg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+---
+
+## Standard Column Structure
+
+| Column | What goes here |
+|--------|---------------|
+| **Backlog** | All tasks you plan to do eventually but haven't started |
+| **To Do** | Tasks you will work on in the current sprint/week |
+| **In Progress** | Tasks you are actively working on right now |
+| **Review / Testing** | Completed work being checked or tested |
+| **Done** | Fully finished and working |
+
+> 💡 Limit your **In Progress** column to 2–3 tasks at a time. This is a core Kanban principle — finishing tasks is more valuable than starting new ones.
+
+---
+
+## How to Populate Your Board
+
+When you start a full-stack project, your first step is to translate your architecture into tasks. Work through each layer of your three-tier stack:
+
+### 1. Set Up Tasks (Do these first)
+- [ ] Initialise project repository and folder structure
+- [ ] Set up backend framework (Express/Flask)
+- [ ] Connect to the database and test the connection
+- [ ] Create database tables / schema
+- [ ] Set up frontend entry point (index.html or React app)
+
+### 2. Core Feature Tasks (One task per feature per tier)
+
+Break each feature of your app across all three tiers:
+
+```
+Feature: User Registration
+  ├── [Backend]  POST /api/users endpoint
+  ├── [Backend]  Validate and hash password
+  ├── [Database] Create users table
+  └── [Frontend] Registration form and fetch call
+```
+
+Each of those becomes its own card on the board. A feature is **not done** until all three tiers are working together.
+
+### 3. Writing a Good Card
+
+Every card (task) on your board should answer three questions:
+
+| Field | Example |
+|-------|---------|
+| **Title** | `[Backend] POST /api/products endpoint` |
+| **What to do** | Create a route that accepts a product name and price, validates the data, inserts it into the database, and returns the new product as JSON. |
+| **Done when...** | Postman returns `201 Created` with the correct JSON body. Unit test passes. |
+
+The prefix (`[Backend]`, `[Frontend]`, `[Database]`) helps you see at a glance which tier is affected and makes it easy to filter tasks by layer.
+
+### 4. Prioritising Your Backlog
+
+Not all tasks are equal. Use these categories to order your backlog:
+
+- **Must have** — core features required for a working app (login, data display, core CRUD)
+- **Should have** — important but not blocking (error messages, form validation)
+- **Could have** — nice additions if time allows (styling, search, sorting)
+- **Won't have** — out of scope for this project
+
+This is the **MoSCoW method**, widely used in agile software development.
+
+Recommended video: [The MoSCoW Prioritization Method - Explanation and Best Practices](https://www.youtube.com/watch?v=NJ2JM_PKXjk)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NJ2JM_PKXjk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+---
+
+## Connecting Your Board to Your Architecture
+
+Your architecture diagram should map directly to your board. For every endpoint you planned:
+
+1. Create a `[Backend]` card for the route
+2. Create a `[Database]` card for any new tables or queries
+3. Create a `[Frontend]` card for the UI that calls that endpoint
+
+If you have an endpoint on your architecture diagram with no matching card, it won't get built.
+
+Recommended video: [GitHub Project Management - Create GitHub Project Board & Automations](https://www.youtube.com/watch?v=oPQgFxHcjAw)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/oPQgFxHcjAw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+---
+
+## Key Vocabulary
+
+- **Backlog:** The full list of tasks that have been identified but not yet started
+- **Card:** A single task on the planning board
+- **Kanban:** A workflow method that visualises tasks as cards moving through columns
+- **MoSCoW:** A prioritisation method — Must have, Should have, Could have, Won't have
+- **Sprint:** A fixed time period (usually 1–2 weeks) during which a set of tasks is completed
+- **WIP Limit:** Work In Progress limit — the maximum number of tasks allowed in a column at once
+
+---
+
+## Next Steps
+
+Continue to [2. Version Control with Git](02_version-control.mdx) to learn how to manage your code changes throughout the development process.
+
+---
+
+*End of Topic 1: Populating Your Planning Board*
