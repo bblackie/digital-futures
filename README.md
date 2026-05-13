@@ -2,7 +2,35 @@
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
-## Installation
+## Install npx
+
+
+npx comes bundled with npm, so just install Node.js via Chocolatey:
+```bash
+choco install nodejs
+```
+Then verify:
+
+```bash
+node -v
+npm -v
+npx -v
+```
+
+## Install a docosaurus site
+
+To scaffold a new Docusaurus site, run:
+```bash
+npx create-docusaurus@latest my-website classic
+```
+Then start the dev server:
+```bash
+cd my-website
+npm start
+```
+
+
+## Install docusaurus dependencies
 
 ```bash
 yarn install
