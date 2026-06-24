@@ -33,7 +33,7 @@ npm start
 ## Install docusaurus dependencies
 
 ```bash
-yarn install
+corepack yarn install
 ```
 
 ## Local Development
