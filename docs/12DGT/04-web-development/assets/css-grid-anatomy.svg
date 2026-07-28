@@ -1,0 +1,23 @@
+<svg viewBox="0 0 480 340" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, sans-serif">
+  <rect x="0" y="0" width="480" height="340" fill="#ffffff"/>
+  <text x="240" y="28" font-size="14" fill="#333" text-anchor="middle" font-weight="600">CSS Grid is two-dimensional: rows and columns at once.</text>
+  <!-- cells (3 cols x 2 rows) with gap -->
+  <!-- row 1 -->
+  <rect x="70" y="60" width="100" height="90" fill="#cfe6c9" stroke="#7fae74"/>
+  <rect x="186" y="60" width="100" height="90" fill="#cfe6c9" stroke="#7fae74"/>
+  <rect x="302" y="60" width="100" height="90" fill="#cfe6c9" stroke="#7fae74"/>
+  <!-- row 2: first two cells merged into an area -->
+  <rect x="70" y="166" width="216" height="90" fill="#bcd6f0" stroke="#5b8fc9"/>
+  <rect x="302" y="166" width="100" height="90" fill="#cfe6c9" stroke="#7fae74"/>
+  <text x="178" y="216" font-size="12" fill="#255c94" text-anchor="middle">grid area (spans 2 columns)</text>
+  <!-- gap label -->
+  <line x1="170" y1="105" x2="186" y2="105" stroke="#c9622b" stroke-width="6"/>
+  <text x="178" y="52" font-size="11" fill="#c9622b" text-anchor="middle">gap</text>
+  <!-- column line numbers -->
+  <text x="70" y="278" font-size="11" fill="#888" text-anchor="middle">1</text>
+  <text x="186" y="278" font-size="11" fill="#888" text-anchor="middle">2</text>
+  <text x="302" y="278" font-size="11" fill="#888" text-anchor="middle">3</text>
+  <text x="402" y="278" font-size="11" fill="#888" text-anchor="middle">4</text>
+  <text x="240" y="298" font-size="12" fill="#888" text-anchor="middle">column grid lines (numbered)</text>
+  <text x="240" y="322" font-size="12" fill="#666" text-anchor="middle">Green = cells sized by tracks. Blue = an item placed across a span.</text>
+</svg>
