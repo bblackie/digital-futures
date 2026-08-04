@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Scripts</title>
+  <desc id="desc">A node connected to a code panel to show behaviour being attached through GDScript.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111524"/>
+      <stop offset="100%" stop-color="#324a77"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <text x="640" y="96" fill="#f3f7ff" font-family="Verdana, sans-serif" font-size="46" text-anchor="middle">Scripts</text>
+  <circle cx="330" cy="385" r="120" fill="#72efdd"/>
+  <text x="330" y="392" fill="#123733" font-family="Verdana, sans-serif" font-size="32" text-anchor="middle">Node</text>
+  <line x1="450" y1="385" x2="580" y2="385" stroke="#f3f7ff" stroke-width="10" stroke-linecap="round"/>
+  <rect x="580" y="210" width="500" height="350" rx="28" fill="#101b29" stroke="#5fa8ff" stroke-width="4"/>
+  <text x="650" y="290" fill="#ffd166" font-family="Courier New, monospace" font-size="28">func _process(delta):</text>
+  <text x="700" y="360" fill="#f4f7fb" font-family="Courier New, monospace" font-size="28">handle_input()</text>
+  <text x="700" y="430" fill="#f4f7fb" font-family="Courier New, monospace" font-size="28">play_animation()</text>
+  <text x="700" y="500" fill="#f4f7fb" font-family="Courier New, monospace" font-size="28">update_state()</text>
+  <text x="640" y="635" fill="#f3f7ff" font-family="Verdana, sans-serif" font-size="24" text-anchor="middle">Scripts attach behaviour to nodes so objects can react, move, and respond to events.</text>
+</svg>

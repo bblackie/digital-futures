@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Games vs Other Digital Outcomes</title>
+  <desc id="desc">A comparison panel showing a game contrasted with a calculator, slideshow, and simulation.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#161616"/>
+      <stop offset="100%" stop-color="#30343f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <text x="640" y="95" fill="#faf6ef" font-family="Verdana, sans-serif" font-size="44" text-anchor="middle">Games vs Other Digital Outcomes</text>
+  <rect x="120" y="175" width="420" height="405" rx="28" fill="#f4d35e"/>
+  <rect x="590" y="175" width="570" height="405" rx="28" fill="#f7f7f7"/>
+  <text x="330" y="245" fill="#2a2308" font-family="Verdana, sans-serif" font-size="34" text-anchor="middle">Game</text>
+  <text x="330" y="305" fill="#2a2308" font-family="Verdana, sans-serif" font-size="24" text-anchor="middle">Challenge</text>
+  <text x="330" y="345" fill="#2a2308" font-family="Verdana, sans-serif" font-size="24" text-anchor="middle">Rules</text>
+  <text x="330" y="385" fill="#2a2308" font-family="Verdana, sans-serif" font-size="24" text-anchor="middle">Feedback</text>
+  <text x="330" y="425" fill="#2a2308" font-family="Verdana, sans-serif" font-size="24" text-anchor="middle">Outcome</text>
+  <line x1="650" y1="290" x2="1090" y2="290" stroke="#c8c8c8" stroke-width="2"/>
+  <line x1="650" y1="400" x2="1090" y2="400" stroke="#c8c8c8" stroke-width="2"/>
+  <line x1="650" y1="510" x2="1090" y2="510" stroke="#c8c8c8" stroke-width="2"/>
+  <text x="730" y="245" fill="#1e232b" font-family="Verdana, sans-serif" font-size="26">Calculator</text>
+  <text x="730" y="275" fill="#48515f" font-family="Verdana, sans-serif" font-size="20">Responds to input, but no challenge or goal.</text>
+  <text x="730" y="355" fill="#1e232b" font-family="Verdana, sans-serif" font-size="26">Slideshow</text>
+  <text x="730" y="385" fill="#48515f" font-family="Verdana, sans-serif" font-size="20">Presents information, but no rules or outcome.</text>
+  <text x="730" y="465" fill="#1e232b" font-family="Verdana, sans-serif" font-size="26">Simulation</text>
+  <text x="730" y="495" fill="#48515f" font-family="Verdana, sans-serif" font-size="20">May look interactive, but goals are not always built in.</text>
+  <text x="640" y="640" fill="#faf6ef" font-family="Verdana, sans-serif" font-size="24" text-anchor="middle">A real game is more than interaction alone. It combines purpose, structure, and consequence.</text>
+</svg>

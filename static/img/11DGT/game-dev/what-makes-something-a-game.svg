@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">What Makes Something a Game?</title>
+  <desc id="desc">Four connected pillars: input, rules, feedback, and outcomes.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1f12"/>
+      <stop offset="100%" stop-color="#405c2a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <text x="640" y="108" fill="#f4f8ef" font-family="Verdana, sans-serif" font-size="44" text-anchor="middle">What Makes Something a Game?</text>
+  <line x1="280" y1="365" x2="1000" y2="365" stroke="#e8f0dc" stroke-width="8"/>
+  <line x1="280" y1="365" x2="280" y2="510" stroke="#e8f0dc" stroke-width="6"/>
+  <line x1="520" y1="365" x2="520" y2="510" stroke="#e8f0dc" stroke-width="6"/>
+  <line x1="760" y1="365" x2="760" y2="510" stroke="#e8f0dc" stroke-width="6"/>
+  <line x1="1000" y1="365" x2="1000" y2="510" stroke="#e8f0dc" stroke-width="6"/>
+  <rect x="200" y="230" width="160" height="120" rx="20" fill="#a4d96c"/>
+  <rect x="440" y="230" width="160" height="120" rx="20" fill="#7cc36a"/>
+  <rect x="680" y="230" width="160" height="120" rx="20" fill="#56ab6a"/>
+  <rect x="920" y="230" width="160" height="120" rx="20" fill="#3c8f66"/>
+  <text x="280" y="300" fill="#0f1a0f" font-family="Verdana, sans-serif" font-size="26" text-anchor="middle">Input</text>
+  <text x="520" y="300" fill="#0f1a0f" font-family="Verdana, sans-serif" font-size="26" text-anchor="middle">Rules</text>
+  <text x="760" y="300" fill="#0f1a0f" font-family="Verdana, sans-serif" font-size="26" text-anchor="middle">Feedback</text>
+  <text x="1000" y="300" fill="#0f1a0f" font-family="Verdana, sans-serif" font-size="26" text-anchor="middle">Outcomes</text>
+  <circle cx="280" cy="525" r="20" fill="#f4f8ef"/>
+  <circle cx="520" cy="525" r="20" fill="#f4f8ef"/>
+  <circle cx="760" cy="525" r="20" fill="#f4f8ef"/>
+  <circle cx="1000" cy="525" r="20" fill="#f4f8ef"/>
+</svg>

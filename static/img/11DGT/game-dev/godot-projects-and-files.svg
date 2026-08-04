@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Projects and Files</title>
+  <desc id="desc">A project folder branching into scenes, scripts, and assets with an emphasis on organisation.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#172019"/>
+      <stop offset="100%" stop-color="#345c3f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <text x="640" y="98" fill="#f3fbf3" font-family="Verdana, sans-serif" font-size="44" text-anchor="middle">Projects and Files</text>
+  <rect x="470" y="150" width="340" height="110" rx="24" fill="#ffd166"/>
+  <text x="640" y="215" fill="#3a2a00" font-family="Verdana, sans-serif" font-size="32" text-anchor="middle">Godot Project</text>
+  <line x1="640" y1="260" x2="640" y2="330" stroke="#f3fbf3" stroke-width="8" stroke-linecap="round"/>
+  <line x1="640" y1="330" x2="290" y2="330" stroke="#f3fbf3" stroke-width="8" stroke-linecap="round"/>
+  <line x1="640" y1="330" x2="640" y2="330" stroke="#f3fbf3" stroke-width="8"/>
+  <line x1="640" y1="330" x2="990" y2="330" stroke="#f3fbf3" stroke-width="8" stroke-linecap="round"/>
+  <line x1="290" y1="330" x2="290" y2="400" stroke="#f3fbf3" stroke-width="8" stroke-linecap="round"/>
+  <line x1="640" y1="330" x2="640" y2="400" stroke="#f3fbf3" stroke-width="8" stroke-linecap="round"/>
+  <line x1="990" y1="330" x2="990" y2="400" stroke="#f3fbf3" stroke-width="8" stroke-linecap="round"/>
+  <rect x="155" y="400" width="270" height="120" rx="22" fill="#72efdd"/>
+  <rect x="505" y="400" width="270" height="120" rx="22" fill="#ff8fab"/>
+  <rect x="855" y="400" width="270" height="120" rx="22" fill="#55c1ff"/>
+  <text x="290" y="470" fill="#123733" font-family="Verdana, sans-serif" font-size="30" text-anchor="middle">Scenes</text>
+  <text x="640" y="470" fill="#57192c" font-family="Verdana, sans-serif" font-size="30" text-anchor="middle">Scripts</text>
+  <text x="990" y="470" fill="#103246" font-family="Verdana, sans-serif" font-size="30" text-anchor="middle">Assets</text>
+  <text x="640" y="620" fill="#f3fbf3" font-family="Verdana, sans-serif" font-size="24" text-anchor="middle">Good organisation helps with debugging, assessment evidence, and explaining your work.</text>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Mechanics and Player Experience</title>
+  <desc id="desc">A balance between responsive, clear mechanics and the player experience they create.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#141925"/>
+      <stop offset="100%" stop-color="#3b557e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <text x="640" y="98" fill="#f4f7ff" font-family="Verdana, sans-serif" font-size="44" text-anchor="middle">Mechanics and Player Experience</text>
+  <circle cx="390" cy="375" r="145" fill="#72efdd"/>
+  <circle cx="890" cy="375" r="145" fill="#ffd166"/>
+  <line x1="535" y1="375" x2="745" y2="375" stroke="#f4f7ff" stroke-width="12" stroke-linecap="round"/>
+  <text x="390" y="335" fill="#123733" font-family="Verdana, sans-serif" font-size="26" text-anchor="middle">Responsive</text>
+  <text x="390" y="372" fill="#123733" font-family="Verdana, sans-serif" font-size="26" text-anchor="middle">Clear</text>
+  <text x="390" y="409" fill="#123733" font-family="Verdana, sans-serif" font-size="26" text-anchor="middle">Fair</text>
+  <text x="890" y="335" fill="#403000" font-family="Verdana, sans-serif" font-size="26" text-anchor="middle">Player</text>
+  <text x="890" y="372" fill="#403000" font-family="Verdana, sans-serif" font-size="26" text-anchor="middle">understanding</text>
+  <text x="890" y="409" fill="#403000" font-family="Verdana, sans-serif" font-size="26" text-anchor="middle">and engagement</text>
+  <text x="640" y="620" fill="#f4f7ff" font-family="Verdana, sans-serif" font-size="24" text-anchor="middle">Good mechanics feel understandable and satisfying because they support the intended experience.</text>
+</svg>

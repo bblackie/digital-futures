@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Godot and Assessment</title>
+  <desc id="desc">An assessment board showing Godot use, explanation of scenes and scripts, and visible development process.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2c1f10"/>
+      <stop offset="100%" stop-color="#6b4a24"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <text x="640" y="96" fill="#fff7ef" font-family="Verdana, sans-serif" font-size="44" text-anchor="middle">Godot and Assessment</text>
+  <rect x="220" y="160" width="840" height="430" rx="26" fill="#fff7ef"/>
+  <rect x="290" y="225" width="700" height="76" rx="14" fill="#f4d9bd"/>
+  <rect x="290" y="337" width="700" height="76" rx="14" fill="#efc79e"/>
+  <rect x="290" y="449" width="700" height="76" rx="14" fill="#e7b27d"/>
+  <path d="M322 261 l18 18 l34 -34" fill="none" stroke="#4f321d" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M322 373 l18 18 l34 -34" fill="none" stroke="#4f321d" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M322 485 l18 18 l34 -34" fill="none" stroke="#4f321d" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="660" y="273" fill="#3f2817" font-family="Verdana, sans-serif" font-size="28" text-anchor="middle">Build the game in Godot</text>
+  <text x="660" y="385" fill="#3f2817" font-family="Verdana, sans-serif" font-size="28" text-anchor="middle">Explain scenes and scripts clearly</text>
+  <text x="660" y="497" fill="#3f2817" font-family="Verdana, sans-serif" font-size="28" text-anchor="middle">Make the development process visible</text>
+  <text x="640" y="640" fill="#fff7ef" font-family="Verdana, sans-serif" font-size="24" text-anchor="middle">Using tutorials is fine, but you still need to understand and justify your own work.</text>
+</svg>

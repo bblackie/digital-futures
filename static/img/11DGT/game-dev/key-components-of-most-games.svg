@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Key Components of Most Games</title>
+  <desc id="desc">A layered blueprint of core game building blocks.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0b2f3a"/>
+      <stop offset="100%" stop-color="#114b5f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <text x="640" y="100" fill="#ecf8fb" font-family="Verdana, sans-serif" font-size="44" text-anchor="middle">Key Components of Most Games</text>
+  <rect x="280" y="180" width="720" height="420" rx="26" fill="#1a6f86" opacity="0.95"/>
+  <rect x="330" y="230" width="620" height="70" rx="14" fill="#ffd166"/>
+  <rect x="330" y="320" width="620" height="70" rx="14" fill="#06d6a0"/>
+  <rect x="330" y="410" width="620" height="70" rx="14" fill="#118ab2"/>
+  <rect x="330" y="500" width="620" height="70" rx="14" fill="#ef476f"/>
+  <text x="640" y="275" fill="#293241" font-family="Verdana, sans-serif" font-size="29" text-anchor="middle">Controllable Player or Object</text>
+  <text x="640" y="365" fill="#073b2b" font-family="Verdana, sans-serif" font-size="29" text-anchor="middle">Core Mechanics</text>
+  <text x="640" y="455" fill="#e7f5ff" font-family="Verdana, sans-serif" font-size="29" text-anchor="middle">Game State</text>
+  <text x="640" y="545" fill="#fff0f3" font-family="Verdana, sans-serif" font-size="29" text-anchor="middle">Ending or Reset Condition</text>
+</svg>

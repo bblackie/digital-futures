@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Explaining Your Work</title>
+  <desc id="desc">An explanation board connecting scene structure, script purpose, and design justification.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#14202e"/>
+      <stop offset="100%" stop-color="#31546d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <text x="640" y="96" fill="#eef7fb" font-family="Verdana, sans-serif" font-size="44" text-anchor="middle">Explaining Your Work</text>
+  <rect x="170" y="180" width="300" height="300" rx="26" fill="#ffd166"/>
+  <rect x="490" y="180" width="300" height="300" rx="26" fill="#72efdd"/>
+  <rect x="810" y="180" width="300" height="300" rx="26" fill="#ff8fab"/>
+  <text x="320" y="300" fill="#3a2a00" font-family="Verdana, sans-serif" font-size="28" text-anchor="middle">Scene</text>
+  <text x="320" y="340" fill="#3a2a00" font-family="Verdana, sans-serif" font-size="22" text-anchor="middle">How is it</text>
+  <text x="320" y="372" fill="#3a2a00" font-family="Verdana, sans-serif" font-size="22" text-anchor="middle">structured?</text>
+  <text x="640" y="300" fill="#123733" font-family="Verdana, sans-serif" font-size="28" text-anchor="middle">Script</text>
+  <text x="640" y="340" fill="#123733" font-family="Verdana, sans-serif" font-size="22" text-anchor="middle">What does it</text>
+  <text x="640" y="372" fill="#123733" font-family="Verdana, sans-serif" font-size="22" text-anchor="middle">do?</text>
+  <text x="960" y="300" fill="#57192c" font-family="Verdana, sans-serif" font-size="28" text-anchor="middle">Organisation</text>
+  <text x="960" y="340" fill="#57192c" font-family="Verdana, sans-serif" font-size="22" text-anchor="middle">Why is it</text>
+  <text x="960" y="372" fill="#57192c" font-family="Verdana, sans-serif" font-size="22" text-anchor="middle">set up this way?</text>
+  <text x="640" y="620" fill="#eef7fb" font-family="Verdana, sans-serif" font-size="24" text-anchor="middle">Clear structure makes it easier to explain technical decisions during assessment.</text>
+</svg>

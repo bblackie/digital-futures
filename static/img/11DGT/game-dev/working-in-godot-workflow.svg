@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Working in Godot</title>
+  <desc id="desc">A repeating workflow of design, build, test, and fix.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2e1420"/>
+      <stop offset="100%" stop-color="#6d2745"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <text x="640" y="98" fill="#fff1f6" font-family="Verdana, sans-serif" font-size="44" text-anchor="middle">Working in Godot</text>
+  <circle cx="640" cy="390" r="210" fill="none" stroke="#fff1f6" stroke-width="12" stroke-dasharray="18 16"/>
+  <polygon points="833,298 910,350 829,378" fill="#fff1f6"/>
+  <polygon points="655,594 718,655 628,665" fill="#fff1f6"/>
+  <polygon points="360,425 286,401 346,330" fill="#fff1f6"/>
+  <circle cx="640" cy="185" r="74" fill="#ffd166"/>
+  <circle cx="865" cy="390" r="74" fill="#72efdd"/>
+  <circle cx="640" cy="595" r="74" fill="#9ccc65"/>
+  <circle cx="415" cy="390" r="74" fill="#ff8fab"/>
+  <text x="640" y="194" fill="#403000" font-family="Verdana, sans-serif" font-size="24" text-anchor="middle">Design</text>
+  <text x="865" y="399" fill="#123733" font-family="Verdana, sans-serif" font-size="24" text-anchor="middle">Build</text>
+  <text x="640" y="604" fill="#2d401d" font-family="Verdana, sans-serif" font-size="24" text-anchor="middle">Test</text>
+  <text x="415" y="399" fill="#57192c" font-family="Verdana, sans-serif" font-size="24" text-anchor="middle">Fix</text>
+  <text x="640" y="675" fill="#fff1f6" font-family="Verdana, sans-serif" font-size="24" text-anchor="middle">Build a little, test often, and keep evidence of your changes as you go.</text>
+</svg>
