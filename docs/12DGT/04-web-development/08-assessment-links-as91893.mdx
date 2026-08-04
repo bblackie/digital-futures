@@ -1,0 +1,162 @@
+---
+title: What You're Being Marked On — AS91893
+tags: [web-development, ncea, assessment, as91893, digital-media, 12dgt, student-notes]
+created: 2026-08-04
+---
+
+# What You're Being Marked On — AS91893
+
+Your website is assessed against **AS91893 — Use advanced techniques to develop a digital media outcome.**
+
+- NCEA **Level 2**
+- **4 credits**
+- **Internal** — marked in school, not in an exam
+
+This note tells you what the marker is looking for, so you can put your effort in the right places.
+
+Read it **before** you start building, not after.
+
+## Key words
+
+| Word | What it means |
+|---|---|
+| **Standard** | The official document listing what you must do to pass. |
+| **Achieved / Merit / Excellence** | The three grade levels. |
+| **Evidence** | The proof you did something. If it isn't recorded, it doesn't count. |
+| **End-users** | The people your site is actually for. |
+| **Implications** | The wider effects of your choices — on people, privacy, the law. |
+| **Iteration** | Build, test, improve, repeat — and show that you did. |
+| **Conventions** | The normal, expected ways of doing things on the web. |
+
+## The most important thing on this page
+
+**AS91893 is a *digital media* standard.**
+
+That means it marks the part users see and interact with: **layout, styling, media, accessibility, usability, and testing.**
+
+It does **not** mark your Python code. Flask routes and SQLite queries are *programming*, and programming has its own separate standard (AS91896).
+
+> **If you spend three weeks building a clever database and one afternoon on the website, you will get a low grade for a lot of work.**
+
+The database is plumbing. It makes the site function, but it isn't what's being assessed here. Put your effort into the website itself.
+
+If you want your programming work assessed, we can look at doing that under the programming standard — but it needs its own separate evidence. The same work can't count twice.
+
+## What you have to do — Achieved
+
+| What the standard asks | What that means for you |
+|---|---|
+| **Use appropriate tools and techniques for the purpose and end-users** | Choose HTML, CSS and JS deliberately and be able to say why. Make it work on the devices your users actually have. (Notes 02–04) |
+| **Use relevant conventions for the media type** | Do web things the normal web way: semantic HTML, navigation that's the same on every page, responsive layout, accessibility, tidy `static/` folder. (Notes 01–05) |
+| **Apply data integrity and testing procedures** | Test it and **write down what you tested and what happened**. Run your HTML and CSS through the W3C validators. Check your forms. Check your links. |
+| **Explain relevant implications** | Write about accessibility, privacy, copyright/licensing and usability — for **your** site specifically. |
+| **Use advanced techniques** | See the list further down. You must clear this bar even for Achieved. |
+
+## Getting Merit
+
+Merit is Achieved, plus **you used it to make the outcome better**.
+
+| Merit criterion | What it looks like |
+|---|---|
+| Testing information used to improve quality | You found problems in testing and **fixed them** — and your log shows the before and after. |
+| Conventions applied to improve quality | You didn't just tick "has alt text". You made real accessibility and responsive choices that improved the site. |
+| Implications addressed | You didn't just *describe* accessibility — you actually *made it accessible*. You didn't just mention licensing — you actually licensed your images properly. |
+
+The pattern: **Achieved describes, Merit acts.**
+
+## Getting Excellence
+
+Excellence is Merit, plus two things:
+
+| Excellence criterion | What it looks like |
+|---|---|
+| **Iterative improvement throughout** | Documented cycles of build → test → improve, across the whole project. Not one round of fixes at the end. |
+| **Efficient tools and techniques in production** | You worked smart, not just hard. See the table below. |
+
+### The "efficient techniques" the standard actually names
+
+This is your clearest route to Excellence, because the standard lists these by name and this unit teaches most of them.
+
+| Technique | How you show it |
+|---|---|
+| Using stylesheets | An external CSS file. CSS custom properties (variables) so your colours and spacing are defined once. |
+| Templates / master pages | **Jinja2 template inheritance** — one `base.html` with `{% block %}` regions that your other pages extend. This is a direct match. |
+| Reusing objects and styles | Reusable classes like `.card` and `.btn`. Jinja2 includes for repeated bits. |
+| Commenting | Comments in your HTML, CSS and JS explaining *why*, not *what*. |
+| Character formatting controls | Deliberate typography — a consistent type scale, weights, line spacing. |
+| HTML/CSS validation | Run pages through the [W3C HTML validator](https://validator.w3.org/) and [CSS validator](https://jigsaw.w3.org/css-validator/), and fix what it finds. Screenshot the clean result. |
+| Optimising media | Compress your images. Use sensible formats (WebP). Don't ship a 4MB photo as a thumbnail. |
+| Managing assets | An organised `static/` folder — `static/css/`, `static/img/`, `static/js/`. Not everything dumped in one pile. |
+
+Tick as many of these as you can. Each one is cheap to do and each one is evidence.
+
+## "Advanced techniques" — the bar you must clear
+
+The standard requires **advanced** techniques even for Achieved. The easiest ones to evidence in this project:
+
+- **Using a third-party library.** Pico.css, Bootstrap, or htmx (Note 06). This is the single easiest one to demonstrate cleanly — you're already doing it.
+- **Creating or customising scripts.** Your own CSS and JavaScript (Note 07), or customising a framework's variables.
+- **Combining steps to enhance elements.** Layered responsive layout techniques — Grid plus container queries plus `clamp()` working together.
+- **Composite effects.** Transitions, transforms, gradients and shadows combined deliberately.
+
+## The two things students most often lose marks on
+
+These aren't about your website's quality. They're about **proof**. Good websites get low grades when this is missing.
+
+### 1. You need a testing log
+
+"Testing procedures" (Achieved) and "iterative improvement" (Excellence) both need a **visible record**. If you tested but didn't write it down, the marker cannot see it, and it doesn't count.
+
+Keep a simple table from day one:
+
+| Date | What I tested | How | Result | What I changed |
+|---|---|---|---|---|
+| 12 Aug | Nav bar on phone | Chrome DevTools, 375px | Links overlapped the logo | Added `flex-wrap: wrap` to `.site-nav` |
+| 12 Aug | HTML validation, index.html | validator.w3.org | 3 errors — unclosed `<div>` | Fixed all three, re-ran, clean |
+
+Five minutes at the end of each lesson. That's it. That table is worth real marks.
+
+### 2. You need to write about implications
+
+"Explaining relevant implications" is an Achieved requirement, and it needs actual written work. It won't happen by accident.
+
+Pick three or four that genuinely apply to your site:
+
+| Implication | Questions to answer for **your** site |
+|---|---|
+| **Accessibility** | Can someone using a screen reader use it? Is the colour contrast good enough? Can you navigate it with only a keyboard? |
+| **Privacy** | What personal data do you collect? Where does it go? Do users know? Do you actually need it? |
+| **Copyright / licensing** | Where did every image and font come from? Are you legally allowed to use them? Have you credited them? |
+| **Usability** | Can your intended users find what they need? Have you tested that with an actual person? |
+
+For each one: **explain it** (what it is, why it matters here), then **show what you did about it** (that's the Merit part).
+
+## Your turn
+
+Set these up in your project folder **now**, before you start building:
+
+1. A `testing-log.md` file with the table headings above.
+2. An `implications.md` file with a heading for each implication you'll cover.
+3. A `dev-journal.md` — or use your Git commit history — recording what you changed and why.
+
+They take ten minutes to create and they're the difference between a good website and a good grade.
+
+## Check yourself
+
+- [ ] I know AS91893 marks the **website**, not the Python.
+- [ ] I know I have to clear the "advanced techniques" bar, and I know which one I'm using.
+- [ ] I've started a testing log and I'm actually filling it in.
+- [ ] I've picked my implications and started writing about them.
+- [ ] I'm keeping a record of changes (journal or commits).
+- [ ] I know the difference between Achieved (describe) and Merit (act on it).
+- [ ] I've validated my HTML and CSS at least once.
+- [ ] My `static/` folder is organised, not a dumping ground.
+
+## The official documents
+
+You don't need to read these to pass, but they're the actual source if you want to check something.
+
+- [AS91893 — the standard itself (NZQA PDF)](https://www.nzqa.govt.nz/nqfdocs/ncea-resource/achievements/2019/as91893.pdf)
+- [Annotated exemplars](https://www2.nzqa.govt.nz/ncea/subjects/past-exams-and-exemplars/digital-technologies/as-91893-annotated-exemplars/) — real student work with the marker's comments. **Genuinely worth twenty minutes.** Seeing what an Excellence submission looks like is more useful than reading the criteria.
+- [Level 2 Digital Technologies resources (TKI)](https://ncea.tki.org.nz/Resources-for-internally-assessed-achievement-standards/Technology/Digital-technologies/Level-2-Digital-technologies)
+- [W3C HTML validator](https://validator.w3.org/) and [CSS validator](https://jigsaw.w3.org/css-validator/) — bookmark both.

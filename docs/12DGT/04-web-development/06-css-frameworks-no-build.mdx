@@ -1,0 +1,143 @@
+---
+title: CSS Frameworks — Choosing One (or None)
+tags: [web-development, css, frameworks, bootstrap, tailwind, pico-css, w3css, htmx, flask, 12dgt, student-notes]
+created: 2026-08-04
+---
+
+# CSS Frameworks — Choosing One (or None)
+
+This note ends in a **decision**. As a class, we're going to pick how our project handles CSS, and we're going to be able to justify why.
+
+The question is **"which one fits our project?"** — not "which one is newest?" or "which one is most popular?"
+
+## Key words
+
+| Word | What it means |
+|---|---|
+| **Framework** | Someone else's CSS that you use instead of writing your own. |
+| **CDN** | A link to a file hosted on the internet. One `<link>` tag, done. |
+| **Build step** | Software you run to turn your source files into what the browser gets. |
+| **Classless** | A framework that styles plain HTML tags directly, with no classes needed. |
+| **Utility classes** | Tiny single-purpose classes like `p-4` or `text-center`. |
+| **htmx** | A small script that lets HTML attributes fetch things from the server. |
+
+## The constraint that decides it
+
+Our project is **Flask, server-rendered, with no build step.**
+
+So any framework we choose has to work as either:
+
+- a plain `.css` file we save in our project, or
+- a single CDN `<link>` in the `<head>`
+
+The moment a framework needs `npm install` and a compile stage, it brings a whole toolchain. That toolchain eats lesson time and produces "it works on my machine but not yours" problems.
+
+That single constraint rules out more options than any feature comparison would.
+
+## The options, honestly
+
+| Approach | Needs a build? | What's good about it | What's awkward for us |
+|---|---|---|---|
+| **No framework** (write your own CSS) | No | Total control. You learn the real skill. Nothing to unlearn later. | You write more yourself. |
+| **W3.CSS** | No (CDN) | Tiny, simple, you already know it. | Small community — fewer answers when you search for help. |
+| **Pico.css** | No (CDN) | Semantic HTML looks good instantly. Almost no classes. | Less control if you want a very custom design. |
+| **Bootstrap** | No (CDN) | Enormous community. Every pattern already exists. Employers use it. | Lots of classes on every element. Sites can look identical. |
+| **Tailwind** | Yes, normally | Industry leader right now. Very flexible. | The build step fights our constraint. |
+
+## About Tailwind specifically
+
+Tailwind is genuinely the most popular CSS framework in industry, so it's fair to ask for it.
+
+Here's the straight answer: **its normal workflow needs a build step.** In a no-build Flask project that's friction, not modernity. There is a CDN version, but its own documentation says it's not for production, and using it means you lose most of what makes Tailwind good.
+
+For *this* project it's the wrong tool. "It's popular" isn't a good enough reason to take on a whole toolchain.
+
+If you want to learn Tailwind, do it — it's a good thing to know. Just not inside this project.
+
+## About W3.CSS specifically
+
+You've used W3.CSS. It is **not** broken or deprecated, and "it's old school" is a lazy argument.
+
+It's a small, CDN-only framework that genuinely suits this stack.
+
+Its real weakness is **community size**. When you hit a problem and search for help, there is far less material for W3.CSS than for Bootstrap. That — not age — is the honest reason to consider something else.
+
+## Worth a look: Pico.css
+
+If you want something that feels modern and keeps the no-build simplicity, [Pico.css](https://picocss.com/) is worth serious consideration.
+
+It's **classless**: it styles semantic HTML directly. A plain `<form>`, `<table>`, `<nav>` and `<button>` look good with almost no classes at all.
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+```
+
+Add that one line to `base.html` and all the semantic HTML from Notes 01 and 05 is already styled.
+
+**Why it fits this project well:** your Jinja2 templates stay clean semantic HTML instead of filling up with utility classes. That means the templates stay readable, which matters when you're the one maintaining them.
+
+## Interactivity without a JavaScript framework: htmx
+
+You might assume that making a page feel dynamic — loading more results, submitting without a reload — needs React or similar. It doesn't.
+
+[htmx](https://htmx.org/) is a small script you add with one CDN link. It lets **HTML attributes** fetch things from the server:
+
+```html
+<button hx-get="/more" hx-target="#list" hx-swap="beforeend">Load more</button>
+```
+
+Reading that button:
+
+| Attribute | Means |
+|---|---|
+| `hx-get="/more"` | Ask the Flask route `/more` for some HTML |
+| `hx-target="#list"` | Put the result into the element with `id="list"` |
+| `hx-swap="beforeend"` | Add it to the end, rather than replacing what's there |
+
+No page reload. No JSON to unpack. No build step. Flask just returns a chunk of HTML and htmx drops it in.
+
+For our project, keeping the amount of JavaScript small is a **good outcome**, not a limitation.
+
+## The decision we're making
+
+You need to justify a choice **against our constraint**, not against fashion.
+
+Reasonable outcomes:
+
+- **Pico.css or plain modern CSS** for styling, plus **htmx** if we want interactivity. Simple, clean, fits the stack.
+- **Bootstrap**, if we value the huge community and the ready-made patterns more than we mind the class soup.
+- **Tailwind** is the one to argue *against* for this project — with reasons, not just "no".
+
+Whatever we choose, be able to finish this sentence:
+
+> "We chose ______ because our project is ______, and this option ______."
+
+That sentence is also assessment evidence. Note 08 explains why.
+
+## Your turn
+
+Before the discussion lesson, write down:
+
+1. Which option you'd pick.
+2. Two reasons it fits a no-build Flask project.
+3. One thing you'd be giving up by choosing it.
+
+Point 3 is the one that separates a real argument from a preference. Every choice costs something.
+
+## Check yourself
+
+- [ ] I can explain what "no build step" means and why it constrains our choice.
+- [ ] I can name the main strength and main weakness of each option.
+- [ ] I can explain why Tailwind is a poor fit *here*, without saying it's a bad framework.
+- [ ] I know what "classless" means and why it suits Jinja2 templates.
+- [ ] I can read an htmx attribute and say what it does.
+- [ ] I have a justified preference, including what it costs.
+
+## Where to get help
+
+- [Pico.css](https://picocss.com/) — docs and live examples.
+- [htmx](https://htmx.org/) and its [examples page](https://htmx.org/examples/) — copy-paste patterns.
+- [Bootstrap](https://getbootstrap.com/) — if we choose it.
+- [W3.CSS reference](https://www.w3schools.com/w3css/) — what you already know.
+- Data: [CSS framework usage statistics](https://w3techs.com/technologies/overview/css_framework) — actual numbers for the discussion.
+- Video: [Kevin Powell's channel](https://www.youtube.com/@KevinPowell) — search "framework" for "do you even need one?"

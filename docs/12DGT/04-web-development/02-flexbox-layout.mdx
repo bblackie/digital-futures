@@ -1,0 +1,205 @@
+---
+title: Flexbox Layout
+tags: [web-development, css, flexbox, layout, 12dgt, student-notes]
+created: 2026-08-04
+---
+
+# Flexbox Layout
+
+Flexbox arranges things **in one direction** — a row, or a column. That makes it perfect for:
+
+- navigation bars
+- rows of buttons
+- an icon sitting next to a label
+- the inside of a card
+
+It is **not** the tool for laying out a whole page. That's Grid's job (Note 03).
+
+The one-line version to remember:
+
+> **Flexbox = one direction at a time. Grid = rows and columns together.**
+
+"Which one do I use?" is the question people get stuck on. That sentence answers it most of the time.
+
+## Key words
+
+| Word | What it means |
+|---|---|
+| **Flex container** | The parent element you put `display: flex` on. |
+| **Flex item** | Any direct child of a flex container. It gets arranged automatically. |
+| **Main axis** | The direction items flow. Left-to-right by default. |
+| **Cross axis** | The other direction, at 90° to the main axis. |
+| **gap** | Space between items. |
+| **wrap** | Letting items drop onto a new line instead of squashing. |
+
+## Copy this first
+
+Paste this into an HTML file and a stylesheet. Change the values and watch what happens — that's how you learn this.
+
+```html
+<div class="row">
+  <div class="item">One</div>
+  <div class="item">Two</div>
+  <div class="item">Three</div>
+</div>
+```
+
+```css
+.row {
+  display: flex;                  /* turn on flexbox */
+  justify-content: space-between; /* spread along the main axis */
+  align-items: center;            /* line up on the cross axis */
+  gap: 1rem;                      /* space between items */
+}
+
+.item {
+  padding: 1rem;
+  background: lightblue;
+}
+```
+
+## Part 1 — The mental model: two axes
+
+![Flexbox main axis and cross axis](assets/flexbox-axes.svg)
+
+When you write `display: flex` on a container, its direct children line up along the **main axis**. The **cross axis** runs across it at 90°.
+
+Three properties control almost everything:
+
+| Property | What it controls |
+|---|---|
+| `justify-content` | Position along the **main axis** (the direction items flow). |
+| `align-items` | Position along the **cross axis** (across the flow). |
+| `flex-direction` | Which axis is the main one: `row` (default, sideways) or `column` (down). |
+
+### The thing that trips everyone up once
+
+If you change `flex-direction` to `column`, the main axis becomes vertical. So `justify-content` now controls **up and down**, and `align-items` controls **left and right**.
+
+They swap. Everyone gets caught by this exactly once. Now you're warned.
+
+### Useful values
+
+For `justify-content`:
+
+- `flex-start` — all bunched at the start (default)
+- `center` — bunched in the middle
+- `space-between` — first at the start, last at the end, even gaps in between
+- `space-around` — even space around each item
+
+For `align-items`:
+
+- `stretch` — items fill the container's height (default)
+- `center` — vertically centred
+- `flex-start` / `flex-end` — top or bottom
+
+## Part 2 — Use `gap`, not margins
+
+Old tutorials tell you to put `margin-right` on flex items to space them out. Don't.
+
+```css
+.row {
+  display: flex;
+  gap: 1rem;   /* this is the modern way */
+}
+```
+
+`gap` puts space **between** items only — not before the first one or after the last one. Margins leave stray space at the ends that you then have to hack out. `gap` just works.
+
+## Part 3 — Responsive comes free, right here
+
+This is the important bit, and it starts now rather than in Note 04.
+
+Add two lines and your layout adapts to screen size **with no extra code**:
+
+```css
+.card-row {
+  display: flex;
+  flex-wrap: wrap;    /* items drop to a new line instead of overflowing */
+  gap: 1rem;
+}
+
+.card {
+  flex: 1 1 250px;    /* grow, shrink, aim for 250px */
+}
+```
+
+Read `flex: 1 1 250px` as three instructions:
+
+| Value | Means |
+|---|---|
+| `1` (grow) | Yes, get bigger to fill spare space. |
+| `1` (shrink) | Yes, get smaller if you have to. |
+| `250px` (basis) | Aim for 250px wide. |
+
+Together: on a wide screen you get several columns side by side. On a phone they stack into one column. **You did not write a single media query.** The layout worked it out.
+
+This is what "responsive" actually means now. It comes from how you build the layout, not from something you bolt on later.
+
+## Part 4 — Build a navigation bar
+
+Don't learn Flexbox in the abstract. Build the nav bar — that *is* the lesson.
+
+```html
+<nav class="site-nav">
+  <a class="logo" href="/">MySite</a>
+  <ul class="links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+</nav>
+```
+
+```css
+.site-nav {
+  display: flex;
+  justify-content: space-between;  /* logo left, links right */
+  align-items: center;             /* everything vertically centred */
+  padding: 1rem;
+}
+
+.links {
+  display: flex;      /* the links are a flex row too */
+  gap: 1.5rem;
+  list-style: none;   /* remove the bullet points */
+  margin: 0;
+  padding: 0;
+}
+```
+
+Notice there are **two** flex containers here. `.site-nav` spreads the logo and the link group apart. `.links` lines up the individual links. Nesting flex containers like this is completely normal.
+
+Keep this code. It becomes the navigation in your Flask project's `base.html` file.
+
+## Warm-up game
+
+[**Flexbox Froggy**](https://flexboxfroggy.com/) — 24 short levels. You move frogs onto lily pads using `justify-content`, `align-items` and `flex-direction`.
+
+Play the first ten minutes of the Flexbox lesson. It genuinely helps.
+
+## Your turn
+
+1. Build the nav bar above. Get it working.
+2. Change `justify-content` to `center`, then `flex-start`, then `space-around`. Look at each one.
+3. Change `flex-direction` to `column`. Watch `justify-content` and `align-items` swap jobs.
+4. Build a row of three cards using `flex-wrap: wrap` and `flex: 1 1 250px`. Narrow your browser window until they stack.
+
+## Check yourself
+
+- [ ] I can say in one sentence when to use Flexbox instead of Grid.
+- [ ] I know which axis `justify-content` works on, and which one `align-items` works on.
+- [ ] I know what happens to those two when I set `flex-direction: column`.
+- [ ] I use `gap` for spacing instead of margins.
+- [ ] I can explain what `flex: 1 1 250px` means, in plain words.
+- [ ] I have a working nav bar I could paste into my project.
+
+## Where to get help
+
+- Video: [Kevin Powell — Learn flexbox the easy way](https://www.youtube.com/watch?v=u044iM9xsWU) (34 min). If you watch one thing, watch this.
+- Video: [Kevin Powell — Flexbox vs. Grid: which to use](https://www.youtube.com/watch?v=ESAXStllfcw).
+- Video: [Kevin Powell — Flexbox design patterns](https://www.youtube.com/watch?v=vQAvjof1oe4) — real layouts you can copy.
+- Interactive: [Josh Comeau — Interactive Guide to Flexbox](https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/) — free, and the clearest explainer online.
+- Cheat sheet: [CSS-Tricks — A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) — keep this tab open while you work.
+- Reference: [MDN — Flexbox basics](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox).
+- Game: [Flexbox Froggy](https://flexboxfroggy.com/).

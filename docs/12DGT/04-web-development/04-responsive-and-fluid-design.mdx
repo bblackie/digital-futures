@@ -1,0 +1,191 @@
+---
+title: Responsive and Fluid Design
+tags: [web-development, css, responsive-design, media-queries, container-queries, 12dgt, student-notes]
+created: 2026-08-04
+---
+
+# Responsive and Fluid Design
+
+Do Notes 02 and 03 first.
+
+Here's the good news: **you have already built responsive pages.** `flex-wrap`, `flex: 1 1 250px` and `auto-fit` / `minmax()` all adapt to screen width on their own. That's most of the job done.
+
+This note covers the part that is **not** automatic — the changes you decide to make at specific screen sizes.
+
+Keep that split clear in your head:
+
+| Type | What it is | Where it came from |
+|---|---|---|
+| **Automatic** | The layout reflows because of how you built it | Notes 02 and 03 |
+| **Deliberate** | You choose a size and say "change to this" | This note |
+
+Do **not** go back to building a fixed layout and then "adding responsiveness". That's the old, painful way.
+
+## Key words
+
+| Word | What it means |
+|---|---|
+| **Viewport** | The visible area of the browser window. |
+| **Breakpoint** | A screen width where you tell the layout to change. |
+| **Media query** | CSS that only applies at certain screen sizes. |
+| **Container query** | CSS that applies based on how wide a *component's* box is, not the screen. |
+| **Mobile-first** | Write the phone version as the default, then add rules for bigger screens. |
+| **`rem`** | A unit relative to the root font size. Usually 1rem = 16px. |
+| **`vw`** | 1% of the viewport width. `100vw` is the whole screen width. |
+
+## Copy this first — the line without which nothing works
+
+Every page needs this inside its `<head>`:
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
+
+**What it does:** tells the phone browser "use the real device width". Without it, phones pretend to be about 980px wide and zoom the whole page out, so your careful mobile layout is never used.
+
+This is the number one reason people say "my responsive CSS isn't working". Put it in your Flask `base.html` once and it's done for every page.
+
+## Part 1 — Fluid units: scale without breakpoints
+
+Before you reach for a media query, try a value that scales by itself.
+
+### Use `rem` instead of `px`
+
+Use `rem` for spacing and text sizes. It's relative to the browser's base font size, so if a user has set larger text for accessibility reasons, your layout respects it. Fixed `px` ignores them.
+
+```css
+padding: 1rem;      /* good */
+padding: 16px;      /* rigid */
+```
+
+### `clamp()` — a value with a floor and a ceiling
+
+```css
+h1 {
+  font-size: clamp(1.5rem, 4vw + 1rem, 3rem);
+}
+```
+
+Three parts, always in this order:
+
+| Part | Value here | Means |
+|---|---|---|
+| minimum | `1.5rem` | Never smaller than this |
+| preferred | `4vw + 1rem` | Try to be this — it scales with screen width |
+| maximum | `3rem` | Never bigger than this |
+
+So that heading grows smoothly as the screen widens, but never gets silly-small on a phone or silly-huge on a big monitor. No breakpoints. No sudden jumps.
+
+`clamp()` replaces a lot of what used to need media queries. Try it before writing one.
+
+## Part 2 — Media queries: your deliberate changes
+
+Use a media query when the layout genuinely needs to **change shape**, not just scale.
+
+### Always work mobile-first
+
+Write the small-screen version as your normal CSS. Then **add** rules for bigger screens using `min-width`.
+
+```css
+/* Default — this is the phone version */
+.layout {
+  display: grid;
+  gap: 1rem;
+}
+
+/* From 40em (about 640px) and up — two columns */
+@media (min-width: 40em) {
+  .layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+```
+
+**Why mobile-first?** Because the phone layout is the simplest one. Starting there means you *add* complexity as the screen grows. The other way round, you spend your time *undoing* desktop rules for small screens, which means more CSS and more bugs.
+
+Use `em` for the breakpoint number rather than `px`, so the breakpoint responds to the user's font size too.
+
+### Common breakpoints
+
+Don't target specific phone models — they change every year. These are rough sizes that work:
+
+| Breakpoint | Roughly |
+|---|---|
+| `40em` | Large phone / small tablet |
+| `48em` | Tablet |
+| `64em` | Laptop |
+
+Better still: narrow your own browser window until the layout looks bad, and put the breakpoint **there**. Let the design tell you where it breaks.
+
+## Part 3 — Container queries: the more precise tool
+
+A media query asks: *how wide is the screen?*
+
+But think about a card. The card doesn't care how wide the screen is. It cares how much room **it** has. The same card in a narrow sidebar and in a wide main column has completely different needs, on the exact same screen.
+
+Container queries fix that:
+
+```css
+.card-list {
+  container-type: inline-size;   /* "measure this box" */
+}
+
+@container (min-width: 400px) {
+  .card {
+    display: flex;   /* side-by-side, but only when the card has room */
+  }
+}
+```
+
+Two steps every time:
+
+1. Mark the parent as a container with `container-type: inline-size`.
+2. Write `@container` rules that respond to *that box's* width.
+
+This works in all current browsers. Learn media queries first, then use container queries when a component needs to work in more than one place.
+
+## Your turn
+
+Take the card gallery from Note 03. It already reflows on its own thanks to `auto-fit`.
+
+Now add **one** deliberate change with a media query: below `30em`, hide a secondary detail on each card and make the tap targets bigger.
+
+```css
+/* default: phone */
+.card .extra-detail { display: none; }
+.card a { padding: 0.75rem; }   /* big enough to tap */
+
+@media (min-width: 30em) {
+  .card .extra-detail { display: block; }
+  .card a { padding: 0.25rem; }
+}
+```
+
+The point of this exercise: the columns reflowing is **automatic**. Hiding the detail is **deliberate**. Two different mechanisms, doing two different jobs.
+
+## How to test it properly
+
+1. Open your page in Chrome.
+2. Press **F12** to open DevTools.
+3. Click the phone/tablet icon (top-left of the DevTools panel), or press **Ctrl+Shift+M**.
+4. Pick a device from the dropdown, or drag the edge of the page to any width.
+5. Write down what breaks and at what width. **Keep that list** — Note 08 explains why your testing record is worth marks.
+
+## Check yourself
+
+- [ ] I have the viewport meta tag in every page, and I know what it does.
+- [ ] I can explain the difference between automatic and deliberate responsiveness.
+- [ ] I use `rem` for spacing and text instead of `px`.
+- [ ] I can read a `clamp()` and say what the three values do.
+- [ ] I write my default CSS for phones, then add `min-width` rules.
+- [ ] I can explain why mobile-first means less CSS.
+- [ ] I know what a container query does differently from a media query.
+- [ ] I have tested my page in DevTools device mode and written down what I found.
+
+## Where to get help
+
+- Course: [web.dev — Learn Responsive Design](https://web.dev/learn/design) — free, modern, from the Chrome team.
+- Reference: [MDN — Responsive design](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design).
+- Reference: [MDN — Using container queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries).
+- Reference: [MDN — clamp()](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp).
+- Video: [Kevin Powell's playlists](https://www.youtube.com/@KevinPowell/playlists) — search his channel for "responsive" and "container queries".

@@ -1,0 +1,306 @@
+---
+title: Forms and Tables
+tags: [web-development, html, css, forms, tables, accessibility, flask, 12dgt, student-notes]
+created: 2026-08-04
+---
+
+# Forms and Tables
+
+You've been building components all along — the nav bar in Note 02, the card gallery in Note 03.
+
+This note goes deep on the two your project cannot work without:
+
+- **Forms** — how data gets **into** your database
+- **Tables** — how data comes **out** and gets displayed
+
+Both are easy to do badly. Doing them properly is worth marks and makes the Flask work much easier later.
+
+## Key words
+
+| Word | What it means |
+|---|---|
+| **Form** | The set of boxes and buttons a user fills in. |
+| **Input** | One box in a form. |
+| **Label** | The text that says what an input is for, linked to that input. |
+| **`name` attribute** | The key Flask uses to read the value out of the form. |
+| **POST** | The method a form uses to send data to the server. |
+| **Validation** | Checking that the data is acceptable. |
+| **Jinja2** | The template language Flask uses to put data into HTML. |
+| **SQL injection** | An attack where someone types SQL into a form field to break your database. |
+
+## Part 1 — Forms
+
+A form is how your app receives input. In Flask, the form sends its data to a route, which reads the values and saves them into the database.
+
+### Copy this first
+
+```html
+<form action="/submit" method="post">
+
+  <label for="username">Username</label>
+  <input type="text" id="username" name="username" required>
+
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" required>
+
+  <button type="submit">Save</button>
+
+</form>
+```
+
+```css
+form {
+  display: flex;
+  flex-direction: column;   /* stack everything downwards */
+  gap: 0.75rem;
+  max-width: 24rem;         /* don't let it stretch across a wide screen */
+}
+```
+
+That's a complete, working, accessible form. Notice the CSS is just Flexbox in column mode — Note 02, reused.
+
+### Labels are not optional
+
+Every input needs a `<label>` connected to it. The connection is made by matching the label's `for` to the input's `id`:
+
+```html
+<label for="username">Username</label>
+<input type="text" id="username" name="username">
+         <!-- these two must match -->
+```
+
+Two reasons this matters:
+
+1. **Accessibility.** A screen reader announces the label when the user reaches the input. Without it, the user hears "edit box" and has no idea what to type.
+2. **It makes the label clickable.** Tapping the word "Username" puts the cursor in the box. On a phone, that's a much bigger target.
+
+### `id` vs `name` — the one people always get wrong
+
+These look similar and do completely different jobs.
+
+| Attribute | Used by | Job |
+|---|---|---|
+| `id` | The `<label>` and CSS/JS | Identifies the element on the page |
+| `name` | **Flask** | The key the value is sent under |
+
+In your Flask route you'll write:
+
+```python
+username = request.form["username"]
+```
+
+That string `"username"` matches the **`name`** attribute. Not the `id`.
+
+If you get this wrong, your form looks fine and submits fine, and Flask gets nothing. Check `name` first when a form "isn't working".
+
+### Use the right input type
+
+```html
+<input type="text">      <!-- anything -->
+<input type="email">     <!-- checks for an @ -->
+<input type="number">    <!-- numbers only -->
+<input type="date">      <!-- shows a date picker -->
+<input type="password">  <!-- hides the characters -->
+```
+
+You get two things for free: basic checking before the form submits, and a better keyboard on phones (`type="email"` shows the @ key; `type="number"` shows a number pad).
+
+### The security bit — read this twice
+
+**Everything the browser checks can be bypassed.**
+
+`required`, `type="email"`, and any JavaScript validation are conveniences for honest users. Someone can turn them all off in DevTools in about five seconds, or send the request without a browser at all.
+
+> **Your Flask route must check every value again, on the server.**
+
+And the related rule:
+
+> **Never build an SQL query by gluing form values into a string.**
+
+If you write something like `"SELECT * FROM users WHERE name = '" + name + "'"`, someone can type SQL into your form and run it against your database. That's **SQL injection**, and it's how real databases get wiped or stolen.
+
+Use Flask's parameterised queries — you pass the values separately and the database driver handles them safely. We'll cover this properly when the database work starts, but plant it in your head now.
+
+### Label-beside-input layout
+
+If you want labels next to inputs instead of above them, that's a two-column Grid (Note 03):
+
+```css
+form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.75rem;
+  align-items: center;
+  max-width: 30rem;
+}
+
+form button {
+  grid-column: 2;   /* put the button under the inputs, not the labels */
+}
+```
+
+Either layout is fine. Stacked is usually better on phones.
+
+## Part 2 — Tables
+
+When Flask hands you rows from the database, a `<table>` is the correct way to show them.
+
+**Use real table elements.** Don't build a fake table out of `<div>`s. Screen readers and keyboard users depend on the actual table structure to understand which value belongs to which column.
+
+### Copy this first
+
+```html
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Joined</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sam</td>
+      <td>sam@example.com</td>
+      <td>2026-03-01</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+| Tag | Job |
+|---|---|
+| `<thead>` | The header row group |
+| `<tbody>` | The data rows |
+| `<tr>` | One row |
+| `<th>` | A header cell |
+| `<td>` | A data cell |
+
+### The Jinja2 version
+
+In your Flask project, the rows won't be typed out — they'll be looped:
+
+```html
+<table>
+  <thead>
+    <tr><th>Name</th><th>Email</th><th>Joined</th></tr>
+  </thead>
+  <tbody>
+    {% for user in users %}
+    <tr>
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.joined }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+```
+
+Two bits of Jinja2 syntax:
+
+- `{% ... %}` is **logic** — loops and if-statements. It doesn't appear on the page.
+- `{{ ... }}` is **a value** — it gets replaced by real data.
+
+So `{% for user in users %}` repeats that one `<tr>` once for every record. Ten users, ten rows. You write the row once.
+
+Get comfortable with this pattern now. It's the single most-used thing in the whole Flask project.
+
+### Making tables readable
+
+```css
+table {
+  border-collapse: collapse;   /* single lines, not doubled-up borders */
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+  background: #f6f6f6;   /* zebra stripes — easier to read across */
+}
+```
+
+`nth-child(even)` selects every second row. Striping makes long tables much easier to follow with your eye.
+
+### Tables on phones
+
+Wide tables overflow small screens. The honest fix is to let it scroll sideways:
+
+```html
+<div class="table-wrap">
+  <table>...</table>
+</div>
+```
+
+```css
+.table-wrap {
+  overflow-x: auto;
+}
+```
+
+It's not elegant, but it works, and real production sites do exactly this. Better an honest scrollbar than a table squashed into unreadable mush.
+
+## Part 3 — Everything else is just a box
+
+Buttons, cards, alerts, badges — they're all the same thing:
+
+> A box, with padding, a background colour, and rounded corners. Sometimes with a flex row inside.
+
+That's it. That's the whole secret. It's the box model from Note 01 plus a bit of Flexbox from Note 02.
+
+```css
+.card {
+  padding: 1rem;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+```
+
+Once you see that, components stop being mysterious.
+
+**One habit worth building:** write a small set of classes you reuse (`.card`, `.btn`, `.alert`) rather than styling each thing separately. Fewer styles, consistent look, easier to change.
+
+## Your turn
+
+Build **one HTML page** containing:
+
+1. A complete "add a record" form — at least four inputs, all with labels, all with sensible `type` values, all with `name` attributes.
+2. A "list all records" table — with `<thead>`, `<tbody>`, and three sample rows typed in.
+3. Both styled and readable.
+4. Add the Jinja2 `{% for %}` loop around your table row as a comment or placeholder.
+
+When your Flask routes exist, this page becomes a working template with almost no changes. That's the point.
+
+## Check yourself
+
+- [ ] Every input in my form has a `<label>` with matching `for` and `id`.
+- [ ] I can explain the difference between `id` and `name`, and which one Flask reads.
+- [ ] I've used appropriate `type` values, not `type="text"` for everything.
+- [ ] I can explain why server-side validation is still needed.
+- [ ] I know what SQL injection is and roughly how to avoid it.
+- [ ] My table uses `<thead>`, `<tbody>`, `<th>` and `<td>` correctly.
+- [ ] I can read a Jinja2 `{% for %}` loop and say what it produces.
+- [ ] My table is readable — collapsed borders, padding, zebra stripes.
+- [ ] My table doesn't destroy the page on a phone.
+
+## Where to get help
+
+- Course: [web.dev — Learn Forms](https://web.dev/learn/forms) — the best free forms course there is.
+- Reference: [MDN — Web forms guide](https://developer.mozilla.org/en-US/docs/Learn/Forms).
+- Reference: [MDN — HTML table basics](https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Basics).
+- Reference: [MDN — Styling tables](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Styling_tables).
+- Docs: [Flask — the request object](https://flask.palletsprojects.com/en/stable/quickstart/#the-request-object) — how `request.form` works.
+- Docs: [Jinja2 templates](https://jinja.palletsprojects.com/en/stable/templates/) — the `{% %}` and `{{ }}` syntax.
+- Video: [Kevin Powell's channel](https://www.youtube.com/@KevinPowell) — search "forms" for styling walkthroughs.

@@ -1,0 +1,194 @@
+---
+title: JavaScript Refresh
+tags: [web-development, javascript, dom, events, flask, htmx, 12dgt, student-notes]
+created: 2026-08-04
+---
+
+# JavaScript Refresh
+
+Here's the framing that matters for this project:
+
+> In a server-rendered Flask app, **most of the logic lives in Python, not JavaScript.**
+
+Flask builds the page on the server and sends finished HTML to the browser. So you need much **less** JavaScript than a typical online tutorial suggests. Most of those tutorials are building single-page apps, which is a completely different job.
+
+JavaScript here is for **small improvements**: reacting to a click, showing or hiding something, checking a field before the form submits.
+
+It is not the engine of your app. Python is.
+
+## Key words
+
+| Word | What it means |
+|---|---|
+| **DOM** | The browser's live model of your page, which JavaScript can read and change. |
+| **Select** | Find an element on the page so you can work with it. |
+| **Event** | Something that happens — a click, a keypress, a form submit. |
+| **Event listener** | Code that waits for an event and then runs. |
+| **`querySelector`** | The function that finds an element using a CSS selector. |
+| **`classList`** | The list of classes on an element. You can add, remove or toggle them. |
+
+## Copy this first
+
+A working show/hide button. This is the pattern that covers most of what you'll need.
+
+```html
+<button id="toggle">Show details</button>
+<div id="panel" class="hidden">
+  <p>Here are the details.</p>
+</div>
+
+<script src="script.js"></script>
+```
+
+```css
+.hidden {
+  display: none;
+}
+```
+
+```javascript
+const button = document.querySelector("#toggle");
+const panel = document.querySelector("#panel");
+
+button.addEventListener("click", () => {
+  panel.classList.toggle("hidden");
+});
+```
+
+Put the `<script>` tag just before `</body>` so the elements exist by the time the script runs.
+
+## Part 1 — JavaScript does three things
+
+Almost everything you'll write follows the same three steps:
+
+| Step | What it means | The code |
+|---|---|---|
+| **1. Select** | Grab an element from the page | `document.querySelector("#panel")` |
+| **2. Listen** | Wait for something to happen | `element.addEventListener("click", ...)` |
+| **3. Change** | Do something in response | `panel.classList.toggle("hidden")` |
+
+Select, listen, change. That's the loop.
+
+Two things that make this easier than it looks:
+
+- **`querySelector` uses CSS selectors.** `#id`, `.class`, `nav a` — the exact same syntax you already use in your stylesheet. You've already learned this part.
+- **`classList.toggle` flips a class on and off.** Combine it with a `.hidden { display: none; }` rule and you have working show/hide in one line. You don't need to touch styles from JavaScript at all — let CSS do the styling and let JavaScript just switch classes.
+
+### `classList` methods
+
+```javascript
+panel.classList.add("active");       // put the class on
+panel.classList.remove("active");    // take it off
+panel.classList.toggle("active");    // flip it
+panel.classList.contains("active");  // true or false
+```
+
+## Part 2 — The three events you'll actually use
+
+### `click`
+
+Buttons, toggles, anything the user presses.
+
+```javascript
+button.addEventListener("click", () => {
+  console.log("clicked");
+});
+```
+
+### `input`
+
+Fires every time the user types a character. Good for live counters and live search.
+
+```javascript
+const field = document.querySelector("#message");
+const counter = document.querySelector("#count");
+
+field.addEventListener("input", () => {
+  counter.textContent = field.value.length + " characters";
+});
+```
+
+`.value` is what's currently in the input. `.textContent` is the text inside an element.
+
+### `submit`
+
+Fires when a form is submitted. You can stop it if you want to check something first.
+
+```javascript
+const form = document.querySelector("#my-form");
+const nameField = document.querySelector("#name");
+
+form.addEventListener("submit", (event) => {
+  if (nameField.value.trim() === "") {
+    event.preventDefault();          // stop the form sending
+    alert("Name is required");
+  }
+});
+```
+
+`event.preventDefault()` cancels the normal behaviour — in this case, sending the form to Flask.
+
+`.trim()` removes spaces from the start and end, so someone can't get past the check by typing a single space.
+
+### The security reminder from Note 05
+
+> **Client-side validation is a convenience, not a safeguard.**
+
+Anyone can open DevTools, delete your JavaScript, and submit whatever they like. Your Flask route must check every value again on the server. Every time.
+
+Check in the browser so honest users get quick feedback. Check on the server because that's the check that actually protects you.
+
+## Part 3 — htmx means you write even less JavaScript
+
+Note 06 introduced [htmx](https://htmx.org/). It matters here too.
+
+A lot of what you might reach for JavaScript to do — load more rows, submit a form without a page reload, refresh part of the page — htmx does with HTML attributes and a chunk of HTML from Flask.
+
+For a server-rendered app, htmx often removes the need to write the JavaScript at all.
+
+**So why learn the DOM basics above?** Because you need to understand what's happening underneath. htmx is doing exactly the select-listen-change loop for you. Knowing that means you can debug it when it misbehaves, and write your own code when htmx isn't the right fit.
+
+## Part 4 — What we're deliberately not doing
+
+You do **not** need any of this for the project:
+
+- Frameworks (React, Vue, Svelte)
+- Build tools and bundlers
+- `fetch()` and JSON plumbing
+
+If you're ahead and keen, `fetch()` calling a Flask JSON endpoint is a reasonable extension. But it's an extension, not part of the core.
+
+Keeping the JavaScript small here is the **correct engineering choice** for a server-rendered app. It's not a limitation and it's not something to apologise for.
+
+## Your turn
+
+Add a live character counter to the "add a record" form from Note 05.
+
+1. Add a `<span id="count"></span>` next to one of your inputs.
+2. Select both the input and the span.
+3. Listen for `input` on the field.
+4. Update the span's `textContent` with the current length.
+
+Small, self-contained, and it uses all three steps — select, listen, change.
+
+**Extension:** turn the counter red when it goes over a limit. (Hint: `classList.toggle` with a second argument — `classList.toggle("over", length > 100)`.)
+
+## Check yourself
+
+- [ ] I can explain why a Flask app needs less JavaScript than a single-page app.
+- [ ] I can name the three steps: select, listen, change.
+- [ ] I know `querySelector` uses the same selectors as CSS.
+- [ ] I can add a click listener that toggles a class.
+- [ ] I know the difference between `.value` and `.textContent`.
+- [ ] I know what `event.preventDefault()` does.
+- [ ] I can explain why client-side validation isn't enough on its own.
+- [ ] I have a working character counter.
+
+## Where to get help
+
+- Reference: [MDN — JavaScript first steps](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps).
+- Reference: [MDN — Introduction to the DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction).
+- Deep reference: [javascript.info](https://javascript.info/) — the best structured JS resource online. You want the DOM and Events sections.
+- Course: [freeCodeCamp — JavaScript](https://www.freecodecamp.org/learn/) — free. Do specific sections, not the whole certificate.
+- Interactive: [Scrimba — Learn JavaScript](https://scrimba.com/) — free tier, you code along inside the video.
+- htmx: [examples](https://htmx.org/examples/) — copy-paste patterns for common interactions.
