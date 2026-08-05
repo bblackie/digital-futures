@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a5f;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#162d4a;stop-opacity:1"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="960" height="540" fill="url(#bg)"/>
+  <!-- Title -->
+  <text x="480" y="50" text-anchor="middle" fill="#e0e0e0" font-size="28" font-weight="700">Personas: Making Users Real</text>
+  <line x1="330" y1="65" x2="630" y2="65" stroke="#4fc3f7" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Persona Card -->
+  <rect x="60" y="90" width="380" height="380" rx="18" fill="url(#cardGrad)" stroke="#4fc3f7" stroke-width="2" filter="url(#shadow)"/>
+  <!-- Avatar circle -->
+  <circle cx="250" cy="155" r="45" fill="#0d47a1" stroke="#4fc3f7" stroke-width="2"/>
+  <!-- Simple person icon -->
+  <circle cx="250" cy="140" r="14" fill="#b0bec5"/>
+  <path d="M225 175 Q250 195 275 175" fill="#b0bec5"/>
+  <!-- Name -->
+  <text x="250" y="225" text-anchor="middle" fill="#ffffff" font-size="24" font-weight="700">Alex, 45</text>
+  <line x1="120" y1="240" x2="380" y2="240" stroke="#4fc3f7" stroke-width="0.5" opacity="0.4"/>
+  <!-- Details -->
+  <text x="100" y="275" fill="#4fc3f7" font-size="14" font-weight="600">Tech Level</text>
+  <text x="250" y="275" fill="#e0e0e0" font-size="14">Comfortable</text>
+  <line x1="100" y1="290" x2="400" y2="290" stroke="#263238" stroke-width="1"/>
+
+  <text x="100" y="320" fill="#4fc3f7" font-size="14" font-weight="600">Goal</text>
+  <text x="250" y="320" fill="#e0e0e0" font-size="14">Find affordable SaaS tools</text>
+  <line x1="100" y1="335" x2="400" y2="335" stroke="#263238" stroke-width="1"/>
+
+  <text x="100" y="365" fill="#4fc3f7" font-size="14" font-weight="600">Pain Point</text>
+  <text x="250" y="365" fill="#ef9a9a" font-size="14">Overwhelmed by jargon</text>
+  <line x1="100" y1="380" x2="400" y2="380" stroke="#263238" stroke-width="1"/>
+
+  <text x="100" y="410" fill="#4fc3f7" font-size="14" font-weight="600">Behaviour</text>
+  <text x="250" y="410" fill="#e0e0e0" font-size="14">Skims pages, reads reviews</text>
+
+  <!-- Key question -->
+  <rect x="100" y="430" width="300" height="30" rx="8" fill="#263238" stroke="#ffa726" stroke-width="1"/>
+  <text x="250" y="450" text-anchor="middle" fill="#ffa726" font-size="14" font-weight="600">💭 "Would Alex understand this?"</text>
+
+  <!-- Why Personas panel -->
+  <rect x="500" y="90" width="420" height="380" rx="18" fill="#1a2636" stroke="#66bb6a" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="710" y="130" text-anchor="middle" fill="#66bb6a" font-size="22" font-weight="700">Why Use Personas?</text>
+  <line x1="560" y1="145" x2="860" y2="145" stroke="#66bb6a" stroke-width="0.5" opacity="0.4"/>
+
+  <!-- Benefit 1 -->
+  <circle cx="545" cy="185" r="18" fill="#1b5e20"/>
+  <text x="545" y="192" text-anchor="middle" fill="#fff" font-size="18">1</text>
+  <text x="575" y="182" fill="#e0e0e0" font-size="16" font-weight="600">Gives a Face to Abstract Users</text>
+  <text x="575" y="202" fill="#90a4ae" font-size="13">Turns "target audience" into a person</text>
+  <text x="575" y="220" fill="#90a4ae" font-size="13">with real motivations and frustrations.</text>
+
+  <!-- Benefit 2 -->
+  <circle cx="545" cy="265" r="18" fill="#1b5e20"/>
+  <text x="545" y="272" text-anchor="middle" fill="#fff" font-size="18">2</text>
+  <text x="575" y="262" fill="#e0e0e0" font-size="16" font-weight="600">Prevents Designing for Yourself</text>
+  <text x="575" y="282" fill="#90a4ae" font-size="13">Anchors decisions in user needs,</text>
+  <text x="575" y="300" fill="#90a4ae" font-size="13">not your own preferences and biases.</text>
+
+  <!-- Benefit 3 -->
+  <circle cx="545" cy="345" r="18" fill="#1b5e20"/>
+  <text x="545" y="352" text-anchor="middle" fill="#fff" font-size="18">3</text>
+  <text x="575" y="342" fill="#e0e0e0" font-size="16" font-weight="600">Guides Every Decision</text>
+  <text x="575" y="362" fill="#90a4ae" font-size="13">From layout to language to features—</text>
+  <text x="575" y="380" fill="#90a4ae" font-size="13">always ask: would your persona get it?</text>
+
+  <!-- Tip -->
+  <rect x="540" y="410" width="340" height="40" rx="8" fill="#263238" stroke="#4fc3f7" stroke-width="1"/>
+  <text x="710" y="435" text-anchor="middle" fill="#4fc3f7" font-size="13" font-weight="600">💡 Create 2–3 personas per project to cover</text>
+  <text x="710" y="448" text-anchor="middle" fill="#4fc3f7" font-size="12">different user types without overcomplicating.</text>
+
+  <!-- Footer -->
+  <text x="480" y="515" text-anchor="middle" fill="#78909c" font-size="13">WD-1.1 · User Research &amp; Personas · 13DGT</text>
+</svg>

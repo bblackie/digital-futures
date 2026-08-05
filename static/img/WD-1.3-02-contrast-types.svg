@@ -1,0 +1,63 @@
+<svg width="700" height="320" viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <rect width="700" height="320" fill="#F7FAFC" rx="14"/>
+  <rect x="1" y="1" width="698" height="318" fill="none" stroke="#E2E8F0" stroke-width="2" rx="14"/>
+
+  <text x="350" y="32" text-anchor="middle" font-size="17" font-weight="bold" fill="#1A202C">Three Types of Contrast</text>
+  <text x="350" y="50" text-anchor="middle" font-size="11" fill="#718096">High contrast signals importance — low contrast signals secondary or background information</text>
+
+  <!-- COLOUR CONTRAST -->
+  <rect x="18" y="66" width="210" height="230" rx="10" fill="#FFF5F7" stroke="#FC8181" stroke-width="2"/>
+  <rect x="18" y="66" width="210" height="34" rx="10" fill="#E53E3E"/>
+  <rect x="18" y="84" width="210" height="16" fill="#E53E3E"/>
+  <text x="123" y="88" text-anchor="middle" font-size="13" font-weight="bold" fill="white">Colour Contrast</text>
+  <!-- Demos -->
+  <rect x="34" y="110" width="178" height="26" rx="4" fill="#1A202C"/>
+  <text x="123" y="127" text-anchor="middle" font-size="11" fill="white">Text on dark: ✓ readable</text>
+  <rect x="34" y="142" width="178" height="26" rx="4" fill="#A0AEC0"/>
+  <text x="123" y="159" text-anchor="middle" font-size="11" fill="#718096">Grey on grey: ✗ fails</text>
+  <rect x="34" y="174" width="178" height="26" rx="4" fill="#FFF"/>
+  <text x="123" y="191" text-anchor="middle" font-size="11" fill="#EDF2F7">White on white: ✗</text>
+  <text x="34" y="222" font-size="10" fill="#9B2335" font-weight="bold">WCAG AA standard:</text>
+  <text x="34" y="238" font-size="10" fill="#C53030">4.5:1 ratio for normal text</text>
+  <text x="34" y="253" font-size="10" fill="#C53030">3:1 ratio for large text (18pt+)</text>
+  <text x="34" y="277" font-size="9" fill="#718096" font-style="italic">Tool: WebAIM Contrast Checker</text>
+
+  <!-- TYPE CONTRAST -->
+  <rect x="244" y="66" width="210" height="230" rx="10" fill="#FFFBEB" stroke="#F6AD55" stroke-width="2"/>
+  <rect x="244" y="66" width="210" height="34" rx="10" fill="#D69E2E"/>
+  <rect x="244" y="84" width="210" height="16" fill="#D69E2E"/>
+  <text x="349" y="88" text-anchor="middle" font-size="13" font-weight="bold" fill="white">Type Contrast</text>
+  <!-- Demos -->
+  <text x="260" y="120" font-size="20" font-weight="bold" fill="#1A202C">H1 Heading Bold</text>
+  <text x="260" y="145" font-size="14" fill="#4A5568">Body regular weight</text>
+  <text x="260" y="165" font-size="11" fill="#A0AEC0">Small caption text</text>
+  <line x1="260" y1="178" x2="438" y2="178" stroke="#FEEBC8" stroke-width="1"/>
+  <text x="260" y="197" font-size="10" fill="#744210" font-weight="bold">Methods:</text>
+  <text x="260" y="213" font-size="10" fill="#B45309">• Bold vs. regular weight</text>
+  <text x="260" y="228" font-size="10" fill="#B45309">• Large vs. small size</text>
+  <text x="260" y="243" font-size="10" fill="#B45309">• Serif vs. sans-serif</text>
+  <text x="260" y="277" font-size="9" fill="#718096" font-style="italic">Size + weight = clear hierarchy</text>
+
+  <!-- SPATIAL CONTRAST -->
+  <rect x="470" y="66" width="210" height="230" rx="10" fill="#EBF8FF" stroke="#63B3ED" stroke-width="2"/>
+  <rect x="470" y="66" width="210" height="34" rx="10" fill="#4299E1"/>
+  <rect x="470" y="84" width="210" height="16" fill="#4299E1"/>
+  <text x="575" y="88" text-anchor="middle" font-size="13" font-weight="bold" fill="white">Spatial Contrast</text>
+  <!-- Demos: grouped vs isolated -->
+  <rect x="486" y="108" width="50" height="16" rx="3" fill="#BEE3F8"/>
+  <rect x="540" y="108" width="50" height="16" rx="3" fill="#BEE3F8"/>
+  <rect x="594" y="108" width="50" height="16" rx="3" fill="#BEE3F8"/>
+  <text x="575" y="138" text-anchor="middle" font-size="9" fill="#2B6CB0">↑ Grouped = related</text>
+
+  <rect x="486" y="152" width="50" height="16" rx="3" fill="#BEE3F8"/>
+  <rect x="575" y="152" width="50" height="16" rx="3" fill="#90CDF4"/>
+  <text x="575" y="183" text-anchor="middle" font-size="9" fill="#2B6CB0">↑ Far apart = separate</text>
+  <line x1="486" y1="196" x2="664" y2="196" stroke="#BEE3F8" stroke-width="1"/>
+  <text x="486" y="215" font-size="10" fill="#2C5282" font-weight="bold">Rules:</text>
+  <text x="486" y="231" font-size="10" fill="#4A5568">• Close = related</text>
+  <text x="486" y="246" font-size="10" fill="#4A5568">• Distant = separate</text>
+  <text x="486" y="261" font-size="10" fill="#4A5568">• Gaps create emphasis</text>
+  <text x="486" y="277" font-size="9" fill="#718096" font-style="italic">White space IS design</text>
+
+  <text x="350" y="312" text-anchor="middle" font-size="10" fill="#A0AEC0">All three types must be considered together — a design can pass colour contrast and still fail type contrast</text>
+</svg>

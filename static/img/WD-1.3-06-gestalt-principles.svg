@@ -1,0 +1,112 @@
+<svg width="720" height="400" viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <rect width="720" height="400" fill="#F7FAFC" rx="14"/>
+  <rect x="1" y="1" width="718" height="398" fill="none" stroke="#E2E8F0" stroke-width="2" rx="14"/>
+
+  <text x="360" y="32" text-anchor="middle" font-size="17" font-weight="bold" fill="#1A202C">Gestalt Principles in Web Design</text>
+  <text x="360" y="50" text-anchor="middle" font-size="11" fill="#718096">How humans automatically group and organize visual information — use these instincts, don't fight them</text>
+
+  <!-- PROXIMITY -->
+  <rect x="18" y="66" width="162" height="302" rx="10" fill="#EBF8FF" stroke="#63B3ED" stroke-width="2"/>
+  <rect x="18" y="66" width="162" height="34" rx="10" fill="#4299E1"/>
+  <rect x="18" y="84" width="162" height="16" fill="#4299E1"/>
+  <text x="99" y="88" text-anchor="middle" font-size="13" font-weight="bold" fill="white">Proximity</text>
+  <!-- Demo -->
+  <rect x="34" y="112" width="130" height="110" rx="6" fill="white" stroke="#BEE3F8" stroke-width="1"/>
+  <!-- Group A (close) -->
+  <circle cx="64" cy="138" r="10" fill="#4299E1"/>
+  <circle cx="84" cy="138" r="10" fill="#4299E1"/>
+  <circle cx="64" cy="158" r="10" fill="#4299E1"/>
+  <circle cx="84" cy="158" r="10" fill="#4299E1"/>
+  <text x="74" y="181" text-anchor="middle" font-size="8" fill="#2B6CB0">Group A</text>
+  <!-- Group B (far) -->
+  <circle cx="130" cy="138" r="10" fill="#FC8181"/>
+  <circle cx="150" cy="138" r="10" fill="#FC8181"/>
+  <circle cx="130" cy="158" r="10" fill="#FC8181"/>
+  <circle cx="150" cy="158" r="10" fill="#FC8181"/>
+  <text x="140" y="181" text-anchor="middle" font-size="8" fill="#C53030">Group B</text>
+  <text x="99" y="240" text-anchor="middle" font-size="10" fill="#2C5282" font-weight="bold">Principle:</text>
+  <text x="99" y="256" text-anchor="middle" font-size="10" fill="#4A5568">Elements close</text>
+  <text x="99" y="271" text-anchor="middle" font-size="10" fill="#4A5568">together appear</text>
+  <text x="99" y="286" text-anchor="middle" font-size="10" fill="#4A5568">related.</text>
+  <text x="99" y="314" text-anchor="middle" font-size="9" fill="#718096" font-style="italic">Web use:</text>
+  <text x="99" y="330" text-anchor="middle" font-size="9" fill="#718096">Label beside its input,</text>
+  <text x="99" y="345" text-anchor="middle" font-size="9" fill="#718096">not above another.</text>
+  <text x="99" y="360" text-anchor="middle" font-size="9" fill="#4A5568">Group card content</text>
+  <text x="99" y="375" text-anchor="middle" font-size="9" fill="#4A5568">tight; space between cards.</text>
+
+  <!-- SIMILARITY -->
+  <rect x="196" y="66" width="162" height="302" rx="10" fill="#F0FFF4" stroke="#68D391" stroke-width="2"/>
+  <rect x="196" y="66" width="162" height="34" rx="10" fill="#38A169"/>
+  <rect x="196" y="84" width="162" height="16" fill="#38A169"/>
+  <text x="277" y="88" text-anchor="middle" font-size="13" font-weight="bold" fill="white">Similarity</text>
+  <!-- Demo -->
+  <rect x="212" y="112" width="130" height="110" rx="6" fill="white" stroke="#C6F6D5" stroke-width="1"/>
+  <circle cx="244" cy="135" r="12" fill="#68D391"/>
+  <circle cx="277" cy="135" r="12" fill="#68D391"/>
+  <rect x="302" y="123" width="24" height="24" rx="4" fill="#FC8181"/>
+  <circle cx="244" cy="171" r="12" fill="#68D391"/>
+  <circle cx="277" cy="171" r="12" fill="#68D391"/>
+  <rect x="302" y="159" width="24" height="24" rx="4" fill="#FC8181"/>
+  <text x="277" y="207" text-anchor="middle" font-size="8" fill="#718096">Circles feel like one group</text>
+  <text x="277" y="240" text-anchor="middle" font-size="10" fill="#276749" font-weight="bold">Principle:</text>
+  <text x="277" y="256" text-anchor="middle" font-size="10" fill="#4A5568">Elements sharing</text>
+  <text x="277" y="271" text-anchor="middle" font-size="10" fill="#4A5568">appearance are</text>
+  <text x="277" y="286" text-anchor="middle" font-size="10" fill="#4A5568">seen as related.</text>
+  <text x="277" y="314" text-anchor="middle" font-size="9" fill="#718096" font-style="italic">Web use:</text>
+  <text x="277" y="330" text-anchor="middle" font-size="9" fill="#718096">All action buttons</text>
+  <text x="277" y="345" text-anchor="middle" font-size="9" fill="#718096">same colour/style.</text>
+  <text x="277" y="360" text-anchor="middle" font-size="9" fill="#4A5568">Same nav style for</text>
+  <text x="277" y="375" text-anchor="middle" font-size="9" fill="#4A5568">same-level items.</text>
+
+  <!-- CONTINUANCE -->
+  <rect x="374" y="66" width="162" height="302" rx="10" fill="#FAF5FF" stroke="#B794F4" stroke-width="2"/>
+  <rect x="374" y="66" width="162" height="34" rx="10" fill="#805AD5"/>
+  <rect x="374" y="84" width="162" height="16" fill="#805AD5"/>
+  <text x="455" y="88" text-anchor="middle" font-size="13" font-weight="bold" fill="white">Continuance</text>
+  <!-- Demo: eye follows a line/row -->
+  <rect x="390" y="112" width="130" height="110" rx="6" fill="white" stroke="#E9D8FD" stroke-width="1"/>
+  <defs>
+    <marker id="eye" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#805AD5"/>
+    </marker>
+  </defs>
+  <line x1="400" y1="155" x2="508" y2="155" stroke="#805AD5" stroke-width="2" marker-end="url(#eye)"/>
+  <circle cx="412" cy="155" r="10" fill="#D6BCFA"/>
+  <circle cx="439" cy="155" r="10" fill="#D6BCFA"/>
+  <circle cx="466" cy="155" r="10" fill="#D6BCFA"/>
+  <circle cx="493" cy="155" r="10" fill="#B794F4"/>
+  <text x="455" y="183" text-anchor="middle" font-size="8" fill="#553C9A">Eye follows the line →</text>
+  <text x="455" y="195" text-anchor="middle" font-size="8" fill="#553C9A">naturally lands on last item</text>
+  <text x="455" y="240" text-anchor="middle" font-size="10" fill="#553C9A" font-weight="bold">Principle:</text>
+  <text x="455" y="256" text-anchor="middle" font-size="10" fill="#4A5568">The eye follows</text>
+  <text x="455" y="271" text-anchor="middle" font-size="10" fill="#4A5568">lines and curves</text>
+  <text x="455" y="286" text-anchor="middle" font-size="10" fill="#4A5568">automatically.</text>
+  <text x="455" y="314" text-anchor="middle" font-size="9" fill="#718096" font-style="italic">Web use:</text>
+  <text x="455" y="330" text-anchor="middle" font-size="9" fill="#718096">Arrow pointing at CTA</text>
+  <text x="455" y="345" text-anchor="middle" font-size="9" fill="#718096">directs action.</text>
+  <text x="455" y="360" text-anchor="middle" font-size="9" fill="#4A5568">Row of steps leads</text>
+  <text x="455" y="375" text-anchor="middle" font-size="9" fill="#4A5568">eye across.</text>
+
+  <!-- CLOSURE -->
+  <rect x="552" y="66" width="150" height="302" rx="10" fill="#FFFBEB" stroke="#F6AD55" stroke-width="2"/>
+  <rect x="552" y="66" width="150" height="34" rx="10" fill="#D69E2E"/>
+  <rect x="552" y="84" width="150" height="16" fill="#D69E2E"/>
+  <text x="627" y="88" text-anchor="middle" font-size="13" font-weight="bold" fill="white">Closure</text>
+  <!-- Demo: incomplete circle perceived as complete -->
+  <rect x="568" y="112" width="118" height="110" rx="6" fill="white" stroke="#FEEBC8" stroke-width="1"/>
+  <!-- Pac-man style circle with gap -->
+  <path d="M627,140 m-28,0 a28,28 0 1,1 4,26" fill="none" stroke="#D69E2E" stroke-width="5"/>
+  <text x="627" y="186" text-anchor="middle" font-size="8" fill="#744210">Brain sees a complete circle</text>
+  <text x="627" y="198" text-anchor="middle" font-size="8" fill="#744210">even though it's broken</text>
+  <text x="627" y="240" text-anchor="middle" font-size="10" fill="#744210" font-weight="bold">Principle:</text>
+  <text x="627" y="256" text-anchor="middle" font-size="10" fill="#4A5568">Brains complete</text>
+  <text x="627" y="271" text-anchor="middle" font-size="10" fill="#4A5568">incomplete shapes</text>
+  <text x="627" y="286" text-anchor="middle" font-size="10" fill="#4A5568">automatically.</text>
+  <text x="627" y="314" text-anchor="middle" font-size="9" fill="#718096" font-style="italic">Web use:</text>
+  <text x="627" y="330" text-anchor="middle" font-size="9" fill="#718096">Partially visible card</text>
+  <text x="627" y="345" text-anchor="middle" font-size="9" fill="#718096">implies more below.</text>
+  <text x="627" y="360" text-anchor="middle" font-size="9" fill="#4A5568">Outline icons are</text>
+  <text x="627" y="375" text-anchor="middle" font-size="9" fill="#4A5568">still recognized.</text>
+
+  <text x="360" y="392" text-anchor="middle" font-size="10" fill="#A0AEC0">Gestalt principles are unconscious — users follow them whether you intend it or not. Design with them deliberately.</text>
+</svg>
