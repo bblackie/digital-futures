@@ -1,0 +1,86 @@
+# Session 6 — Backups and incident response
+
+[Previous session](05-networks-and-layered-protection.mdx) · [Course index](README.mdx) · [Next session](07-design-a-security-plan.mdx)
+
+**Time:** 60 minutes. **Goal:** Explain recovery choices and plan a sensible response to an incident.
+
+| Task | Minutes |
+|---|---:|
+| Recall three complementary controls | 5 |
+| Read notes and diagram | 20 |
+| Core video and question | 10 |
+| Recovery scenario | 15 |
+| Check and exit question | 10 |
+
+## 1. A copy must be recoverable
+
+A **backup** is a copy retained so data can be recovered after loss or unwanted change. A plan needs to specify what is copied, how often, where it is held, who can access it, how long versions are retained and how restoration is tested.
+
+Synchronisation keeps locations aligned. It may faithfully copy a deletion or an encrypted replacement. A synchronised service can provide useful version history, but this only supports recovery if earlier versions remain available and protected. Do not assume synchronisation alone is a complete backup plan.
+
+Copies should survive the incidents affecting the original. For example, separate protected storage helps when a laptop fails. Offline or suitably protected immutable copies help resist malicious alteration. A permanently attached writable drive may be reachable by the same malware as the laptop. Backups containing personal data also need access controls and appropriate encryption.
+
+See [NCSC — Data security](https://www.ncsc.gov.uk/collection/10-steps/data-security) for practical guidance on separate copies, retained versions and restoration testing.
+
+## 2. Three backup approaches
+
+| Type | What is copied | Traditional restoration needs |
+|---|---|---|
+| Full | All selected data | The selected full backup |
+| Incremental | Changes since the most recent backup in the chain | The full backup and each needed later incremental |
+| Differential | Changes since the last full backup | The full backup and the selected later differential |
+
+Incremental backups can save copying time and storage, but a chain can complicate recovery. Differential backups tend to grow as changes accumulate, while recovery needs fewer sets. Actual products may package restoration differently. These are the underlying concepts. See [AWS — Comparing backup strategies](https://aws.amazon.com/compare/the-difference-between-incremental-differential-and-other-backups/).
+
+**Worked example:** After Sunday's full backup, Monday changes file A and Tuesday changes file B. Tuesday's incremental contains B's changes; Tuesday's differential contains the changes to both A and B since Sunday. To reconstruct Tuesday using traditional incrementals, use Sunday, Monday and Tuesday together.
+
+## 3. Time matters in two different ways
+
+Ask: **How much recent work could we lose?** Then ask: **How long can we operate without the system?** These are separate requirements.
+
+If the last successful backup is Wednesday at 6 pm and the incident happens Thursday at 2 pm, up to 20 hours of changes may be missing. That is not a prediction that restoration takes 20 hours. A restoration test establishes whether files can actually be recovered and how long the process takes.
+
+## 4. Responding to an incident
+
+In school, promptly report the incident to a teacher or authorised IT staff through a known channel. Record visible symptoms, time, device and preceding actions. Do not improvise a cleanup or erase evidence. Follow the school's containment instructions.
+
+The wider response is normally led by authorised staff:
+
+```mermaid
+flowchart LR
+    A[Prepare procedures and backups] --> B[Detect and report]
+    B --> C[Contain affected systems]
+    C --> D[Investigate and remove the cause]
+    D --> E[Recover and verify]
+    E --> F[Review and improve]
+    F --> A
+```
+
+**Read the diagram:** It is a learning model, not a rigid universal sequence. Investigation and containment can overlap. Recovery is followed by verification and improvement, not simply “turn it on again”.
+
+A backup restores data, but it does not itself remove an attacker's access or undo information theft. Staff must address the cause, secure affected access and verify the recovery environment. Backups may contain malicious material if the compromise began before it was noticed.
+
+## YouTube viewing
+
+1. **Core:** [Incremental vs Differential Backup, & Full — Explained — PowerCert Animated Videos](https://www.youtube.com/watch?v=o-83E6levzM). Watch for up to 7 minutes. Use the remaining window to draw which backup sets are needed for Tuesday's recovery in the worked example.
+2. **Optional extension:** [Cybersecurity Architecture: Response — IBM Technology](https://www.youtube.com/watch?v=Jk79QJCxPkM). Focus on who must act after detection. Ignore enterprise product names and historical breach statistics; explain why monitoring without a response is insufficient.
+
+## Activity — Thursday's incident
+
+At 2 pm Thursday, the club laptop displays a ransom demand and its files cannot be opened. The last successful backup is Wednesday at 6 pm. A treasurer says to restore immediately from a drive that has remained connected.
+
+1. Calculate the maximum period of changes missing from that backup.
+2. Explain two reasons to involve IT before attempting restoration.
+3. Explain why the connected drive may not provide a reliable recovery source.
+4. Describe two checks needed before declaring recovery successful.
+5. Explain why recovery does not settle the possibility that contact details were stolen.
+
+## Check your work
+
+The missing interval is 20 hours. IT should contain the incident, preserve relevant evidence, investigate the cause and verify safe recovery. The connected backup might also have been altered or encrypted.
+
+Check that the chosen backup is usable and appropriate, that restored records open and are sufficiently complete, and that the recovered environment no longer has the original compromise. A test should also confirm authorised users can work again. Disclosure is a separate confidentiality issue: restored records do not retrieve copies held by an attacker.
+
+**Exit question:** Explain the difference between reducing data loss and reducing recovery time.
+
+**Key terms:** backup, restoration, synchronisation, version history, full, incremental, differential, containment.
