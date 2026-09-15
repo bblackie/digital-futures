@@ -1,14 +1,37 @@
-# Session 8 — Assessment and revision
+---
+title: "Session 8 — Assessment and revision"
+sidebar_label: "8. Assessment and revision"
+description: "Closed notes. Forty minutes. The timed assessment, its marking guide, and the Week 2 homework that turns lost marks into revision priorities."
+hide_title: true
+---
 
-[Previous session](07-design-a-security-plan.mdx) · [Course index](README.mdx)
+import { ArticleShell, Kicker, Headline, Dek, Byline, Hero, Lede, Callout, KeyTerms, CheckWork, Roadmap, UnitLinks, StopBanner } from '@site/src/components/ArticleKit';
 
-**Time:** 60 minutes, followed by **120 minutes of Week 2 homework**.
+<ArticleShell>
 
-**Goal:** Explain security concepts accurately under time pressure and use feedback to improve.
+<Kicker>Computer Science · Security Unit · Session 8 of 8</Kicker>
 
-The questions and marking scheme are original course material. They have not been mapped to the inaccessible past papers or an official exam-board standard.
+<Headline>Closed notes. Forty minutes. Prove you understand it, not just remember it.</Headline>
 
-## This session's timetable
+<Dek>Seven sessions of controls, trade-offs and justification now get tested under time pressure, closed-book, against six questions that reward explanation over naming. Mark your own answers honestly against the guide below, then use what you got wrong to set next week's revision priorities — the whole point of this session is the feedback loop, not the score.</Dek>
+
+<Byline>
+  <span><strong>Session time:</strong> 60 minutes</span>
+  <span aria-hidden="true">·</span>
+  <span><strong>Homework:</strong> 120 minutes, Week 2</span>
+  <span aria-hidden="true">·</span>
+  <span>Closes the loop on Sessions 1–7</span>
+</Byline>
+
+<Hero
+  src="/img/12DGT/computer-security/hero-08-assessment-and-revision.jpg"
+  alt="A hand marking a multiple-choice answer sheet with a pen."
+  caption="Marking your own paper only works if you do it after the 40 minutes are up, not before. Photo: Nguyen Dang Hoang Nhu / Unsplash"
+/>
+
+<Lede>
+
+**Goal:** explain security concepts accurately under time pressure, and use feedback to improve.
 
 | Task | Minutes |
 |---|---:|
@@ -16,11 +39,23 @@ The questions and marking scheme are original course material. They have not bee
 | Mark and annotate answers | 15 |
 | Choose revision priorities | 5 |
 
-The notes below are a reference for marking and homework. Begin the timed questions with your notes and the marking guide closed. **Do not watch videos before or during the assessment**; use the optional links during the allocated homework revision time.
+The questions and marking scheme are original course material. They have not been mapped to the inaccessible past papers or an official exam-board standard.
+
+</Lede>
+
+<Callout kind="diagnostic">
+
+Begin the timed questions with your notes and the marking guide closed. **Do not watch videos before or during the assessment** — save the optional links below for the homework revision time, where they actually belong.
+
+</Callout>
 
 ## Assessment — 30 marks
 
-Suggested timings total 40 minutes. Write in full sentences where explanation is requested. A list of control names does not explain how they work.
+<Callout kind="assessment">
+
+Suggested timings total 40 minutes. Write in full sentences where explanation is requested — a list of control names does not explain how they work.
+
+</Callout>
 
 ### Question 1 — Security goals [6 marks; 6 minutes]
 
@@ -36,7 +71,7 @@ Distinguish authentication from authorisation. Explain how MFA could reduce the 
 
 ### Question 4 — Cryptography [6 marks; 8 minutes]
 
-Compare symmetric and asymmetric encryption, including their keys and one practical difference. Explain how password hashing differs from encryption and how a stored password hash can be used during login.
+Compare symmetric and asymmetric encryption, including their keys and one practical difference. Explain how password hashing differs from encryption, and how a stored password hash can be used during login.
 
 ### Question 5 — Evaluate protections [6 marks; 8 minutes]
 
@@ -48,15 +83,21 @@ Explain two reasons why restoring a backup may not completely resolve a ransomwa
 
 ### Final check [3 minutes]
 
-Check that each answer addresses the question, names the mechanism and uses the scenario. Make sure your explanation does not claim any control guarantees perfect security.
+Check that each answer addresses the question, names the mechanism, and uses the scenario. Make sure your explanation does not claim any control guarantees perfect security.
 
----
+<StopBanner label="Stop here until your 40 minutes are finished">
 
-## Stop here until your 40 minutes are finished
+Do not read past this point until the timed section above is actually done. The marking guide is below — reading it early defeats the entire purpose of a closed-notes assessment.
+
+</StopBanner>
 
 ## Marking guide
 
+<Callout kind="marking">
+
 Credit equivalent accurate wording. Award only the points stated below, up to each question's maximum. Do not award a second mark for repeating an idea. These are learning marks, not official grades.
+
+</Callout>
 
 ### Question 1 — 6 marks
 
@@ -98,7 +139,7 @@ Award **1 mark for each appropriate improvement + 1 for its linked mechanism**, 
 - MFA makes the shared/stolen password alone insufficient for some login attacks; ideally combine with individual accounts.
 - A separate protected backup reduces the chance malware can alter both original and recovery copy.
 
-Other well-explained improvements can earn credit if they address a specific stated weakness. “A better firewall” without explaining the relevant weakness is not sufficient.
+Other well-explained improvements can earn credit if they address a specific stated weakness. "A better firewall" without explaining the relevant weakness is not sufficient.
 
 ### Question 6 — 4 marks
 
@@ -120,9 +161,13 @@ Award **1 mark for a reason + 1 for its explanation**, for any two distinct reas
 | Justify | Support a choice with scenario-specific reasons |
 | Evaluate | Weigh benefits and limitations and reach a supported judgement |
 
-Weak: “Backups stop ransomware.”
+<Callout kind="example">
 
-Improved: “A protected backup can restore records made inaccessible by ransomware. It does not prevent the initial infection, may omit recent changes and cannot reverse theft of personal data.”
+**Weak:** "Backups stop ransomware."
+
+**Improved:** "A protected backup can restore records made inaccessible by ransomware. It does not prevent the initial infection, may omit recent changes and cannot reverse theft of personal data."
+
+</Callout>
 
 ```mermaid
 flowchart TD
@@ -136,15 +181,19 @@ flowchart TD
     G --> H[Use feedback to target revision]
 ```
 
-**Read the diagram:** Match the depth to the command. A definition question does not require an essay; an evaluation question needs more than a definition.
+*Reading the diagram: match the depth to the command. A definition question does not require an essay; an evaluation question needs more than a definition.*
 
-## YouTube review choices
+## Watch
 
-Choose a video only after identifying the concept you need to revise. These links are optional and fit inside the homework revision block by replacing some flashcard time.
+<Callout kind="watch">
+
+Choose a video only after identifying the concept you need to revise. These links are optional, and fit inside the homework revision block by replacing some flashcard time — not by adding to it.
 
 1. [Cybersecurity: Crash Course Computer Science #31 — CrashCourse](https://www.youtube.com/watch?v=bPVaOlJ6ln0). General review: pause after a familiar concept and explain it with a new example before continuing.
 2. [Hashing Algorithms and Security — Computerphile](https://www.youtube.com/watch?v=b4b8ktEV4Bg). Cryptography review: explain why hashing is not reversible encryption. Older algorithm examples are historical, not recommendations.
 3. [Cybersecurity Architecture: Response — IBM Technology](https://www.youtube.com/watch?v=Jk79QJCxPkM). Recovery review: explain what still needs attention after files are restored. Do not memorise historical statistics or product names.
+
+</Callout>
 
 ## Set your revision priorities — 5 minutes
 
@@ -154,9 +203,15 @@ Choose a video only after identifying the concept you need to revise. These link
 | 18–23 | Revisit the sessions linked to lost marks and rewrite explanations |
 | 0–17 | Rebuild the weakest concepts with notes and worked examples, then retry those questions |
 
-These bands guide study; they do not predict an official exam grade. Pick two priorities from the actual mistakes, not just the total.
+These bands guide study; they do not predict an official exam grade. Pick two priorities from your actual mistakes, not just the total.
 
 ## Week 2 homework — 120 minutes total
+
+<Callout kind="homework">
+
+Four parts, roughly two hours total, spread across the second week. Part A turns today's marked paper directly into revision material — do it while the assessment is still fresh.
+
+</Callout>
 
 ### A. Correct and explain — 40 minutes
 
@@ -168,7 +223,11 @@ An online shop stores customer addresses and orders. Staff work remotely. A publ
 
 Recommend four controls in 250–350 words. For each, identify the threat or weakness, mechanism, benefit and limitation. Justify the first priority and state any assumptions.
 
-**Self-check:** Your answer should distinguish public and staff access, limit staff permissions, protect customer data and plan recovery against the four-hour target. Examples include MFA for staff, least privilege, protected recoverable backups and patched systems. Other choices can work when justified. A nightly backup schedule alone does not prove four-hour recovery.
+<CheckWork label="Reveal the self-check for Part B">
+
+Your answer should distinguish public and staff access, limit staff permissions, protect customer data and plan recovery against the four-hour target. Examples include MFA for staff, least privilege, protected recoverable backups and patched systems. Other choices can work when justified. A nightly backup schedule alone does not prove four-hour recovery.
+
+</CheckWork>
 
 ### C. Delayed retrieval — 25 minutes
 
@@ -188,3 +247,15 @@ Compare your Session 1 baseline answers with what you know now. Record three imp
 - [ ] I can justify complementary controls and explain limitations.
 - [ ] I can distinguish backup frequency from recovery time.
 - [ ] I have marked and corrected my assessment and completed the transfer task.
+
+<Roadmap length={8} current={8} />
+
+<UnitLinks>
+
+[**Previous session** · Design a security plan](07-design-a-security-plan.mdx)
+
+[**Unit** · Computer Security](README.mdx)
+
+</UnitLinks>
+
+</ArticleShell>

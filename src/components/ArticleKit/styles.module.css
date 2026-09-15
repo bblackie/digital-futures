@@ -1,0 +1,484 @@
+/* ArticleKit — magazine-style dressing for Digital Futures course notes.
+   Display type for headlines/kickers; body copy stays on the site's
+   normal font stack for readability. Colours mostly ride Infima's
+   theme variables so the page still works in dark mode; the masthead
+   band is deliberately fixed-dark, like a printed section flag. */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&display=swap');
+
+:root {
+  --sec-ink: #0f2018;
+  --sec-ink-light: #16311f;
+  --sec-mint: #8fe3b3;
+  --sec-warn: #b45309;
+  --display-font: 'Archivo', var(--ifm-font-family-base);
+}
+
+[data-theme='dark'] {
+  --sec-warn: #f0a63a;
+}
+
+.articleShell :global(blockquote) {
+  border-left-color: var(--ifm-color-primary);
+  background: var(--ifm-color-emphasis-100);
+  border-radius: 0 6px 6px 0;
+}
+
+/* ── Masthead ─────────────────────────────────────────────────────────── */
+
+.kicker {
+  display: inline-block;
+  font-family: var(--display-font);
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(135deg, var(--sec-ink) 0%, var(--sec-ink-light) 100%);
+  padding: 0.4rem 0.9rem;
+  border-radius: 4px;
+  margin: 0 0 1.1rem 0;
+}
+
+.kicker::before {
+  content: '';
+}
+
+.headline {
+  font-family: var(--display-font);
+  font-weight: 800;
+  font-size: clamp(2rem, 4.4vw, 3.15rem);
+  line-height: 1.06;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.65rem 0;
+  color: var(--ifm-heading-color, var(--ifm-font-color-base));
+}
+
+.dek {
+  font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--ifm-color-emphasis-700);
+  margin: 0 0 1.15rem 0;
+  max-width: 46em;
+}
+
+.byline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.9rem;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-600);
+  padding-bottom: 1.4rem;
+  margin-bottom: 1.6rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.byline strong {
+  color: var(--ifm-color-emphasis-800);
+}
+
+/* ── Hero photo ───────────────────────────────────────────────────────── */
+
+.hero {
+  margin: 0 0 2rem 0;
+}
+
+.heroImg {
+  width: 100%;
+  height: clamp(200px, 42vw, 430px);
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+
+.heroCaption {
+  font-size: 0.78rem;
+  color: var(--ifm-color-emphasis-600);
+  text-align: right;
+  margin-top: 0.45rem;
+}
+
+/* ── Executive summary ────────────────────────────────────────────────── */
+
+.lede {
+  background: var(--ifm-color-emphasis-100);
+  border-left: 4px solid var(--ifm-color-primary);
+  border-radius: 0 8px 8px 0;
+  padding: 1.1rem 1.4rem 1.3rem;
+  margin: 0 0 2rem 0;
+}
+
+.ledeLabel {
+  font-family: var(--display-font);
+  font-weight: 800;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ifm-color-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.ledeBody :global(p:last-child) {
+  margin-bottom: 0;
+}
+
+.ledeBody :global(table) {
+  margin: 0.75rem 0 0 0;
+  font-size: 0.92rem;
+}
+
+/* ── Callout cards ────────────────────────────────────────────────────── */
+
+.callout {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-left: 4px solid var(--ifm-color-primary);
+  border-radius: 0 8px 8px 0;
+  box-shadow: var(--ifm-global-shadow-lw, 0 1px 3px rgba(0, 0, 0, 0.06));
+  padding: 1rem 1.35rem 1.2rem;
+  margin: 1.75rem 0;
+}
+
+.callout-pitfall,
+.callout-assessment {
+  border-left-color: var(--sec-warn);
+}
+
+.callout-homework,
+.callout-marking {
+  border-left-color: var(--sec-ink-light);
+}
+
+.calloutLabel {
+  font-family: var(--display-font);
+  font-weight: 800;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ifm-color-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.callout-pitfall .calloutLabel,
+.callout-assessment .calloutLabel {
+  color: var(--sec-warn);
+}
+
+.callout-homework .calloutLabel,
+.callout-marking .calloutLabel {
+  color: var(--sec-ink-light);
+}
+
+[data-theme='dark'] .callout-homework .calloutLabel,
+[data-theme='dark'] .callout-marking .calloutLabel {
+  color: var(--sec-mint);
+}
+
+[data-theme='dark'] .callout-homework,
+[data-theme='dark'] .callout-marking {
+  border-left-color: var(--sec-mint);
+}
+
+.calloutBody :global(p:last-child),
+.calloutBody :global(ol:last-child),
+.calloutBody :global(ul:last-child) {
+  margin-bottom: 0;
+}
+
+.calloutBody :global(blockquote) {
+  margin: 0.75rem 0;
+}
+
+/* ── Glossary chips ───────────────────────────────────────────────────── */
+
+.keyTerms {
+  margin: 2rem 0;
+}
+
+.keyTermsLabel {
+  font-family: var(--display-font);
+  font-weight: 800;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ifm-color-emphasis-600);
+  margin: 0 0 0.6rem 0;
+}
+
+.keyTermsList {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.keyTermsChip {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-800);
+  background: var(--ifm-color-emphasis-100);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 999px;
+  padding: 0.3rem 0.85rem;
+}
+
+/* ── Reveal / answer key ──────────────────────────────────────────────── */
+
+.checkWork {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  margin: 1.75rem 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.checkWorkSummary {
+  cursor: pointer;
+  font-family: var(--display-font);
+  font-weight: 700;
+  font-size: 0.98rem;
+  padding: 0.9rem 1.35rem;
+  list-style: none;
+  color: var(--ifm-color-emphasis-800);
+  background: var(--ifm-color-emphasis-100);
+}
+
+.checkWorkSummary::-webkit-details-marker {
+  display: none;
+}
+
+.checkWorkSummary::before {
+  content: '▸ ';
+  color: var(--ifm-color-primary);
+}
+
+.checkWork[open] .checkWorkSummary::before {
+  content: '▾ ';
+}
+
+.checkWorkSummary:hover {
+  background: var(--ifm-color-emphasis-200);
+}
+
+.checkWorkBody {
+  padding: 1.1rem 1.35rem 1.3rem;
+}
+
+.checkWorkBody :global(p:last-child) {
+  margin-bottom: 0;
+}
+
+/* ── Stop banner ───────────────────────────────────────────────────────── */
+
+.stopBanner {
+  background: linear-gradient(135deg, var(--sec-ink) 0%, var(--sec-ink-light) 100%);
+  border-radius: 8px;
+  padding: 1.3rem 1.5rem 1.5rem;
+  margin: 2.5rem 0;
+  box-shadow: 0 4px 18px rgba(15, 32, 24, 0.25);
+}
+
+.stopBannerLabel {
+  font-family: var(--display-font);
+  font-weight: 900;
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sec-mint);
+  margin: 0 0 0.5rem 0;
+}
+
+.stopBannerBody {
+  color: #f2f7f4;
+  font-size: 0.98rem;
+}
+
+.stopBannerBody :global(p:last-child) {
+  margin-bottom: 0;
+}
+
+/* ── Section headings and tables inside the shell ─────────────────────── */
+
+.articleShell :global(h2) {
+  font-family: var(--display-font);
+  font-weight: 800;
+  font-size: 1.55rem;
+  letter-spacing: -0.005em;
+  margin-top: 2.75rem;
+  padding-top: 0.9rem;
+  border-top: 3px solid var(--ifm-color-emphasis-200);
+}
+
+.articleShell :global(h3) {
+  font-family: var(--display-font);
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.articleShell :global(table) {
+  font-size: 0.95rem;
+}
+
+.articleShell :global(thead th) {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  border-bottom: 2px solid var(--ifm-color-primary);
+}
+
+.articleShell :global(a) {
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* ── End-of-article navigation ────────────────────────────────────────── */
+
+.roadmap {
+  list-style: none;
+  display: flex;
+  gap: 0.4rem;
+  padding: 0;
+  margin: 3rem 0 1.25rem 0;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  flex-wrap: wrap;
+}
+
+.roadmapStep {
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 50%;
+  border: 2px solid var(--ifm-color-emphasis-300);
+  color: var(--ifm-color-emphasis-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.roadmapStepCurrent {
+  border-color: var(--ifm-color-primary);
+  background: var(--ifm-color-primary);
+  color: #fff;
+}
+
+/* UnitLinks is a plain layout wrapper — the <a> tags inside it are real
+   MDX markdown links (`[label](file.mdx)`), not generated by this
+   component, so they get Docusaurus's normal link resolution and
+   broken-link checking. We style them generically via :global(). */
+
+.navLinks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+.navLinks :global(p) {
+  margin: 0;
+}
+
+.navLinks :global(a) {
+  display: block;
+  padding: 0.8rem 1.1rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.navLinks :global(a):hover {
+  border-color: var(--ifm-color-primary);
+  transform: translateY(-1px);
+}
+
+/* ── Section listing cards ─────────────────────────────────────────────── */
+/* Used on a category hub page (e.g. the Computer Science index) to list
+   child units/topics, modelled on a magazine topic page's article list. */
+
+.sectionCard {
+  display: flex;
+  gap: 1.25rem;
+  align-items: stretch;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 10px;
+  background: var(--ifm-background-surface-color);
+  padding: 1.1rem;
+  margin: 0 0 1.1rem 0;
+  box-shadow: var(--ifm-global-shadow-lw, 0 1px 3px rgba(0, 0, 0, 0.06));
+}
+
+.sectionCardPlaceholder {
+  border-style: dashed;
+  box-shadow: none;
+}
+
+.sectionCardMedia {
+  flex: 0 0 180px;
+}
+
+.sectionCardImg {
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+
+.sectionCardBody {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.sectionCardEyebrow {
+  font-family: var(--display-font);
+  font-weight: 800;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ifm-color-primary);
+  margin: 0 0 0.35rem 0;
+}
+
+.sectionCardPlaceholder .sectionCardEyebrow {
+  color: var(--ifm-color-emphasis-500);
+}
+
+.sectionCardBody :global(h3) {
+  margin: 0 0 0.35rem 0;
+}
+
+.sectionCardBody :global(h3 a) {
+  text-decoration: none;
+}
+
+.sectionCardBody :global(h3 a:hover) {
+  text-decoration: underline;
+}
+
+.sectionCardBody :global(p:last-child) {
+  margin-bottom: 0;
+  color: var(--ifm-color-emphasis-700);
+}
+
+@media (max-width: 600px) {
+  .sectionCard {
+    flex-direction: column;
+  }
+
+  .sectionCardMedia {
+    flex: none;
+  }
+
+  .sectionCardImg {
+    width: 100%;
+    height: 160px;
+  }
+}
