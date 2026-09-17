@@ -1,0 +1,97 @@
+---
+slide_label: "CS-5.3"
+title: "Interpretation, Bias & Display"
+course: "13DGT"
+unit: "Unit 5: Computer Science"
+topic: "3. Interpretation, Bias & Display"
+---
+
+# [CS-5.3] Interpretation, Bias & Display
+
+## Why This Matters
+
+Processing big data correctly doesn't guarantee the *conclusions* drawn from it are fair or accurate. This topic — named directly in the spec as "interpretation and representation (bias and display)" — is about reading data critically: who is actually represented in a dataset, what a chart does and doesn't show, and how a technically correct number can still mislead.
+
+---
+
+## Where Bias Enters Big Data
+
+Bias can be introduced at almost any stage of the pipeline from [Topic 2](02_big-data-generation-and-formats.mdx), before any analysis happens at all.
+
+| Type of bias | What it means | Example |
+|---|---|---|
+| **Selection / sampling bias** | The people in the dataset aren't representative of the wider population | A mobility report built only from users who opted in to location tracking over-represents smartphone owners who chose to enable that setting |
+| **Opt-in bias** | Only some users have the feature that generates the data turned on | If a setting is off by default, the dataset skews toward more tech-engaged users who actively turned it on |
+| **Measurement bias** | The way data is collected systematically distorts it | Comparing "visits" using relative percentage change hides the true underlying numbers |
+| **Coverage gaps** | Some areas or groups simply don't generate enough data to be measured | A low-population region may not meet a platform's minimum data threshold at all |
+
+### Worked Example: A Real Coverage Gap
+
+Google's 2020 New Zealand Community Mobility Report is built entirely from users who had the **Location History** setting turned on — which is **off by default**. This means the underlying sample is not the whole population, but specifically the subset of people who chose to enable a particular privacy setting. This is a textbook example of **opt-in / selection bias**: it doesn't make the report useless, but it does mean any conclusion ("New Zealanders reduced retail visits by 91%") technically describes *that opted-in group*, not the whole country.
+
+The regional breakdown for Manawatu-Wanganui in the same report also shows a category — "Transit stations" — explicitly marked with a footnote: *"Not enough data for this date: Google needs a significant volume of data to generate an aggregated and anonymous view of trends."* This is a direct illustration of the **volume** characteristic from [Topic 1](01_big-data-characteristics.mdx) causing a real gap in what can be reported, and it's worth noting in an answer that a sensible dataset owner **withholds** a statistic rather than reporting an unreliable one.
+
+*(Source: `91908-res-2021.pdf`, Resources E–G.)*
+
+---
+
+## Reading a Claim Critically
+
+When you're given a statistic drawn from big data, check:
+
+1. **Population** — who was actually measured? (everyone, or an opted-in/self-selected subset?)
+2. **Baseline** — what is the number being compared against, and is that baseline itself reasonable?
+3. **Aggregation level** — is this a national figure hiding large regional differences?
+4. **Causation vs correlation** — does the data actually show *why* something happened, or only *that* it happened alongside something else?
+
+---
+
+## Choosing and Critiquing a Display
+
+The same underlying data can be shown in very different ways, and the choice changes what a reader notices first.
+
+| Display | Good for | Risk |
+|---|---|---|
+| **Line graph over time** | Showing a trend and its speed (velocity) | Can exaggerate small changes if the y-axis is zoomed in |
+| **Percentage change vs baseline** | Quick comparison across categories | Hides the actual underlying numbers (a 90% drop from a small baseline may be a smaller real change than a 20% drop from a huge baseline) |
+| **Regional breakdown table/map** | Showing that a national average hides local variation | Can appear more precise than the data supports, especially in low-volume regions |
+| **Raw counts** | Showing true scale | Can be harder to compare across groups of very different sizes |
+
+---
+
+## Worked Example: Interpreting a Dataset's Collection
+
+> **What key problems or issues relating to the 3 Vs can you see with the collection of a dataset like this? How might these problems or issues be addressed?**
+> *(Adapted from `91908-exm-2021.pdf`, Question Three (b).)*
+
+**How to answer well:**
+- Name a specific V (e.g. **veracity**, or **volume**) and tie it to a concrete collection issue — don't just say "the data might be biased"
+- For the Google mobility example: veracity/representativeness is limited because only opted-in Location History users are counted; volume is limited in low-population regions, producing "not enough data" gaps
+- Suggest a realistic fix: widening the sample where possible, being transparent about who is and isn't represented, or explicitly withholding statistics below a minimum data threshold (as Google does) rather than reporting an unreliable figure
+
+A companion question style asks you to weigh the human impact directly:
+
+> **With reference to the resources, how do the technical capabilities and limitations of big data affect people's lives? Give examples to support your answer.**
+> *(`91908-exm-2021.pdf`, Question Three (c).)*
+
+This wants you to connect a *technical* limitation (e.g. a minimum data threshold suppressing a statistic) to a *real consequence* for a specific group (e.g. policymakers in a low-population region having less evidence available to guide a local decision than a city does).
+
+---
+
+## Key Vocabulary
+
+- **Selection / sampling bias:** When the data collected doesn't represent the true population
+- **Opt-in bias:** Skew introduced because only users who actively enabled a feature are counted
+- **Baseline:** The reference point a change is measured against
+- **Aggregation:** Combining individual data points into a summary statistic, which can hide variation
+- **Data threshold:** A minimum volume of data required before a statistic is considered reliable enough to report
+
+---
+
+## Next Steps
+
+Continue to [4. Tools, Technologies & AI](04_big-data-tools-and-technologies.mdx) to see what actually stores and processes datasets at this scale, and how AI finds the patterns behind these statistics in the first place.
+
+---
+
+*End of Topic 3: Interpretation, Bias & Display*

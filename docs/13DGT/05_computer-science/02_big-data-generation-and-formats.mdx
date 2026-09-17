@@ -1,0 +1,107 @@
+---
+slide_label: "CS-5.2"
+title: "Generation, Processing & Formats"
+course: "13DGT"
+unit: "Unit 5: Computer Science"
+topic: "2. Generation, Processing & Formats"
+---
+
+# [CS-5.2] Generation, Processing & Formats
+
+## Why This Matters
+
+Before any analysis happens, data has to come from somewhere, be checked, and be put into a shape a computer can work with. The 2026 specification names this whole chain explicitly: "generation, processing and analysing data in different formats". Papers repeatedly ask you to distinguish **structured** from **unstructured** data and explain how that difference changes what you can actually do with it.
+
+---
+
+## Where Big Data Comes From
+
+Big data is generated continuously by many different sources, often without a single person deliberately "entering" it:
+
+| Source | Example |
+|--------|---------|
+| **User activity** | Posts, likes, shares, comments, watch time on a platform |
+| **Sensors / IoT devices** | Smartwatches, smart thermostats, industrial machinery sensors |
+| **Transactions** | Purchases, bank transfers, ride-share trips |
+| **Location data** | GPS from phones, Wi-Fi/cell tower triangulation |
+| **Web and app logs** | Every page view, click, and search query |
+
+## Structured vs Unstructured Data
+
+This distinction is one of the most consistently examined ideas in this topic.
+
+| | Structured data | Unstructured data |
+|---|---|---|
+| **Definition** | Organised into a fixed, predictable format (rows/columns, key-value pairs) | Has no predefined format or model |
+| **Examples** | User IDs, timestamps, like counts, follower numbers, stored in a database table | Video content, images, free-text captions, comments |
+| **How it's queried** | Directly with structured query languages (e.g. SQL) — fast, precise | Requires additional processing (e.g. natural language processing, computer vision) before it can be queried meaningfully |
+| **Storage** | Relational databases | Distributed file systems, object storage, NoSQL databases |
+
+**Semi-structured data** sits between the two — it has *some* organisational tags but not a fixed schema. JSON or XML data (e.g. a social media post object that contains structured fields like `timestamp` and `like_count` alongside an unstructured `caption` field) is the clearest example, and it's worth naming this middle category if a scenario clearly doesn't fit neatly into either extreme.
+
+### Why the difference matters for processing
+
+Because unstructured data has no fixed shape, it can't be searched or aggregated the way a spreadsheet column can. A platform can instantly calculate "average likes per post" from structured numeric fields with a simple query. To do anything with the *content* of a video or the *sentiment* of a caption, it first needs to be run through a separate process — object recognition, speech-to-text, sentiment analysis — that converts it into structured features a system can then analyse alongside the rest.
+
+---
+
+## A Simple Processing Pipeline
+
+Regardless of format, big data generally moves through the same broad stages before it becomes useful:
+
+```mermaid
+flowchart LR
+    A[Collection] --> B[Cleaning & Validation]
+    B --> C[Storage]
+    C --> D[Processing]
+    D --> E[Analysis / Output]
+```
+
+- **Collection** — data is captured from the source (an app, a sensor, a form)
+- **Cleaning & validation** — duplicates, missing values, and obviously invalid entries (e.g. impossible timestamps) are removed or flagged
+- **Storage** — structured and unstructured data are often stored differently (see [Topic 4](04_big-data-tools-and-technologies.mdx))
+- **Processing** — unstructured data is converted into structured, analysable features
+- **Analysis / output** — patterns, trends, or predictions are generated from the processed data
+
+A key exam point: **errors introduced early in this pipeline propagate forward.** If cleaning misses duplicate accounts, every later statistic (average engagement, trend velocity) is skewed, even though the analysis step itself was performed correctly.
+
+---
+
+## Worked Example: Structured vs Unstructured Social Media Data
+
+> **(i) What is the difference between structured and unstructured data from X?**
+> **(ii) How do these differences impact the methods used to process and analyse the data?**
+> *(`91908-cat-B-2023.pdf`, Question Two (d); the equivalent TikTok version appears in `91908-cat-A-2023.pdf`, Question Two (d).)*
+
+**How to answer well:**
+- For (i): give the definition **and** a platform-specific example of each — e.g. structured: post timestamp, retweet count, follower count; unstructured: the text of the post itself, an attached image or video
+- For (ii): don't just repeat the definitions — explain the *consequence*. Structured data supports fast, direct statistical queries (e.g. "posts per hour"); unstructured data must first be converted (e.g. natural language processing to detect topic or sentiment) before it can be combined with structured statistics
+
+A related question style asks you to go further:
+
+> **How could a platform process and analyse data in different types and formats (such as numbers and text stored in databases) and images, videos, and social media posts?**
+> *(`91908-cat-A-2023.pdf` / `91908-cat-B-2023.pdf`, Question Two (f).)*
+
+This is asking you to describe the pipeline above in the platform's own terms: structured fields go straight into database queries; text is processed with language techniques to extract meaning; images and video are processed with computer-vision techniques to extract tags or detect content — and all of these outputs can then be combined for a fuller analysis.
+
+---
+
+## Key Vocabulary
+
+- **Structured data:** Data organised into a fixed, predictable format (e.g. database tables)
+- **Unstructured data:** Data with no predefined format or model (e.g. video, free text)
+- **Semi-structured data:** Data with some organisational tags but no fixed schema (e.g. JSON)
+- **Data cleaning / validation:** Removing or flagging duplicate, missing, or invalid entries before analysis
+- **Data pipeline:** The sequence of stages data moves through from collection to analysis
+- **Natural language processing (NLP):** Techniques for extracting structured meaning from text
+- **Computer vision:** Techniques for extracting structured information from images/video
+
+---
+
+## Next Steps
+
+Continue to [3. Interpretation, Bias & Display](03_big-data-interpretation-and-display.mdx) to see what can go wrong once processed data is turned into a claim or a chart.
+
+---
+
+*End of Topic 2: Generation, Processing & Formats*

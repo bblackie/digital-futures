@@ -1,0 +1,117 @@
+---
+slide_label: "CS-5.5"
+title: "Privacy, Ethics & Governance"
+course: "13DGT"
+unit: "Unit 5: Computer Science"
+topic: "5. Privacy, Ethics & Governance"
+---
+
+# [CS-5.5] Privacy, Ethics & Governance
+
+## Why This Matters
+
+Every paper covered in this unit ends its Big Data question by asking you to step back and weigh **who benefits and who is put at risk**. The 2026 specification names this directly: "big data considerations (privacy, ethics, and data governance)". This is where the highest-level answers (Merit/Excellence: "discuss", "critically analyse") are actually won or lost — you need more than "it's bad for privacy".
+
+---
+
+## Three Distinct Concepts
+
+Students often blur these together. They're related but not the same thing, and naming the right one precisely is worth marks.
+
+| Concept | What it actually means |
+|---|---|
+| **Privacy** | An individual's right to control what personal information about them is collected and who can see it |
+| **Ethics** | Broader questions of right and wrong in how data is used — even when it's technically legal and the person consented |
+| **Governance** | The rules, policies and accountability structures an organisation puts in place to manage data responsibly — who owns it, who can access it, how long it's kept |
+
+---
+
+## Privacy in Practice: Anonymisation and Consent
+
+Google's 2020 Community Mobility Report is a genuinely useful worked example of real privacy engineering, not just a policy statement. Its published "Preserving privacy" section describes several concrete techniques together:
+
+- **Opt-in consent** — the underlying Location History setting is **off by default**; only users who actively turn it on contribute data, and they can turn it off or delete their history at any time
+- **Aggregation** — reports are built from combined data across many users, not individual movements
+- **Differential privacy** — the reports describe adding **artificial statistical noise** to the dataset, which allows overall trends to remain accurate while making it much harder to identify any single individual's actual behaviour from the published numbers
+- **Suppressing absolute numbers** — the report deliberately only publishes *percentage change*, not raw visit counts, which further limits what could be inferred about specific people or places
+
+*(Source: `91908-res-2021.pdf`, Resource G.)*
+
+This is worth remembering as a concrete answer to "how can privacy risks be addressed" — rather than a vague "they should anonymise the data", you can name the actual mechanism (aggregation + differential privacy + suppressing raw counts) and explain what each part protects against.
+
+---
+
+## Ethical Concerns of Predictions and Recommendations
+
+Recommendation and prediction systems (see [Topic 4](04_big-data-tools-and-technologies.mdx)) raise ethical questions that go beyond privacy:
+
+- **Profiling** — building a detailed behavioural profile of a person from patterns in their data, even without knowing their name
+- **Discrimination** — a model trained on biased historical data can produce systematically unfair predictions for particular groups
+- **Manipulation / engagement optimisation** — a system designed to maximise time-on-platform may prioritise content that keeps someone scrolling over content that's actually good for them
+- **Informed consent at scale** — most users don't realistically read or understand what they're agreeing to when they accept a platform's terms of service
+
+### Worked Example
+
+> **What are the potential ethical concerns that a platform might need to consider when using big data to make predictions or recommendations?**
+> *(`91908-cat-A-2023.pdf` / `91908-cat-B-2023.pdf`, Question Two (c).)*
+
+**How to answer well:** pick two or three of the concerns above and explain the *mechanism* that causes each one — e.g. "a recommendation model trained on what users already engage with can create a feedback loop that narrows the range of content someone sees over time, which raises a concern about manipulation rather than informed choice."
+
+---
+
+## Data Governance
+
+Governance is the organisational layer that's supposed to prevent privacy and ethical harms in the first place. Key governance questions include:
+
+- **Ownership** — who owns the data: the user, the platform, or is it shared?
+- **Access control** — who inside the organisation can see raw vs. aggregated data?
+- **Retention** — how long is data kept, and is it deleted when no longer needed?
+- **Accountability** — who is responsible if the data is misused or breached?
+
+---
+
+## Weighing Benefits Against Harms
+
+Both 2023 papers ask you to conclude with the **current and future implications of big data**, giving named real-world use cases as prompts. Across both papers, these prompts cover:
+
+| Positive use case | Risk it also raises |
+|---|---|
+| **Fraud detection in banking** | False positives can wrongly block a legitimate customer's transactions |
+| **Personalised marketing in retail** | Relies on detailed behavioural profiling, which some customers may not have knowingly consented to |
+| **Traffic and transportation management in smart cities** | Requires continuous location tracking of residents |
+| **Predictive maintenance in manufacturing** | Can be used to monitor and evaluate individual workers, not just machinery |
+| **Healthcare** | Highly sensitive personal data; a wrong prediction can directly affect patient treatment |
+| **Public services** | Risk of unequal service if the underlying data underrepresents some communities (see [Topic 3](03_big-data-interpretation-and-display.mdx)) |
+
+### Worked Example
+
+> **What are the current and future implications of big data? Discuss the positive and negative implications, and consider the potential effects on people.**
+> *(`91908-cat-A-2023.pdf` / `91908-cat-B-2023.pdf`, Question Two (g); a similar version appears in `91908-exm-2021.pdf`, Question Three (d)–(e).)*
+
+**How to answer well** (this is typically the highest-value question in the paper):
+1. Choose **one** named use case rather than trying to cover all of them
+2. Explain the **mechanism** that makes it positive (e.g. how pattern detection genuinely helps fraud detection)
+3. Explain a **specific, connected** negative implication — not a generic "privacy is a concern", but the actual trade-off this use case creates
+4. Reach a **conclusion** — can the benefit and the harm be balanced, and what would that require? (e.g. governance rules, transparency, opt-out options)
+
+---
+
+## Key Vocabulary
+
+- **Privacy:** An individual's right to control their personal information
+- **Ethics:** Questions of right and wrong in data use, beyond legality or consent
+- **Governance:** The policies and accountability structures managing how data is owned, accessed, and retained
+- **Anonymisation:** Removing identifying information from data
+- **Aggregation:** Combining individual data points so no single person's data is exposed alone
+- **Differential privacy:** Adding statistical noise to a dataset so overall patterns remain accurate while individuals can't be reliably identified
+- **Profiling:** Building a behavioural picture of a person from patterns in their data
+
+---
+
+## Back to the Unit
+
+Return to the [Unit 5 overview](index.mdx) to review all five Big Data topics, or revisit [1. Characteristics of Big Data](01_big-data-characteristics.mdx) to work through the topics again from the start.
+
+---
+
+*End of Topic 5: Privacy, Ethics & Governance*
