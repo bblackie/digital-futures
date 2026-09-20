@@ -1,20 +1,46 @@
 ---
 slide_label: "CS-5.1"
-title: "Characteristics of Big Data"
 course: "13DGT"
 unit: "Unit 5: Computer Science"
 topic: "1. Characteristics of Big Data"
+title: "1. Characteristics of Big Data"
+sidebar_label: "1. characteristics of big data"
+description: "The three (or five) Vs that make data 'big', and how to apply them to an unfamiliar case study."
+hide_title: true
 ---
 
-# [CS-5.1] Characteristics of Big Data
+import { ArticleShell, Kicker, Headline, Dek, Byline, Hero, Lede, Callout, KeyTerms, CheckWork, Roadmap, UnitLinks } from '@site/src/components/ArticleKit';
 
-## Why This Matters
+<ArticleShell>
 
-"Big data" doesn't just mean "a lot of data" — a library with ten million books isn't big data. What makes data *big* in the computer science sense is a combination of properties that break the tools and techniques used for ordinary datasets. Every 91908 Big Data question assumes you can name and apply these properties accurately, so this is the vocabulary the rest of the topic builds on.
+<Kicker>Computer Science · Big Data · Topic 1 of 5</Kicker>
 
----
+<Headline>A library with ten million books isn't big data.</Headline>
 
-## What Is Big Data?
+<Dek>"Big data" doesn't just mean "a lot of data." What makes data *big*, in the computer science sense, is a combination of properties that break the tools and techniques used for ordinary datasets — and every 91908 Big Data question assumes you can name and apply them accurately.</Dek>
+
+<Byline>
+  <span><strong>AS91908</strong> · Big Data</span>
+  <span aria-hidden="true">·</span>
+  <span>Vocabulary this whole topic builds on</span>
+</Byline>
+
+<Hero src="/img/13DGT/big-data/hero-01-big-data-characteristics.jpg" alt="A hand holding a white smartphone showing a grid of photos in a social media feed." caption="Photo: Georgia de Lotz / Unsplash" />
+
+<Lede>
+
+**Goal:** define each of the "Vs" of big data precisely, and apply them to a named, real case study.
+
+| Section | What it covers |
+|---|---|
+| What is big data? | The three Vs (and two more), straight from the specification |
+| Big data vs "just a lot of data" | Why the distinction changes what tools you need |
+| Worked example | Google's 2020 NZ Community Mobility Report, all three Vs at once |
+| Applying this to an unfamiliar context | A five-question checklist for any new scenario |
+
+</Lede>
+
+## What is big data?
 
 **Big data** refers to datasets that are too large, too fast-moving, or too varied in structure to be efficiently stored, processed, or analysed using traditional single-computer methods (e.g. one spreadsheet, one relational database on one machine).
 
@@ -33,11 +59,9 @@ The specification adds "**etc.**" after these three, and two further Vs are comm
 
 You don't need to memorise a fixed list — the spec explicitly leaves it open — but you should be able to **define each V precisely** and **apply it to a named scenario**, not just recite it.
 
----
+## Big data vs "just a lot of data"
 
-## Big Data vs "Just a Lot of Data"
-
-A common mistake is treating "big data" as a synonym for "large file". The distinction matters because it explains *why* new tools are needed at all.
+A common mistake is treating "big data" as a synonym for "large file." The distinction matters because it explains *why* new tools are needed at all.
 
 ```mermaid
 flowchart LR
@@ -47,9 +71,7 @@ flowchart LR
 
 A school's enrolment spreadsheet is large but not "big data" — it's one consistent structure, updated occasionally, and fits comfortably on one computer. A social media platform's post stream is big data — it never stops arriving (velocity), it mixes text, images and video (variety), and no single machine could hold or process all of it (volume).
 
----
-
-## Worked Example: A Real Case Study
+<Callout kind="case" title="Case file: Google's COVID-19 Community Mobility Report">
 
 Google's 2020 **COVID-19 Community Mobility Report** for New Zealand is a good real-world illustration of all three Vs at once:
 
@@ -59,19 +81,26 @@ Google's 2020 **COVID-19 Community Mobility Report** for New Zealand is a good r
 
 *(Source: `91908-res-2021.pdf`, Resource E, and `91908-exm-2021.pdf`, Question Three.)*
 
-### Past-paper style question
+</Callout>
+
+<Callout kind="example" title="Past-paper practice">
 
 > **What are the 3 V's of big data? Provide an example of each from the case study.**
 > *(Adapted from `91908-cat-A-2023.pdf` and `91908-cat-B-2023.pdf`, Question Two (a), asked about TikTok and X respectively.)*
 
-**How to answer well:**
+<CheckWork label="Reveal how to answer well">
+
 - Define each V in a full sentence — don't just name it
 - Pick **one concrete detail from the given case study** per V, not a generic example from memory
 - If the case study doesn't obviously supply one V (e.g. veracity), say so and explain what evidence *would* show it — this demonstrates understanding rather than guessing
 
----
+</CheckWork>
 
-## Applying This to an Unfamiliar Context
+</Callout>
+
+## Applying this to an unfamiliar context
+
+<Callout kind="activity">
 
 The exam will very likely give you a platform or organisation you haven't studied in class. Practise this transfer skill now: for **any** unfamiliar big-data scenario, ask yourself:
 
@@ -81,23 +110,22 @@ The exam will very likely give you a platform or organisation you haven't studie
 4. How would you know if some of the data was wrong, fake, or unreliable? → **Veracity**
 5. What would make this data actually useful, versus just large? → **Value**
 
----
+</Callout>
 
-## Key Vocabulary
+## Exit question
 
-- **Big data:** Datasets too large, fast, or varied to be handled by traditional single-machine tools
-- **Volume:** The scale/amount of data generated and stored
-- **Variety:** The range of formats and structures data exists in
-- **Velocity:** The speed of data generation and the need for timely processing
-- **Veracity:** The trustworthiness and accuracy of data
-- **Value:** Whether processed data yields useful, actionable insight
+Pick a platform you use every day and explain, in your own words, why it counts as "big data" rather than just "a lot of data" — naming at least three Vs.
 
----
+<KeyTerms terms={['big data', 'volume', 'variety', 'velocity', 'veracity', 'value']} />
 
-## Next Steps
+<Roadmap length={5} current={1} />
 
-Continue to [2. Generation, Processing & Formats](02_big-data-generation-and-formats.mdx) to see where all this data actually comes from, and why structured and unstructured data need different treatment.
+<UnitLinks>
 
----
+[← Back to Big Data overview](README.mdx)
 
-*End of Topic 1: Characteristics of Big Data*
+[Next → Topic 2: Generation, Processing & Formats](02_big-data-generation-and-formats.mdx)
+
+</UnitLinks>
+
+</ArticleShell>
