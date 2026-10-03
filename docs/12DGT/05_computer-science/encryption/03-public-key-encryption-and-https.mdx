@@ -1,0 +1,122 @@
+---
+title: "3. Public-Key Encryption and HTTPS"
+sidebar_label: "3. Public-key encryption and HTTPS"
+description: "Asymmetric encryption, how it solves the key exchange problem, and what the padlock in your browser actually means."
+hide_title: true
+---
+
+import { ArticleShell, Kicker, Headline, Dek, Byline, Hero, Lede, Callout, KeyTerms, CheckWork, Roadmap, UnitLinks } from '@site/src/components/ArticleKit';
+
+<ArticleShell>
+
+<Kicker>Computer Science · Encryption Unit · Session 3 of 8</Kicker>
+
+<Headline>The trick that lets two strangers agree on a secret, in full view of everyone.</Headline>
+
+<Dek>Symmetric encryption left us with a problem: both sides need the same key, but how do you safely hand someone a key across a network you don't trust? Public-key encryption solves it — and it's the reason a padlock appears in your browser every time you visit your bank.</Dek>
+
+<Byline>
+  <span><strong>Session time:</strong> 60 minutes</span>
+  <span aria-hidden="true">·</span>
+  <span><strong>Homework:</strong> none this session</span>
+</Byline>
+
+<Hero src="/img/12DGT/encryption/hero-03-public-key-encryption-and-https.jpg" alt="A padlock icon on a laptop keyboard, surrounded by swirling light trails." caption="Photo: FlyD / Unsplash" />
+
+<Lede>
+
+**Goal:** explain how public/private key pairs work, solve the key exchange problem, and explain what HTTPS is and why it matters.
+
+| Time | Segment |
+|---|---|
+| 0–10 min | Diagnostic: the stranger problem |
+| 10–30 min | Explaining public and private keys |
+| 30–45 min | Worked example: HTTPS in your browser |
+| 45–55 min | Activity: HTTPS vs HTTP |
+| 55–60 min | Exit question and key terms |
+
+</Lede>
+
+## Before you start
+
+<Callout kind="diagnostic">
+
+Imagine you need to send a locked box to a stranger you've never met, so that only they can open it — but the only postal service available is one where anyone can intercept and inspect anything in transit. You have no way to safely send them a copy of the key beforehand. Is this possible at all? Keep your answer — you'll revisit it in ten minutes.
+
+</Callout>
+
+## Two keys, not one
+
+**Public-key encryption** (also called **asymmetric encryption**) gives every user a mathematically linked **pair** of keys instead of one shared key:
+
+- A **public key**, which can be freely shared with anyone — published, emailed, put on a website. It only *encrypts*.
+- A **private key**, which is kept completely secret and never shared. It only *decrypts* what was encrypted with its matching public key.
+
+```mermaid
+flowchart LR
+    A["Plaintext"] -- "Encrypt with recipient's PUBLIC key" --> B["Ciphertext"]
+    B -- "Sent across an untrusted network" --> C["Ciphertext arrives"]
+    C -- "Decrypt with recipient's PRIVATE key (kept secret)" --> D["Plaintext, recovered"]
+```
+
+This directly solves the problem Session 2 ended on. Anyone can encrypt a message using your *public* key — you can hand it out to the whole internet with no risk — but only you, holding the matching *private* key, can ever decrypt it. There's no need to secretly exchange anything beforehand, because the key that gets shared openly is only ever useful for locking, never for unlocking.
+
+<Callout kind="pitfall">
+
+A common mistake is thinking the public and private keys are interchangeable, or that "public" means "weaker." They're mathematically linked but not identical, and the private key is never derivable from the public one in any practical amount of time — that one-way relationship is the entire point.
+
+</Callout>
+
+## HTTPS: public-key encryption, running in your browser right now
+
+**HTTP** (HyperText Transfer Protocol) sends data between your browser and a website in plain, readable text. **HTTPS** ("HTTP Secure") adds an encryption layer — built using public-key encryption — so that traffic between you and the site is unreadable to anyone intercepting it along the way.
+
+You can see this happening every day: **Google's** Chrome browser, along with every other modern browser, marks HTTPS sites with a padlock icon and actively warns you before you enter data on a plain HTTP site. Since the mid-2020s, the overwhelming majority of web traffic — including virtually every bank, every school portal, and every online retailer such as **Amazon** — uses HTTPS by default.
+
+<Callout kind="example" title="Worked example: what happens when you open your bank's website">
+
+1. Your browser contacts the bank's server and asks to start a secure (HTTPS) connection.
+2. The server sends back its **digital certificate** — issued by a trusted **certificate authority** (an organisation whose job is to verify that the server really does belong to who it claims to) — which contains the server's public key.
+3. Your browser checks the certificate is valid and genuinely issued to that bank's domain.
+4. Public-key encryption is then used to safely agree on a temporary, one-off *symmetric* key for this specific browsing session — solving the key exchange problem from Session 2 without ever sending that key in the clear.
+5. From this point, your browser and the bank's server use fast **symmetric** encryption (Session 2) for the rest of the session, because it's more efficient than public-key encryption for large amounts of ongoing data.
+
+This is worth noticing: real systems often use **both** kinds of encryption together — public-key encryption to solve the key exchange problem, then symmetric encryption for speed once a shared key has been safely agreed on.
+
+</Callout>
+
+## Activity: HTTPS vs HTTP
+
+For each situation, explain what could go wrong if the connection were plain HTTP instead of HTTPS.
+
+1. Logging into your school's student portal from the school's shared Wi-Fi.
+2. Typing your card details into an online shop's checkout page.
+3. Searching a symptom on a health information website.
+
+<CheckWork>
+
+1. Anyone else on the same Wi-Fi network could potentially intercept and read your username and password as plain text.
+2. Your card number, expiry date, and security code would be sent as readable plaintext, visible to anyone intercepting traffic between you and the shop's server.
+3. Your search terms — potentially sensitive health information — would be visible to anyone on the network path, even though you never explicitly "sent" them to a third party.
+
+</CheckWork>
+
+## Exit question
+
+Explain how public-key encryption solves the key exchange problem that symmetric encryption alone cannot, and describe one real consequence of a website using HTTP instead of HTTPS.
+
+<KeyTerms terms={['public-key encryption', 'asymmetric encryption', 'public key', 'private key', 'HTTPS', 'digital certificate', 'certificate authority']} />
+
+<Roadmap length={8} current={3} />
+
+<UnitLinks>
+
+[← Session 2: Symmetric encryption](02-symmetric-encryption.mdx)
+
+[Back to unit overview](README.mdx)
+
+[Next → Session 4: Hashing and passwords](04-hashing-and-passwords.mdx)
+
+</UnitLinks>
+
+</ArticleShell>

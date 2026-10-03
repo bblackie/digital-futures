@@ -1,0 +1,120 @@
+---
+title: "6. The Human Side of Encryption"
+sidebar_label: "6. The human side of encryption"
+description: "Human factors and ethical issues: weak passwords, data left behind, and the ongoing backdoor debate."
+hide_title: true
+---
+
+import { ArticleShell, Kicker, Headline, Dek, Byline, Hero, Lede, Callout, KeyTerms, CheckWork, Roadmap, UnitLinks } from '@site/src/components/ArticleKit';
+
+<ArticleShell>
+
+<Kicker>Computer Science · Encryption Unit · Session 6 of 8</Kicker>
+
+<Headline>The maths is nearly unbreakable. The people around it usually aren't.</Headline>
+
+<Dek>AES and public-key encryption are, by themselves, extraordinarily strong. Almost every real-world encryption failure happens somewhere else entirely — a reused password, data a company forgot it still held, or a genuine, unresolved argument about who should be allowed to see what. This session is about the human factors and ethical issues around encryption, not the mathematics.</Dek>
+
+<Byline>
+  <span><strong>Session time:</strong> 60 minutes</span>
+  <span aria-hidden="true">·</span>
+  <span><strong>Homework:</strong> none this session</span>
+</Byline>
+
+<Hero src="/img/12DGT/encryption/hero-06-the-human-side-of-encryption.jpg" alt="A person's hands typing on a laptop keyboard next to a phone and a cup of coffee." caption="Photo: Vardan Papikyan / Unsplash" />
+
+<Lede>
+
+**Goal:** explain at least one human factor and one ethical issue connected to encryption, using real examples.
+
+| Time | Segment |
+|---|---|
+| 0–10 min | Diagnostic: where encryption actually fails |
+| 10–30 min | Human factors: reused passwords and data left behind |
+| 30–45 min | Ethical issues: the backdoor debate |
+| 45–55 min | Activity: an organisation closes down |
+| 55–60 min | Exit question and key terms |
+
+</Lede>
+
+## Before you start
+
+<Callout kind="diagnostic">
+
+Encryption algorithms like AES are, by current standards, extremely difficult to break directly. Yet password and data breaches happen constantly. If the maths is this strong, what's actually going wrong? Write one guess before reading on.
+
+</Callout>
+
+## Human factors: the weak link is rarely the algorithm
+
+Almost no real-world breach happens because someone mathematically defeated AES or broke SHA-256 directly. Far more common:
+
+- **Reused passwords** (Session 4): a breach at one company exposes a password hash that, once cracked, works on the user's other accounts too — the encryption at the *second* company was never the problem.
+- **Human error in key management**: a private key stored insecurely, or a decryption key emailed in plaintext "just this once," undermines even correctly implemented encryption.
+- **Data an organisation forgot it still held**: encryption only protects data that's still being actively managed. Old backups, decommissioned servers, or accounts from a service a company no longer offers can be forgotten about entirely — and if encryption keys are lost, mismanaged, or never rotated when staff leave, that data can become a liability no one is actively watching.
+
+<Callout kind="pitfall">
+
+A common mistake in exam answers is treating "human factors" and "the algorithm" as the same issue. They aren't: an achievement-standard answer about human factors should focus on *people, processes, and decisions* — training, policy, key management, communication — not on describing the encryption method itself again.
+
+</Callout>
+
+## Ethical issues: the backdoor debate
+
+One of the most persistent ethical debates in this field is whether companies should be required to build a **backdoor** into strong encryption — a deliberate way for law enforcement or governments to access otherwise-encrypted data, such as messages on a phone or in a messaging app, when investigating serious crime.
+
+This came to public attention in 2016, when the **FBI** asked **Apple** to help unlock an iPhone recovered after a terrorist attack in San Bernardino, California. Apple refused to build the requested tool, arguing it would weaken security for all iPhone users, not just the one device in question. The FBI ultimately gained access to the phone's data using another method. The underlying disagreement was never resolved and continues today, including in ongoing debates in the UK, Australia, and elsewhere about whether encrypted messaging services (including **WhatsApp**, owned by **Meta**) should be legally required to provide access under specific circumstances.
+
+There are genuine, serious arguments on both sides, and the achievement standard expects you to be able to describe the *issue*, not necessarily pick a winner:
+
+**In favour of some form of access:** law enforcement argues that strong, backdoor-free encryption can shield serious criminal activity — including child exploitation material and terrorism planning — from investigation, even with a lawful warrant, and that some mechanism for exceptional access serves a genuine public safety interest.
+
+**Against building backdoors:** security researchers and companies including Apple argue that any backdoor, once built, becomes a target — there is no way to guarantee it will only ever be used by the intended authority, and a flaw deliberately built in for "good" access can be discovered and exploited by criminals, hostile governments, or anyone else who finds it. They also argue it's technically difficult, or impossible, to build a backdoor that works for one government but not others, or that can't eventually leak.
+
+<Callout kind="activity">
+
+In pairs, take opposite sides of this debate for five minutes each. One person argues for requiring some form of lawful access to encrypted data; the other argues against any backdoor, under any circumstances. Then swap: each of you writes two sentences summarising the *strongest* point the other side made — not your own side.
+
+</Callout>
+
+## Activity: an organisation closes down
+
+<Callout kind="case" title="Case file: what happens to the data?">
+
+Imagine a mid-sized online retailer permanently closes down. Over its years of operating, it collected encrypted customer records: names, addresses, order history, and hashed-and-salted account passwords.
+
+In groups or individually, answer:
+
+1. Who, if anyone, is still responsible for that data after the company stops trading?
+2. What should happen to the encryption keys used to protect stored customer data, and why does that decision matter?
+3. What could go wrong for former customers if this is handled carelessly?
+
+</Callout>
+
+<CheckWork label="Reveal one reasonable set of answers">
+
+1. Depending on the country and industry, there may be legal obligations (data protection or privacy law) that continue to apply even after a company stops trading — responsibility doesn't simply disappear, though enforcement becomes much harder once the organisation no longer exists in a practical sense.
+2. Ideally, keys should be securely destroyed once data is no longer needed and any legal retention period has passed, and encrypted backups should not be left on decommissioned or resold hardware with keys still attached or recoverable. If keys are lost carelessly (not destroyed but simply forgotten), the "encrypted" data may sit on old hardware indefinitely, still technically protected but with no organisation actively managing or securing it.
+3. Former customers could have personal data resurface years later — for example, if old hardware is sold on without being properly wiped, or if a poorly-handled shutdown means passwords or personal details leak with no company left to notify anyone or respond.
+
+</CheckWork>
+
+## Exit question
+
+Choose one human factor **or** one ethical issue from this session, and explain — using a real example — why it matters even when the underlying encryption algorithm is technically strong.
+
+<KeyTerms terms={['human factors', 'key management', 'backdoor', 'ethical issue', 'data retention']} />
+
+<Roadmap length={8} current={6} />
+
+<UnitLinks>
+
+[← Session 5: Encryption in everyday tech](05-encryption-in-everyday-tech.mdx)
+
+[Back to unit overview](README.mdx)
+
+[Next → Session 7: Future-proofing encryption](07-future-proofing-encryption.mdx)
+
+</UnitLinks>
+
+</ArticleShell>

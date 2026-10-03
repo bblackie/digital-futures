@@ -1,0 +1,106 @@
+---
+title: "5. Encryption in Everyday Tech"
+sidebar_label: "5. Encryption in everyday tech"
+description: "Contactless payments, healthcare records, and everyday devices — the same few ideas, over and over."
+hide_title: true
+---
+
+import { ArticleShell, Kicker, Headline, Dek, Byline, Hero, Lede, Callout, KeyTerms, CheckWork, Roadmap, UnitLinks } from '@site/src/components/ArticleKit';
+
+<ArticleShell>
+
+<Kicker>Computer Science · Encryption Unit · Session 5 of 8</Kicker>
+
+<Headline>You used at least three of these before lunch.</Headline>
+
+<Dek>By now you've met symmetric encryption, public-key encryption, and hashing individually. This session is about recognising them out in the wild — in the card you tap, the health record a hospital sends, and the growing list of everyday devices that quietly depend on all three.</Dek>
+
+<Byline>
+  <span><strong>Session time:</strong> 60 minutes</span>
+  <span aria-hidden="true">·</span>
+  <span><strong>Homework:</strong> none this session</span>
+</Byline>
+
+<Hero src="/img/12DGT/encryption/hero-05-encryption-in-everyday-tech.jpg" alt="A phone with a payment card shown in a digital wallet, tapped against a contactless card reader." caption="Photo: SumUp / Unsplash" />
+
+<Lede>
+
+**Goal:** identify which type of encryption (or hashing) is at work in a range of real, everyday technologies, and explain the opportunity each one provides.
+
+| Time | Segment |
+|---|---|
+| 0–10 min | Diagnostic: today's encryption, counted |
+| 10–30 min | Explaining contactless payments and healthcare data |
+| 30–45 min | Worked example: a hospital referral |
+| 45–55 min | Activity: match the technology |
+| 55–60 min | Exit question and key terms |
+
+</Lede>
+
+## Before you start
+
+<Callout kind="diagnostic">
+
+Look back at your list from Session 1 ("three apps or systems you trust"). Add to it: how many *different* pieces of technology have you used today that almost certainly relied on encryption or hashing? Aim for at least five, and be specific (not just "my phone" — what on your phone?).
+
+</Callout>
+
+## Contactless payments
+
+Tapping a card or phone on an EFTPOS terminal uses a chip-based standard (EMV) that generates a **unique, single-use transaction code** for every single tap — even if you tap the same card on the same terminal twice in a row, the code sent is different each time. This is deliberately similar to the rolling-code garage door remote from Session 2: a fixed, reusable card number sent in the clear would be trivial to intercept and replay, so the system is built to make every transaction cryptographically unique.
+
+When you add a card to **Apple Pay** or **Google Pay**, the system goes a step further using **tokenisation**: your actual card number is never stored on the phone or sent to the terminal at all. Instead, a substitute number (a token) tied to that specific phone is used, and it's meaningless if intercepted or stolen, because it can't be used anywhere else.
+
+<Callout kind="case" title="Case file: a hospital referral">
+
+When a GP refers a patient to a specialist at a different hospital, the patient's file — history, medication, test results — has to move between two separate healthcare organisations' computer systems. Health information is amongst the most sensitive personal data that exists, and in most countries (including New Zealand, under the Health Information Privacy Code) it's subject to strict legal protection.
+
+Encryption here typically combines several ideas from this unit: the connection between the two health systems is usually secured much like HTTPS (Session 3), using public-key encryption to establish trust and a temporary shared key; the file itself may additionally be encrypted at rest (Session 2, symmetric encryption with AES) while stored on either hospital's servers; and staff logins to access the record depend on properly hashed and salted passwords (Session 4).
+
+**The opportunity this creates:** without strong encryption, health systems could not digitise patient records or share them between specialists at all — the legal and ethical risk would be too high. Encryption is what makes it *possible* to get faster, better-coordinated care from multiple providers, not just what makes it safe.
+
+</Callout>
+
+## Activity: match the technology
+
+For each technology below, name which concept from this unit (symmetric encryption, public-key encryption/HTTPS, or hashing/salting) is most directly responsible for protecting it, and explain your reasoning in one sentence.
+
+1. A hospital's stored database of patient records, sitting on its own servers.
+2. A doctor logging into that hospital's system with a username and password.
+3. A patient's referral letter being transmitted, in real time, to a specialist at another hospital.
+4. A contactless card generating a different transaction code every time it's tapped.
+
+<CheckWork>
+
+1. **Symmetric encryption (AES).** Large amounts of stored data are typically encrypted at rest using a fast symmetric algorithm, since there's no need to solve a key-exchange problem for data that isn't being transmitted to someone else.
+2. **Hashing and salting.** The login system compares a hash of the entered password against the stored, salted hash — it should never store or compare the actual password.
+3. **Public-key encryption / HTTPS-style connection.** Two systems that have never directly shared a key before need to establish trust and agree on a secure channel — the same key-exchange problem HTTPS solves for websites.
+4. **Symmetric encryption**, generating a unique code per transaction — conceptually similar to a rolling-code system, so a captured code can't simply be replayed.
+
+</CheckWork>
+
+<Callout kind="pitfall">
+
+A common mistake in exam answers is naming a technology (like "encryption" or "HTTPS") without explaining *which specific problem it solves* in that scenario. "It uses encryption to keep data safe" is too vague — always say safe *from what*, and *how*.
+
+</Callout>
+
+## Exit question
+
+Choose one real, everyday technology not already discussed in this session, and explain which type of encryption (or hashing) it most likely relies on, and why.
+
+<KeyTerms terms={['EMV', 'tokenisation', 'data at rest', 'health information privacy']} />
+
+<Roadmap length={8} current={5} />
+
+<UnitLinks>
+
+[← Session 4: Hashing and passwords](04-hashing-and-passwords.mdx)
+
+[Back to unit overview](README.mdx)
+
+[Next → Session 6: The human side of encryption](06-the-human-side-of-encryption.mdx)
+
+</UnitLinks>
+
+</ArticleShell>
