@@ -1,1 +1,9 @@
-{"static":{"bike.jpg":{"title":"Bike","caption":"A bike","alt":"A bike."}}}
+{
+  "static": {
+    "bike.jpg": {
+      "alt": "A bike.",
+      "caption": "A bike",
+      "title": "Bike"
+    }
+  }
+}
