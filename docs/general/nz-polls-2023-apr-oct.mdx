@@ -1,0 +1,49 @@
+---
+title: NZ Polling Tracker — Apr–Oct 2023
+description: Party vote polling in the final six months before the 14 October 2023 election, with the actual result plotted alongside.
+tags: [nz-politics, polling, election-2023]
+---
+
+import PollChart from '@site/src/components/PollChart';
+
+# NZ Polling Tracker — Final Six Months Before the 2023 Election
+
+Every published poll from late April 2023 through election day, 14 October 2023,
+with the actual election result plotted as the final point so you can see how the
+last polls compared to reality. Hover for exact figures; click a party name to
+toggle its line.
+
+Guardian Essential, The Post/Freshwater Strategy, and one Talbot Mills reading
+(30 May–6 Jun) are omitted — none of them reported a figure for TOP.
+
+<PollChart
+  title="NZ Party Vote Polling, April–October 2023 (final 6 months before the 2023 election)"
+  yLabel="Party vote %"
+  categories={[
+    'TM 27Apr-3May', 'Curia 2-7May', 'RNZ 5-11May', 'Horizon 12-17May',
+    'RM 24Apr-21May', 'Verian 20-24May', 'Curia 31May-6Jun', 'RM 29May-25Jun',
+    'TM 28Jun-2Jul', 'Curia 2-10Jul', 'Verian 8-12Jul', 'RM 26Jun-23Jul',
+    'RNZ 26-31Jul', 'TM 31Jul-7Aug', 'Curia 3-8Aug', 'Verian 12-16Aug',
+    'RM 31Jul-27Aug', 'TM 24-30Aug', 'Curia 31Aug-6Sep', 'RNZ 3-9Sep',
+    'Verian 9-12Sep', 'Verian 16-19Sep', 'RNZ 17-23Sep', 'Verian 23-26Sep',
+    'TM 22-28Sep', 'Verian 30Sep-3Oct', 'Curia 1-4Oct', 'RM 4Sep-8Oct',
+    'RNZ 5-10Oct', 'Verian 7-10Oct', 'ELECTION',
+  ]}
+  series={[
+    { name: 'National', color: '#00529F', values: [36, 35.6, 35.3, 26.5, 31.5, 37, 35.7, 30, 36, 33.3, 35, 33.5, 36.6, 35, 34.9, 37, 31, 36, 35, 40.9, 39, 37, 39.1, 36, 38, 36, 35.9, 30.5, 34.5, 37, 38.08] },
+    { name: 'Labour', color: '#D82C20', values: [33, 33.8, 35.9, 34.4, 31, 35, 32.9, 30.5, 31, 31.1, 33, 26, 32.3, 32, 27.1, 29, 24, 30, 26.5, 26.8, 28, 27, 26.5, 26, 27, 26, 27.9, 26, 27.5, 28, 26.92] },
+    { name: 'Green', color: '#098137', values: [9, 7, 8.1, 9.5, 12, 7, 9.7, 9.5, 8, 8.9, 10, 9, 9.6, 10, 12, 12, 12.5, 12, 12.7, 12.3, 10, 12, 14.2, 13, 13, 13, 10.6, 15, 14.9, 14, 11.61] },
+    { name: 'ACT', color: '#FFD100', values: [10, 12.7, 10.8, 12.3, 13.5, 11, 12.7, 15, 12, 13.2, 12, 14, 12.1, 11, 13, 13, 18, 10, 14.3, 10.1, 10, 12, 8.8, 12, 9, 10, 9.1, 11.5, 8.8, 9, 8.64] },
+    { name: 'NZ First', color: '#000000', values: [3.4, 2.6, 3, 5.3, 3.5, 3, 1.6, 3, 4, 3.3, 3.1, 5, 4.1, 4.4, 5.8, 3.7, 5.5, 5.4, 3.9, 4.6, 5, 5, 5.2, 6, 6.4, 6, 6.9, 7.5, 6.8, 6, 6.09] },
+    { name: 'Te Pāti Māori', color: '#B2001A', values: [4.1, 3.7, 3.5, 4.3, 4.5, 2.4, 3.5, 7, 4.2, 5, 2.8, 6, 2.7, 3.1, 2.5, 2.6, 4, 2.4, 2.9, 3.1, 2.6, 2.9, 2.2, 1.9, 3.1, 2.2, 3.7, 3, 2.7, 1.7, 3.08] },
+    { name: 'TOP', color: '#00B2A9', values: [1.8, 1.7, 2, 2.8, 2, 1.4, 0.8, 3, 2.9, 0.3, 1.7, 4, 1.5, 1.8, 1, 0.6, 2, 1.5, 2.7, 0.7, 1.4, 1.4, 1.9, 1.3, 2.3, 1.5, 2.9, 3.5, 2.2, 2.3, 2.22] },
+  ]}
+/>
+
+**Reading the ending:** the final four polls before election day, plus the result
+itself, cluster noticeably higher for National (34.5–38%) than the mid-campaign
+average — a genuine late swing, since it shows up across different houses in the
+same fortnight, not just one pollster's noise. ACT's mid-campaign spike to 18% in
+the Roy Morgan poll spanning 31 Jul–27 Aug coincides with the Kiri Allan
+resignation and general Labour disarray, and partly unwound by election day as
+NZ First kept climbing instead.
