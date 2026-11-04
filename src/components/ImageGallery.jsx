@@ -5,7 +5,7 @@ export default function ImageGallery({ images }) {
       {images.map((img) => (
         <a key={img.src} href={img.www} style={{ textAlign: 'center' }}>
           <img src={img.src} alt={img.alt} style={{ width: '100%' }} />
-          <div>{`Sir ${img.alt}`}</div>
+          <div>{`Commander ${img.alt}`}</div>
         </a>
       ))}
     </div>
